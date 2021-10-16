@@ -49,10 +49,6 @@ public class zombieManager : MonoBehaviour, IHumanoid
                     currentlyAttacking.currentHealth -= damage;
                     currentAttackTimeout = attackTimeout;
                 }
-                else
-                {
-                    isAttacking = false;
-                }  
             }
         }
     }
