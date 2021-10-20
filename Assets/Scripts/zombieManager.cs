@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class zombieManager : MonoBehaviour, IHumanoid
+public class zombieManager : MonoBehaviour
 {
     public float velocity = 1.5f;
     public float damage = 5f;

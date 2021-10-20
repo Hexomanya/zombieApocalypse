@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class humanMananger : MonoBehaviour, IHumanoid
+public class humanMananger : MonoBehaviour
 {
     public float damage = 2f;
     public float velocity = 2f;

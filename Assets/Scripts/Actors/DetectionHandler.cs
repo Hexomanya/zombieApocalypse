@@ -1,0 +1,56 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Assets.Scripts.Actors
+{
+    public class DetectionHandler : MonoBehaviour
+    {
+        public float detectionRange = 5f;
+    
+        private List<AttackableObject> possibleTargets = new List<AttackableObject>();
+    
+        void Start()
+        {
+            gameObject.GetComponent<CircleCollider2D>().radius = detectionRange;
+        }
+
+        void Update()
+        {
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            AttackableObject attackableObject = collision.GetComponent<AttackableObject>();
+            if (!possibleTargets.Contains(attackableObject))
+            {
+                possibleTargets.Add(attackableObject);
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            possibleTargets.Remove(collision.GetComponent<AttackableObject>());
+        }
+    
+        // LoS - Line of Sight
+        public Vector3 GetTargetPositionWithLoS()
+        {
+            if (possibleTargets.Count > 0)
+            {
+                foreach (AttackableObject target in possibleTargets)
+                {
+                    Vector3 distance = transform.position - target.transform.position;
+                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, 1 << 0);
+                    Debug.DrawLine(target.transform.position, target.transform.position + distance, Color.red);
+
+                    if (hits.Length == 0)
+                    {
+                        return target.transform.position;
+                    }
+                }
+            }
+        
+            return transform.position;
+        }
+    }
+}
