@@ -1,44 +1,55 @@
+using Assets.Scripts.Actors.ActorStates;
+using Assets.Scripts.Actors.ActorTypes;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
 {
-    public class Human : MonoBehaviour
+    public class Human : MonoBehaviour, IActor
     {
-        public float moveSpeed = 3f;
-        public float meleeDamage = 5f;
-        public float attackCooldown = 2f;
-        public HumanTypes typ = HumanTypes.Fleeing;
+        private IActorType myActorType;
 
-        private float AttackTimer { get; set; } = 0f;
-        private Vector3 TargetMovePosition { get; set; }
-        private Rigidbody2D Rb { get; set; }
-        private DetectionHandler DetectionHandler { get; set; }
-        private bool fleeing = false;
-    
-        void Start()
+        [field: SerializeField]
+        private ActorType Typ { get; set; } = ActorType.Zombie;
+
+        [field: SerializeField]
+        public float MoveSpeed { get; private set; } = 3f;
+
+        [field: SerializeField]
+        public float MeleeDamage { get; private set; } = 5f;
+
+        [field: SerializeField]
+        public float AttackCooldown { get; private set; } = 2f;
+
+        public AttackableObject CurrentMeleeTarget { get; set; }
+
+        public IBehaviourState CurrenState => myActorType.CurrentState;
+
+        public float AttackTimer { get; set; } = 0f;
+
+        public DetectionHandler DetectionHandler { get; private set; }
+
+        public MeleeRangeHandler MeleeRange { get; private set; }
+
+        public Vector3 CurrentMoveTarget { get; set; }
+
+        public float ConcentrationTime => 0f;
+
+        public float ConcentrationTimer { get; set; } = 0f;
+
+        public float PlayerCommandCooldown { get; private set; } = 2f;
+
+        void Awake()
         {
-            Rb = gameObject.GetComponent<Rigidbody2D>();
             DetectionHandler = GetComponentInChildren<DetectionHandler>();
+            MeleeRange = GetComponentInChildren<MeleeRangeHandler>();
+            AttackTimer = AttackCooldown;
+            myActorType = ActorTypeProvider.GetActorType(Typ);
         }
 
         void Update()
         {
-            if (DetectionHandler.GetTargetPositionWithLoS() == transform.position && !fleeing)
-            {
-                return;
-            }
-        
-            if(typ == HumanTypes.Fleeing)
-            {
-                fleeing = true;
-                // TODO: get nearest safe position from pathfinder 
-                Vector3 direction = Vector3.up * 500f - transform.position;
-                direction = Utility.RemoveNumberFractions(direction);
-                direction.z = 0f;
-            
-                // TODO: maybe change to rigidbody
-                transform.position += direction.normalized * Time.deltaTime * moveSpeed;
-            }
+            CurrenState.Update(gameObject, this);
+            myActorType.DecideOnNextState(gameObject, this);
         }
     }
 }

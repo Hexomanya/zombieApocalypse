@@ -1,33 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
 {
-    public class MeleeHandler : MonoBehaviour
+    public class MeleeRangeHandler : MonoBehaviour
     {
         public float meleeDamage = 5f;
         public float attackCooldown = 2f;
+        public float meleeRange = 0.7f;
 
-        private float AttackTimer { get; set; } = 0f;
         private List<AttackableObject> possibleTargets = new List<AttackableObject>();
 
-        void Start()
+        private void Start()
         {
-        }
-
-        void Update()
-        {
-            if(AttackTimer <= 0f && possibleTargets.Count > 0)
-            {
-                possibleTargets[0].ApplyDamage(meleeDamage);
-                AttackTimer = attackCooldown;
-            }
-
-            if (AttackTimer > 0f)
-            {
-                AttackTimer -= Time.deltaTime;
-            }
+            gameObject.GetComponent<CircleCollider2D>().radius = meleeRange;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +28,17 @@ namespace Assets.Scripts.Actors
         private void OnTriggerExit2D(Collider2D collision)
         {
             possibleTargets.Remove(collision.GetComponent<AttackableObject>());
+        }
+
+        public AttackableObject GetPossibleTarget()
+        {
+            // TODO: improve target selection
+            if(possibleTargets.Count > 0)
+            {
+                return possibleTargets[0];
+            }
+
+            return null;
         }
     }
 }

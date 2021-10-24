@@ -1,55 +1,57 @@
+using Assets.Scripts.Actors.ActorStates;
+using Assets.Scripts.Actors.ActorTypes;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
 {
-    public class Zombie : MonoBehaviour
+    public class Zombie : MonoBehaviour, IActor
     {
-        public float moveSpeed = 3f;
-        public float concentrationTime = 10f;
+        private IActorType myActorType;
 
-        private float ConcentrationTimer { get; set; }= 0f;
-        private Vector3 TargetMovePosition { get; set; }
-        private Rigidbody2D Rb { get; set; }
+        [field: SerializeField]
+        private ActorType Typ { get; set; } = ActorType.Zombie;
+
+        [field: SerializeField]
+        public float MoveSpeed { get; private set; } = 3f;
+
+        [field: SerializeField]
+        public float MeleeDamage { get; private set; } = 5f;
+
+        [field: SerializeField]
+        public float AttackCooldown { get; private set; } = 2f;
+
+        [field: SerializeField]
+        public float ConcentrationTime { get; private set; } = 5f;
+
+        [field: SerializeField]
+        public float PlayerCommandCooldown { get; private set; } = 2f;
+
+        public AttackableObject CurrentMeleeTarget { get; set; }
+
+        public IBehaviourState CurrenState => myActorType.CurrentState;
+
+        public float AttackTimer { get; set; } = 0f;
+
+        public float ConcentrationTimer { get; set; } = 0f;
+
+        public DetectionHandler DetectionHandler { get; private set; }
+
+        public MeleeRangeHandler MeleeRange { get; private set; }
+
+        public Vector3 CurrentMoveTarget { get; set; }
 
         void Awake()
         {
-            Rb = gameObject.GetComponent<Rigidbody2D>();
+            DetectionHandler = GetComponentInChildren<DetectionHandler>();
+            MeleeRange = GetComponentInChildren<MeleeRangeHandler>();
+            AttackTimer = AttackCooldown;
+            myActorType = ActorTypeProvider.GetActorType(Typ);
         }
 
         void Update()
         {
-            HandleMovement();
-        }
-
-        private void HandleMovement()
-        {
-            Vector3 direction = TargetMovePosition - transform.position;
-            direction = Utility.RemoveNumberFractions(direction);
-            direction.z = 0f;
-
-            // Target reached
-            if(direction == Vector3.zero)
-            {
-                ConcentrationTimer = 0f;
-            }
-        
-            // TODO: maybe change to rigidbody
-            transform.position += direction.normalized * Time.deltaTime * moveSpeed;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                TargetMovePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                ConcentrationTimer = concentrationTime;
-            }
-
-            if (ConcentrationTimer <= 0f)
-            {
-                // Get a possible target inside detection Range
-                TargetMovePosition = gameObject.GetComponentInChildren<DetectionHandler>().GetTargetPositionWithLoS();
-                ConcentrationTimer = concentrationTime;
-            }
-
-            ConcentrationTimer -= Time.deltaTime;
+            CurrenState.Update(gameObject, this);
+            myActorType.DecideOnNextState(gameObject, this);
         }
     }
 }

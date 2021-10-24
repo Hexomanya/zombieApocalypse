@@ -14,10 +14,6 @@ namespace Assets.Scripts.Actors
             gameObject.GetComponent<CircleCollider2D>().radius = detectionRange;
         }
 
-        void Update()
-        {
-        }
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
             AttackableObject attackableObject = collision.GetComponent<AttackableObject>();
@@ -31,9 +27,14 @@ namespace Assets.Scripts.Actors
         {
             possibleTargets.Remove(collision.GetComponent<AttackableObject>());
         }
+
+        public bool IsAnyTargetInRange()
+        {
+            return possibleTargets.Count > 0;
+        }
     
         // LoS - Line of Sight
-        public Vector3 GetTargetPositionWithLoS()
+        public AttackableObject GetAnyTargetWithLoS()
         {
             if (possibleTargets.Count > 0)
             {
@@ -45,12 +46,39 @@ namespace Assets.Scripts.Actors
 
                     if (hits.Length == 0)
                     {
-                        return target.transform.position;
+                        return target;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public AttackableObject GetClosestTargetWithLoS()
+        {
+            AttackableObject closest = null;
+            Vector3 dis = Vector3.one * 500f;
+
+            if (possibleTargets.Count > 0)
+            {
+                foreach (AttackableObject target in possibleTargets)
+                {
+                    Vector3 distance = transform.position - target.transform.position;
+                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, 1 << 0);
+                    Debug.DrawLine(target.transform.position, target.transform.position + distance, Color.red);
+
+                    if (hits.Length == 0)
+                    {
+                        if (distance.magnitude < dis.magnitude)
+                        {
+                            dis = distance;
+                            closest = target;
+                        }
                     }
                 }
             }
         
-            return transform.position;
+            return closest;
         }
     }
 }
