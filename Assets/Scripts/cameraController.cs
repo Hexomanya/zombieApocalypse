@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraController : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public float velocity = 2f;
-
 
     // Update is called once per frame
     void Update()
