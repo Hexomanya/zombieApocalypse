@@ -4,12 +4,14 @@ namespace Assets.Scripts
 {
     public class AttackableObject : MonoBehaviour
     {
-        public float maxHealth = 20f;
-        private float CurrentHealth { get; set; }
+        [field: SerializeField]
+        public float MaxHealth { get; private set; } = 20f;
+
+        public float CurrentHealth { get; private set; }
     
         void Start()
         {
-            CurrentHealth = maxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         void Update()

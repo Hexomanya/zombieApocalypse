@@ -1,40 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 
-public class healthbar : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
-    float maxHealth;
-    float currentHealth;
-    bool isHuman;
+    private AttackableObject attackableObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(this.gameObject.GetComponentInParent<humanMananger>() != null)
-        {
-            maxHealth = this.gameObject.GetComponentInParent<humanMananger>().maxHealth;
-            isHuman = true;
-        }
-        else
-        {
-            maxHealth = this.gameObject.GetComponentInParent<zombieManager>().maxHealth;
-            isHuman = false;
-        }
-          
+        attackableObject = GetComponentInParent<AttackableObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isHuman)
-        {
-            currentHealth = this.gameObject.GetComponentInParent<humanMananger>().currentHealth;
-        }
-        else
-        {
-            currentHealth = this.gameObject.GetComponentInParent<zombieManager>().currentHealth;
-        }
-        this.transform.localScale = new Vector3(currentHealth / maxHealth, this.transform.localScale.y, 0) ;
+        transform.localScale = new Vector3(attackableObject.CurrentHealth / attackableObject.MaxHealth, transform.localScale.y, 0) ;
     }
 }

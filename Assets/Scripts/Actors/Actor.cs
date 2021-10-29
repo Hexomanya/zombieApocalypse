@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Actors
 {
-    public class Zombie : MonoBehaviour, IActor
+    public class Actor : MonoBehaviour, IActor
     {
         private IActorType myActorType;
 
