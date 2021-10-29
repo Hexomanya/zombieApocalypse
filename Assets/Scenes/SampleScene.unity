@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIew3vygZTAIAAPUEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMmS2jAQ/RVK55DCLMWQW2IYJgcGakhqLr4Iq41VyJJLy7BM8e9pyTZ2nMrJUr/X3a8X+ZNwaUpIrdJrzdlGMSDfBsSfyZdBC77AhR6V3PMbNJx3zmzuSTRw3qjlCu2RdzOqAKt5+l0ehSeP0Ogkz5QuVuwIsTLWoDmjwgBCWlnvLdH0OSAX/AwX3uWKp/Hcn254WowGdzymIC3oltoQG1rFcjIVtCiBecktefwIW9EkFlMzvPBUCcFNrYTYaxkqjWlpHNaBBMYpVhbSj/GaAz/mtr48nLdZZsDWkjS9LrnGBlVRyQ9Vda2g5lTp+qDCQZA0fQqiqqibfwjDKMCZVsVLkzga+SQ25+npjV5Tamynr13zslUehf6cqTjRg4D3HOSrWmvlJEPQauddnYHxsr0+aotzSE+tvZLaM7ry/9PxNdxD+ZdY8OLgoa/TyrAXKjQ8zB40juYnCg6bYeoQaPUqfhv4RY/dFaqBZ66NRaiuUnp5B+W0p5JV6JmvxtlYaQnBXIsuQVJhrzsMY/sz7GGdtD3kmfrHUievseYN9FyCueWPRj1op86PYZlcnTdg8q2zgstuMI+8YqNiJWW1Y6aHer+90xlNu35Hx9nfy0VgNp3PI5hMFrNJdHiKhuyApxmLZhnLFjM2JWH7uMRKqdhVUusG4dxk20qJm9b8RQZrTcuw8EzT85rfCtVpOpeZ2qcaQG6rCA/loDEJPky2YhxbtAdruQwTJ58JESo9AUsegZJQ6upiNU3aKAkp+Yey3pKQOPw2EnIn9z9QSwMEFAAACAgAAAgh7Oz/RRBsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqqYm5uWGqsbGlqbFhkoWhbkoSkGWaYmialpJmaZpiohQLVF9SWZDql5ibCtETkFiSkZaZl5KZl67nXpSZ4g4yWim2FgBQSwECLQAUAAAICAAACCHsN78oGUwCAAD1BAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHs7P9FEGwAAAB4AAAACQAkAAAAAAAAAAAAAACZAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAFADAAAAAA==
+    dataString: UEsDBBQAAAgIAAAIIez0AFHMSQIAAPIEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMmS2jAQ/RVK55DCLEXILTEMkwMDNWRqLr4Iq41VyJJLy7BM8e9pyTZ2nMrJUr/X3a8X+ZNwaUpIrdJrzdlGMSDfB8SfyZdBCz7DhR6V3PMbNJx3zmzuSTRwXqnlCu2RdzOqAKt5+kMehSeP0Ogkz5QuVuwIsTLWoDmjwgBCWlnvLdH0OSAX/AwX3uWKp/Hcn254WowGdzymIC3oltoQG1rFcjIVtCiBecktefwIW9EkFlMzvPBUCcFNrYTYaxkqjWlpHNaBBMYpVhbSj/GaAz/mtr48nLdZZsDWkjS9LrnGBlVRyU9Vda2g5lTp+qDCBQFBURVy8w86rOBMq+K5yRqNfAab8/T0Sq8pNbbT1K552cqOQnPOVJzoQcB7DvJFrbVykiFotfOuzsB42V4fhcU5pKfWXkntGV35/9H4Gu6h9ksseHHw0NdpZdgLFbodBg8a5/ILBYe1MHUItHoVbwZ+02N3f2rgiWtjEaqrlF7eQTntqWQVeuarcTZWWkIw16JLkFTY6w7D2P4Ae1gnbQ95ov6l1MlrrHkAPZdgbvmjUQ/aqfNjWCZX5w2YfOus4LIbzCMv2KhYSVktmOmh3m/vdEbTrt/Rcfb3chGYTefzCCaTxWwSHb5FQ3bA04xFs4xlixmbkrB9XGKlVOwqqXWDcG6ybaXETWt+IYO1pmXYdqbpec1vheo0nctM7VMNILdVhIdy0JgEXyVbMY4t2oO1XIaJk8+ECJWegCWPQEkodXWxmiZtlISU/ENZb0lIHP4ZCbmT+x9QSwMEFAAACAgAAAgh7Oz/RRBsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqqYm5uWGqsbGlqbFhkoWhbkoSkGWaYmialpJmaZpiohQLVF9SWZDql5ibCtETkFiSkZaZl5KZl67nXpSZ4g4yWim2FgBQSwECLQAUAAAICAAACCHs9ABRzEkCAADyBAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHs7P9FEGwAAAB4AAAACQAkAAAAAAAAAAAAAACWAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAE0DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1523481669}
   - component: {fileID: 1523481668}
   - component: {fileID: 1523481670}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,6 +541,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1706231177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1932915544487196009, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+  m_PrefabInstance: {fileID: 1932915544990898143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844608775
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -418920077178866309, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1932915543989874960, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -727,6 +736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1339898317420399942, guid: 01361fa586d76d544a96548bd875609b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1706231177}
     - target: {fileID: 4679703661269681741, guid: 01361fa586d76d544a96548bd875609b, type: 3}
       propertyPath: m_Name
       value: Zombie
