@@ -11,7 +11,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         public void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            actor.CurrentMeleeTarget = actor.MeleeRange.GetPossibleTarget();
+            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
             switch (currentState)
             {
                 case IdleState _:

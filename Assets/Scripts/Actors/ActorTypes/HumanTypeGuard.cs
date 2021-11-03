@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
-using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
@@ -12,10 +11,10 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         public void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            actor.CurrentMoveTarget = actor.DetectionHandler.GetAnyTargetWithLoS() != null
+            actor.AIBase.destination = actor.DetectionHandler.GetAnyTargetWithLoS() != null
                 ? actor.DetectionHandler.GetClosestTargetWithLoS().transform.position
                 : gameObject.transform.position;
-            actor.CurrentMeleeTarget = actor.MeleeRange.GetPossibleTarget();
+            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
 
             switch (actor.CurrenState)
             {
@@ -44,7 +43,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleSearchingState(GameObject gameObject, IActor actor)
         {
-            if(actor.CurrentMoveTarget != gameObject.transform.position)
+            if(actor.AIBase.destination != gameObject.transform.position)
             {
                 currentState = BehaviourStateProvider.Engaging;
             }
@@ -72,7 +71,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 currentState = BehaviourStateProvider.Searching;
             }
-            else if (actor.CurrentMoveTarget != gameObject.transform.position)
+            else if (actor.AIBase.destination != gameObject.transform.position)
             {
                 currentState = BehaviourStateProvider.Engaging;
             }
