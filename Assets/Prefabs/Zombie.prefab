@@ -347,6 +347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &4679703662696763248
 GameObject:
   m_ObjectHideFlags: 0

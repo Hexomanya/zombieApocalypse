@@ -6,6 +6,7 @@ namespace Assets.Scripts.Actors
     public class DetectionHandler : MonoBehaviour
     {
         public float detectionRange = 5f;
+        public LayerMask obstacleLayer = 0;
     
         private List<AttackableObject> possibleTargets = new List<AttackableObject>();
     
@@ -40,8 +41,13 @@ namespace Assets.Scripts.Actors
             {
                 foreach (AttackableObject target in possibleTargets)
                 {
+                    if (target == null)
+                    {
+                        throw new System.ArgumentNullException("Detected an Object without an 'AttackableObject' Script!");
+                    }
+
                     Vector3 distance = transform.position - target.transform.position;
-                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, 1 << 0);
+                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, obstacleLayer);
                     Debug.DrawLine(target.transform.position, target.transform.position + distance, Color.red);
 
                     if (hits.Length == 0)
