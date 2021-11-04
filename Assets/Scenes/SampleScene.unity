@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479a610f566c3ca47b4572f79af88a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 4
+  velocity: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -507,8 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 32
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
+  m_RefResolutionX: 1280
+  m_RefResolutionY: 720
   m_UpscaleRT: 0
   m_PixelSnapping: 1
   m_CropFrameX: 0
