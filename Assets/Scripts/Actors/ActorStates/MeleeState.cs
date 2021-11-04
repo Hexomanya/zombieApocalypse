@@ -8,6 +8,8 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor)
         {
+            actor.AIBase.canMove = false;
+            actor.AIBase.destination = gameObject.transform.position;
             if (actor.AttackTimer <= 0f && actor.CurrentMeleeTarget != null)
             {
                 actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage);

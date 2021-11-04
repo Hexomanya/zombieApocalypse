@@ -80,5 +80,22 @@ namespace Assets.Scripts.Actors
         
             return closest;
         }
+
+        public Vector3 GetTargetClusterCenter()
+        {
+            Vector3 center = Vector3.zero;
+
+            if (possibleTargets.Count > 0)
+            {
+                foreach (AttackableObject item in possibleTargets)
+                {
+                    center += item.transform.position;
+                }
+
+                return center / possibleTargets.Count;
+            }
+
+            return transform.position;
+        }
     }
 }

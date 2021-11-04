@@ -8,6 +8,8 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor)
         {
+            actor.AIBase.canMove = false;
+            actor.AIBase.destination = gameObject.transform.position;
             // TODO: do something, examples:
             // - Actor could wander around for a bit
             // - Actor could walk towards last known enemy position

@@ -1,5 +1,6 @@
 using Assets.Scripts.Actors.ActorStates;
 using Assets.Scripts.Actors.ActorTypes;
+using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
@@ -10,9 +11,6 @@ namespace Assets.Scripts.Actors
 
         [field: SerializeField]
         private ActorType Typ { get; set; } = ActorType.Zombie;
-
-        [field: SerializeField]
-        public float MoveSpeed { get; private set; } = 3f;
 
         [field: SerializeField]
         public float MeleeDamage { get; private set; } = 5f;
@@ -36,16 +34,17 @@ namespace Assets.Scripts.Actors
 
         public DetectionHandler DetectionHandler { get; private set; }
 
-        public MeleeRangeHandler MeleeRange { get; private set; }
+        public MeleeRangeHandler MeleeRangeHandler { get; private set; }
 
-        public Vector3 CurrentMoveTarget { get; set; }
+        public AIBase AIBase { get; private set; }
 
         void Awake()
         {
             DetectionHandler = GetComponentInChildren<DetectionHandler>();
-            MeleeRange = GetComponentInChildren<MeleeRangeHandler>();
+            MeleeRangeHandler = GetComponentInChildren<MeleeRangeHandler>();
             AttackTimer = AttackCooldown;
             myActorType = ActorTypeProvider.GetActorType(Typ);
+            AIBase = GetComponent<AIBase>();
         }
 
         void Update()

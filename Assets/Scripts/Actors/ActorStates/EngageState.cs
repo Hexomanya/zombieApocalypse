@@ -8,11 +8,7 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor)
         {
-            // TODO: Get Path from pathfinder
-            Vector3 direction = actor.CurrentMoveTarget - gameObject.transform.position;
-            direction = Utility.RemoveNumberFractions(direction, true);
-
-            gameObject.transform.position += direction.normalized * Time.deltaTime * actor.MoveSpeed;
+            actor.AIBase.canMove = true;
         }
     }
 }
