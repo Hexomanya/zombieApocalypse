@@ -48,7 +48,6 @@ namespace Assets.Scripts.Actors
 
                     Vector3 distance = transform.position - target.transform.position;
                     RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, obstacleLayer);
-                    Debug.DrawLine(target.transform.position, target.transform.position + distance, Color.red);
 
                     if (hits.Length == 0)
                     {

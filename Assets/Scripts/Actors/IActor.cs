@@ -27,5 +27,9 @@ namespace Assets.Scripts.Actors
         public IBehaviourState CurrentState { get; }
 
         public AIBase AIBase { get; }
+
+        public Transform LastKnownTargetPosition { get; set; }
+
+        public Vector3 SpawnPos { get; }
     }
 }

@@ -9,24 +9,25 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
+            if (actor.LastKnownTargetPosition != null)
+            {
+                actor.AIBase.destination = actor.LastKnownTargetPosition.position;
+                actor.AIBase.canMove = true;
+            }
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
+            actor.AIBase.canMove = false;
+            actor.AIBase.destination = gameObject.transform.position;
         }
 
         public void Update(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
-            // TODO: do something, examples:
-            // - Actor could wander around for a bit
-            // - Actor could walk towards last known enemy position
-            // - Actor could walk towards friendly actors (though that might be similar to patrolling)
-            // - Actor could partially walk towards closest enemy even if they are not in detection range
-            return;
-
-            // for now I will leave this as an Idle state due to low priority as well as requiering a proper pathfinder
+            if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius) 
+            {
+                actor.LastKnownTargetPosition = null;
+            }
         }
     }
 }

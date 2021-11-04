@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
@@ -27,6 +28,21 @@ namespace Assets.Scripts.Actors.ActorTypes
                 case SearchState _:
                     HandleSearchingState(gameObject, actor);
                     break;
+                case ReturningState _:
+                    HandleReturningState(gameObject, actor);
+                    break;
+            }
+        }
+
+        private void HandleReturningState(GameObject gameObject, IActor actor)
+        {
+            if(actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+            }
+            else if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).sqrMagnitude <= actor.AIBase.radius * actor.AIBase.radius)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
@@ -44,9 +60,9 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
-            else if (!actor.DetectionHandler.IsAnyTargetInRange())
+            else if (actor.LastKnownTargetPosition == null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Returning);
             }
         }
 
@@ -58,19 +74,19 @@ namespace Assets.Scripts.Actors.ActorTypes
             }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 
         private void HandleIdleState(GameObject gameObject, IActor actor)
         {
-            if (actor.DetectionHandler.IsAnyTargetInRange())
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
-            }
-            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+            }
+            else if (actor.LastKnownTargetPosition != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 

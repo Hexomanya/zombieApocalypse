@@ -57,7 +57,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
-            else if (!actor.DetectionHandler.IsAnyTargetInRange())
+            else if (actor.LastKnownTargetPosition == null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
@@ -85,7 +85,11 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
             }
-            else if (actor.DetectionHandler.IsAnyTargetInRange())
+            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+            }
+            else if (actor.LastKnownTargetPosition != null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
@@ -101,7 +105,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
-            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).sqrMagnitude <= actor.AIBase.radius * actor.AIBase.radius)
+            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }

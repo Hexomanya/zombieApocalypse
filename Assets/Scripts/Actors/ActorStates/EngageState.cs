@@ -24,12 +24,13 @@ namespace Assets.Scripts.Actors.ActorStates
             // only update PathFinder if target position has changed
             if(actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                Vector3 targetPos = actor.DetectionHandler.GetClosestTargetWithLoS().transform.position;
-                if (actor.AIBase.destination != targetPos)
+                Transform targetPos = actor.DetectionHandler.GetClosestTargetWithLoS().transform;
+                actor.LastKnownTargetPosition = targetPos;
+                if (actor.AIBase.destination != targetPos.position)
                 {
-                    actor.AIBase.destination = targetPos;
+                    actor.AIBase.destination = targetPos.position;
                 }
-            }            
+            }
         }
     }
 }

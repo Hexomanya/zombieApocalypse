@@ -37,6 +37,9 @@ namespace Assets.Scripts.Actors
         public MeleeRangeHandler MeleeRangeHandler { get; private set; }
 
         public AIBase AIBase { get; private set; }
+        public Transform LastKnownTargetPosition { get; set; }
+
+        public Vector3 SpawnPos { get; private set; }
 
         void Awake()
         {
@@ -45,6 +48,7 @@ namespace Assets.Scripts.Actors
             AttackTimer = AttackCooldown;
             myActorType = ActorTypeProvider.GetActorType(Typ);
             AIBase = GetComponent<AIBase>();
+            SpawnPos = transform.position;
         }
 
         void Update()

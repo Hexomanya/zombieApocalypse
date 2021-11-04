@@ -8,6 +8,7 @@
         private static readonly IBehaviourState engaging = new EngageState();
         private static readonly IBehaviourState searching = new SearchState();
         private static readonly IBehaviourState playerMoveCommandState = new PlayerMoveCommandState();
+        private static readonly IBehaviourState returningState = new ReturningState();
 
         public static IBehaviourState Idle => idle;
         public static IBehaviourState Fleeing => fleeing;
@@ -15,5 +16,6 @@
         public static IBehaviourState Engaging => engaging;
         public static IBehaviourState Searching => searching;
         public static IBehaviourState PlayerMoveCommandState => playerMoveCommandState;
+        public static IBehaviourState Returning => returningState;
     }
 }
