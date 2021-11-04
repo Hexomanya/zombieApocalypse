@@ -24,7 +24,7 @@ namespace Assets.Scripts.Actors
 
         public AttackableObject CurrentMeleeTarget { get; set; }
 
-        public IBehaviourState CurrenState { get; }
+        public IBehaviourState CurrentState { get; }
 
         public AIBase AIBase { get; }
     }

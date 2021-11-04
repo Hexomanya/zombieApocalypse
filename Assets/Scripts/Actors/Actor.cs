@@ -26,7 +26,7 @@ namespace Assets.Scripts.Actors
 
         public AttackableObject CurrentMeleeTarget { get; set; }
 
-        public IBehaviourState CurrenState => myActorType.CurrentState;
+        public IBehaviourState CurrentState => myActorType.CurrentState;
 
         public float AttackTimer { get; set; } = 0f;
 
@@ -49,7 +49,7 @@ namespace Assets.Scripts.Actors
 
         void Update()
         {
-            CurrenState.Update(gameObject, this);
+            CurrentState.Update(gameObject, this);
             myActorType.DecideOnNextState(gameObject, this);
         }
     }

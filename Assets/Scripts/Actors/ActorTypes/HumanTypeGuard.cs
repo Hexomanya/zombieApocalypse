@@ -9,23 +9,20 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         public IBehaviourState CurrentState => currentState;
 
+        public float PlayerCommandCooldownTimer { get; set; }
+
         public void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.destination = actor.DetectionHandler.GetAnyTargetWithLoS() != null
-                ? actor.DetectionHandler.GetClosestTargetWithLoS().transform.position
-                : gameObject.transform.position;
-            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
-
-            switch (actor.CurrenState)
+            switch (currentState)
             {
                 case IdleState _:
                     HandleIdleState(gameObject, actor);
                     break;
                 case EngageState _:
-                    HandleEngagingState(actor);
+                    HandleEngagingState(gameObject, actor);
                     break;
                 case MeleeState _:
-                    HandleMeleeState(actor);
+                    HandleMeleeState(gameObject, actor);
                     break;
                 case SearchState _:
                     HandleSearchingState(gameObject, actor);
@@ -33,35 +30,35 @@ namespace Assets.Scripts.Actors.ActorTypes
             }
         }
 
-        private void HandleMeleeState(IActor actor)
+        private void HandleMeleeState(GameObject gameObject, IActor actor)
         {
-            if (actor.CurrentMeleeTarget == null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() == null)
             {
-                currentState = BehaviourStateProvider.Searching;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 
         private void HandleSearchingState(GameObject gameObject, IActor actor)
         {
-            if(actor.AIBase.destination != gameObject.transform.position)
+            if(actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                currentState = BehaviourStateProvider.Engaging;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
             else if (!actor.DetectionHandler.IsAnyTargetInRange())
             {
-                currentState = BehaviourStateProvider.Idle;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
-        private void HandleEngagingState(IActor actor)
+        private void HandleEngagingState(GameObject gameObject, IActor actor)
         {
-            if (actor.CurrentMeleeTarget != null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
-                currentState = BehaviourStateProvider.Melee;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                currentState = BehaviourStateProvider.Idle;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
@@ -69,12 +66,19 @@ namespace Assets.Scripts.Actors.ActorTypes
         {
             if (actor.DetectionHandler.IsAnyTargetInRange())
             {
-                currentState = BehaviourStateProvider.Searching;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
-            else if (actor.AIBase.destination != gameObject.transform.position)
+            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                currentState = BehaviourStateProvider.Engaging;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
+        }
+
+        private void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
+        {
+            currentState.ExitState(gameObject, actor);
+            currentState = nextState;
+            currentState.EnterState(gameObject, actor, this);
         }
     }
 }

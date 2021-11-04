@@ -9,36 +9,37 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         public IBehaviourState CurrentState => currentState;
 
+        public float PlayerCommandCooldownTimer { get; set; }
+
         public void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
             switch (currentState)
             {
                 case IdleState _:
-                    HandleIdleState(actor);
+                    HandleIdleState(gameObject, actor);
                     break;
                 case FleeingState _:
-                    HandleFleeingState(actor);
+                    HandleFleeingState(gameObject, actor);
                     break;
                 case MeleeState _:
-                    HandleMeleeState(actor);
+                    HandleMeleeState(gameObject, actor);
                     break;
             }
         }
 
-        private void HandleMeleeState(IActor actor)
+        private void HandleMeleeState(GameObject gameObject, IActor actor)
         {
             if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                currentState = BehaviourStateProvider.Idle;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
-            else if (actor.CurrentMeleeTarget == null)
+            else if (actor.MeleeRangeHandler.GetPossibleTarget() == null)
             {
-                currentState = BehaviourStateProvider.Fleeing;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Fleeing);
             }
         }
 
-        private void HandleFleeingState(IActor actor)
+        private void HandleFleeingState(GameObject gameObject, IActor actor)
         {
             // TODO: Implement "Got away"
             if (false)
@@ -46,26 +47,31 @@ namespace Assets.Scripts.Actors.ActorTypes
             }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                currentState = BehaviourStateProvider.Idle;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
-            else if (actor.CurrentMeleeTarget != null)
+            else if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
-                currentState = BehaviourStateProvider.Melee;
-                actor.AttackTimer = actor.AttackCooldown;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
         }
 
-        private void HandleIdleState(IActor actor)
+        private void HandleIdleState(GameObject gameObject, IActor actor)
         {
-            if (actor.CurrentMeleeTarget != null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
-                currentState = BehaviourStateProvider.Melee;
-                actor.AttackTimer = actor.AttackCooldown;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                currentState = BehaviourStateProvider.Fleeing;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Fleeing);
             }
+        }
+
+        private void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
+        {
+            currentState.ExitState(gameObject, actor);
+            currentState = nextState;
+            currentState.EnterState(gameObject, actor, this);
         }
     }
 }

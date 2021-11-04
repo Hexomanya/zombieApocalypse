@@ -15,6 +15,6 @@ public class StateDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = actor.CurrenState.StateName;
+        textMesh.text = actor.CurrentState.StateName;
     }
 }
