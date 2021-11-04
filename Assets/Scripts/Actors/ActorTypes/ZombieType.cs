@@ -13,7 +13,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         public void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            actor.CurrentMeleeTarget = actor.MeleeRange.GetPossibleTarget();
+            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
             // prevent underflow
             if (PlayerCommandCooldownTimer > 0f)
             {
@@ -50,7 +50,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleSearchingState(GameObject gameObject, IActor actor)
         {
-            actor.CurrentMoveTarget = actor.DetectionHandler.GetAnyTargetWithLoS() != null
+            actor.AIBase.destination = actor.DetectionHandler.GetAnyTargetWithLoS() != null
                 ? actor.DetectionHandler.GetClosestTargetWithLoS().transform.position
                 : gameObject.transform.position;
 
@@ -58,7 +58,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchToPlayerMoveCommandState(actor);
             }
-            else if (actor.CurrentMoveTarget != gameObject.transform.position)
+            else if (actor.AIBase.destination != gameObject.transform.position)
             {
                 currentState = BehaviourStateProvider.Engaging;
             }
@@ -106,7 +106,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 currentState = BehaviourStateProvider.Melee;
             }
-            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.CurrentMoveTarget - gameObject.transform.position, true) == Vector3.zero)
+            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true) == Vector3.zero)
             {
                 currentState = BehaviourStateProvider.Searching;
             }
@@ -120,7 +120,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void SwitchToPlayerMoveCommandState(IActor actor)
         {
-            actor.CurrentMoveTarget = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            actor.AIBase.destination = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             currentState = BehaviourStateProvider.PlayerMoveCommandState;
             actor.ConcentrationTimer = actor.ConcentrationTime;
             PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;

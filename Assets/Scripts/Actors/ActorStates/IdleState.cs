@@ -8,8 +8,8 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor)
         {
-            // do nothing
-            return;
+            actor.AIBase.canMove = false;
+            actor.AIBase.destination = gameObject.transform.position;
         }
     }
 }

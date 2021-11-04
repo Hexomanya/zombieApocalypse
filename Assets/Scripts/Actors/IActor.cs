@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
+using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
@@ -7,9 +8,7 @@ namespace Assets.Scripts.Actors
     {
         public DetectionHandler DetectionHandler { get; }
 
-        public MeleeRangeHandler MeleeRange { get; }
-
-        public float MoveSpeed { get; }
+        public MeleeRangeHandler MeleeRangeHandler { get; }
 
         public float MeleeDamage { get; }
 
@@ -25,8 +24,8 @@ namespace Assets.Scripts.Actors
 
         public AttackableObject CurrentMeleeTarget { get; set; }
 
-        public Vector3 CurrentMoveTarget { get; set; }
-
         public IBehaviourState CurrenState { get; }
+
+        public AIBase AIBase { get; }
     }
 }
