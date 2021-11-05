@@ -41,6 +41,11 @@ namespace Assets.Scripts.Actors
 
         public Vector3 SpawnPos { get; private set; }
 
+        [field: SerializeField]
+        public PatrollRoute PatrollRoute { get; private set; }
+
+        public int WaypointIndex { get; set; } = 0;
+
         void Awake()
         {
             DetectionHandler = GetComponentInChildren<DetectionHandler>();

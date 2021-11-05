@@ -7,8 +7,9 @@
             return type switch
             {
                 ActorType.HumanFleeing => new HumanTypeFleeing(),
-                ActorType.HumanGuard => new HumanTypeGuard(),
+                ActorType.HumanGuarding => new HumanTypeGuard(),
                 ActorType.Zombie => new ZombieType(),
+                ActorType.HumanPatrolling => new HumanTypePatrolling(),
                 _ => throw new System.ArgumentException($"No Actor of type {type} available."),
             };
         }

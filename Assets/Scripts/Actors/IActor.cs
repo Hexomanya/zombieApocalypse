@@ -31,5 +31,9 @@ namespace Assets.Scripts.Actors
         public Transform LastKnownTargetPosition { get; set; }
 
         public Vector3 SpawnPos { get; }
+
+        public PatrollRoute PatrollRoute { get; }
+
+        public int WaypointIndex { get; set; }
     }
 }
