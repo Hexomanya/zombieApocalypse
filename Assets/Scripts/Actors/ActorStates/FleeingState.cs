@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Actors.ActorTypes;
+﻿using Assets.Scripts.Actors.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates

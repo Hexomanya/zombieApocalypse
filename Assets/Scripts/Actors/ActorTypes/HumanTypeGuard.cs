@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
-using System;
+using Assets.Scripts.Actors.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes

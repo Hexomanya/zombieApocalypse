@@ -1,4 +1,4 @@
-using Assets.Scripts.Actors;
+using Assets.Scripts.Actors.Interfaces;
 using UnityEngine;
 
 public class StateDisplay : MonoBehaviour

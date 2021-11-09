@@ -1,7 +1,6 @@
-﻿using Assets.Scripts.Actors.ActorTypes;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Actors.ActorStates
+namespace Assets.Scripts.Actors.Interfaces
 {
     public interface IBehaviourState
     {

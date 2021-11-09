@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
 using UnityEngine;
 
-namespace Assets.Scripts.Actors.ActorTypes
+namespace Assets.Scripts.Actors.Interfaces
 {
     public interface IActorType
     {
