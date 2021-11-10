@@ -135,9 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Typ>k__BackingField: 0
   <MeleeDamage>k__BackingField: 5
-  <AttackCooldown>k__BackingField: 2
+  <MeleeAttackCooldown>k__BackingField: 2
   <ConcentrationTime>k__BackingField: 5
   <PlayerCommandCooldown>k__BackingField: 2
+  <PatrollRoute>k__BackingField: {fileID: 0}
 --- !u!114 &7727834343445299765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ MonoBehaviour:
   detectionRange: 6
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2048
 --- !u!1 &4679703662696763248
 GameObject:
   m_ObjectHideFlags: 0
