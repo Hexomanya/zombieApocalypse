@@ -22,10 +22,15 @@ namespace Assets.Scripts.Actors.ActorStates
         public void Update(GameObject gameObject, IActor actor)
         {
             AttackableObject attackableObject = actor.DetectionHandler.GetAnyTargetWithLoS();
-            if (attackableObject != null && actor.RangeAttackHandler.RangedAttackTimer <= 0f)
+            if (attackableObject != null)
             {
-                actor.RangeAttackHandler.Shoot((attackableObject.gameObject.transform.position - gameObject.transform.position).normalized);
-                actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
+                if (actor.RangeAttackHandler.RangedAttackTimer <= 0f)
+                {
+                    actor.RangeAttackHandler.Shoot((attackableObject.gameObject.transform.position - gameObject.transform.position).normalized);
+                    actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
+                }
+
+                actor.LastKnownTargetPosition = attackableObject.transform;
             }
 
             if (actor.RangeAttackHandler.RangedAttackTimer > 0f)

@@ -6,10 +6,10 @@ public class RangeAttackHandler : MonoBehaviour
     public GameObject ProjectileSpritePrefab { get; private set; }
 
     [field: SerializeField]
-    public float ProjectileVelocity { get; private set; } = 15f;
+    public float ProjectileVelocity { get; private set; } = 10f;
 
     [field: SerializeField]
-    public float RangedAttackCooldown { get; private set; } = 3f;
+    public float RangedAttackCooldown { get; private set; } = 1f;
 
     [field: SerializeField]
     public float Damage { get; private set; } = 4f;
