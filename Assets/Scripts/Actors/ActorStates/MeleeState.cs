@@ -9,8 +9,8 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.destination = gameObject.transform.position;
             actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
             actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
         }

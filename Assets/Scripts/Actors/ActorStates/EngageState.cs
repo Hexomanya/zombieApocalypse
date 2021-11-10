@@ -9,14 +9,14 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.destination = actor.DetectionHandler.GetClosestTargetWithLoS().transform.position;
-            actor.AIBase.canMove = true;
+            actor.AstarAI.destination = actor.DetectionHandler.GetClosestTargetWithLoS().transform.position;
+            actor.AstarAI.canMove = true;
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.destination = gameObject.transform.position;
-            actor.AIBase.canMove = false;
+            actor.AstarAI.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
         }
 
         public void Update(GameObject gameObject, IActor actor)
@@ -26,9 +26,9 @@ namespace Assets.Scripts.Actors.ActorStates
             {
                 Transform targetPos = actor.DetectionHandler.GetClosestTargetWithLoS().transform;
                 actor.LastKnownTargetPosition = targetPos;
-                if (actor.AIBase.destination != targetPos.position)
+                if (actor.AstarAI.destination != targetPos.position)
                 {
-                    actor.AIBase.destination = targetPos.position;
+                    actor.AstarAI.destination = targetPos.position;
                 }
             }
         }

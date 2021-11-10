@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Actors.ActorStates;
-using Pathfinding;
+﻿using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.Interfaces
@@ -28,7 +27,7 @@ namespace Assets.Scripts.Actors.Interfaces
 
         public IBehaviourState CurrentState { get; }
 
-        public AIBase AIBase { get; }
+        public IAstarAI AstarAI { get; }
 
         public Transform LastKnownTargetPosition { get; set; }
 

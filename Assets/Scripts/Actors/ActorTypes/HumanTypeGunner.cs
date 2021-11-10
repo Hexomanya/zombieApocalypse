@@ -36,7 +36,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleReturningState(GameObject gameObject, IActor actor)
         {
-            if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius)
+            if (actor.AstarAI.reachedDestination)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }

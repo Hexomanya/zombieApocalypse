@@ -9,13 +9,13 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.canMove = true;
+            actor.AstarAI.canMove = true;
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.destination = gameObject.transform.position;
         }
 
         public void Update(GameObject gameObject, IActor actor)
@@ -23,9 +23,9 @@ namespace Assets.Scripts.Actors.ActorStates
             Vector3 closestBorder;
             closestBorder = GetClosestSafeMapBorder(gameObject, actor);
 
-            if(actor.AIBase.destination != closestBorder)
+            if(actor.AstarAI.destination != closestBorder)
             {
-                actor.AIBase.destination = closestBorder;
+                actor.AstarAI.destination = closestBorder;
             }
         }
 

@@ -38,7 +38,7 @@ namespace Assets.Scripts.Actors
 
         public RangeAttackHandler RangeAttackHandler { get; private set; }
 
-        public AIBase AIBase { get; private set; }
+        public IAstarAI AstarAI { get; private set; }
         public Transform LastKnownTargetPosition { get; set; }
 
         public Vector3 SpawnPos { get; private set; }
@@ -55,7 +55,7 @@ namespace Assets.Scripts.Actors
             RangeAttackHandler = GetComponent<RangeAttackHandler>();
             MeleeAttackTimer = MeleeAttackCooldown;
             myActorType = ActorTypeProvider.GetActorType(Typ);
-            AIBase = GetComponent<AIBase>();
+            AstarAI = GetComponent<IAstarAI>();
             SpawnPos = transform.position;
         }
 

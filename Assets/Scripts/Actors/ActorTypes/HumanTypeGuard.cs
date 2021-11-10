@@ -40,7 +40,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
-            else if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).sqrMagnitude <= actor.AIBase.radius * actor.AIBase.radius)
+            else if (actor.AstarAI.reachedDestination)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }

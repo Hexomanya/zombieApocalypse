@@ -106,7 +106,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
-            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius)
+            else if (actor.ConcentrationTimer <= 0f || actor.AstarAI.reachedDestination)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
