@@ -2,7 +2,7 @@
 using Pathfinding;
 using UnityEngine;
 
-namespace Assets.Scripts.Actors
+namespace Assets.Scripts.Actors.Interfaces
 {
     public interface IActor
     {
@@ -10,11 +10,13 @@ namespace Assets.Scripts.Actors
 
         public MeleeRangeHandler MeleeRangeHandler { get; }
 
+        public RangeAttackHandler RangeAttackHandler { get; }
+
         public float MeleeDamage { get; }
 
-        public float AttackCooldown { get; }
+        public float MeleeAttackCooldown { get; }
 
-        public float AttackTimer { get; set; }
+        public float MeleeAttackTimer { get; set; }
 
         public float ConcentrationTime { get; }
 
@@ -24,8 +26,16 @@ namespace Assets.Scripts.Actors
 
         public AttackableObject CurrentMeleeTarget { get; set; }
 
-        public IBehaviourState CurrenState { get; }
+        public IBehaviourState CurrentState { get; }
 
         public AIBase AIBase { get; }
+
+        public Transform LastKnownTargetPosition { get; set; }
+
+        public Vector3 SpawnPos { get; }
+
+        public PatrollRoute PatrollRoute { get; }
+
+        public int WaypointIndex { get; set; }
     }
 }

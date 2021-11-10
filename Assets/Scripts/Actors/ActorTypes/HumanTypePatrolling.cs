@@ -1,25 +1,20 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
 using Assets.Scripts.Actors.Interfaces;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class ZombieType : IActorType
+    public class HumanTypePatrolling : IActorType
     {
         private IBehaviourState currentState = BehaviourStateProvider.Idle;
 
         public IBehaviourState CurrentState => currentState;
 
-        public float PlayerCommandCooldownTimer { get; set; } = 0f;
+        public float PlayerCommandCooldownTimer { get; set; }
 
         public void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            // prevent underflow
-            if (PlayerCommandCooldownTimer > 0f)
-            {
-                PlayerCommandCooldownTimer -= Time.deltaTime;
-            }
-
             switch (currentState)
             {
                 case IdleState _:
@@ -34,9 +29,21 @@ namespace Assets.Scripts.Actors.ActorTypes
                 case SearchState _:
                     HandleSearchingState(gameObject, actor);
                     break;
-                case PlayerMoveCommandState _:
-                    HandlePlayerMoveCommandState(gameObject, actor);
+                case PatrollingState _:
+                    HandlePatrollingState(gameObject, actor);
                     break;
+            }
+        }
+
+        private void HandlePatrollingState(GameObject gameObject, IActor actor)
+        {
+            if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+            }
+            else if (actor.LastKnownTargetPosition != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 
@@ -50,11 +57,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleSearchingState(GameObject gameObject, IActor actor)
         {
-            if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
-            }
-            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
@@ -70,23 +73,15 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
-            else if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
-            }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 
         private void HandleIdleState(GameObject gameObject, IActor actor)
         {
-            if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
-            }
-            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
@@ -94,27 +89,9 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
-        }
-
-        private void HandlePlayerMoveCommandState(GameObject gameObject, IActor actor)
-        {
-            if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
+            else
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
-            }
-            else if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
-            }
-            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
-            }
-
-            // prevent underflow
-            if (actor.ConcentrationTimer > 0f)
-            {
-                actor.ConcentrationTimer -= Time.deltaTime;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Patrolling);
             }
         }
 

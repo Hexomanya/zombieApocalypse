@@ -3,15 +3,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
 {
-    public class PlayerMoveCommandState : IBehaviourState
+    public class ReturningState : IBehaviourState
     {
-        public string StateName => "Moving in Position";
+        public string StateName => "Returning";
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.destination = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            actor.ConcentrationTimer = actor.ConcentrationTime;
-            actorType.PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;
+            actor.AIBase.destination = actor.SpawnPos;
             actor.AIBase.canMove = true;
         }
 
@@ -23,7 +21,6 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor)
         {
-            // movement is handled by AIBase of PathFinder
         }
     }
 }

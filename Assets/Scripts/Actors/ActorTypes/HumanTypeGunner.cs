@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class HumanTypeGuard : IActorType
+    public class HumanTypeGunner : IActorType
     {
         private IBehaviourState currentState = BehaviourStateProvider.Idle;
 
@@ -19,8 +19,8 @@ namespace Assets.Scripts.Actors.ActorTypes
                 case IdleState _:
                     HandleIdleState(gameObject, actor);
                     break;
-                case EngageState _:
-                    HandleEngagingState(gameObject, actor);
+                case ShootingState _:
+                    HandleShootingState(gameObject, actor);
                     break;
                 case MeleeState _:
                     HandleMeleeState(gameObject, actor);
@@ -36,11 +36,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleReturningState(GameObject gameObject, IActor actor)
         {
-            if(actor.DetectionHandler.GetAnyTargetWithLoS() != null)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
-            }
-            else if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).sqrMagnitude <= actor.AIBase.radius * actor.AIBase.radius)
+            if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
@@ -50,15 +46,19 @@ namespace Assets.Scripts.Actors.ActorTypes
         {
             if (actor.MeleeRangeHandler.GetPossibleTarget() == null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
         private void HandleSearchingState(GameObject gameObject, IActor actor)
         {
-            if(actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
+            }
+            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Shooting);
             }
             else if (actor.LastKnownTargetPosition == null)
             {
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             }
         }
 
-        private void HandleEngagingState(GameObject gameObject, IActor actor)
+        private void HandleShootingState(GameObject gameObject, IActor actor)
         {
             if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
@@ -74,7 +74,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
@@ -82,7 +82,7 @@ namespace Assets.Scripts.Actors.ActorTypes
         {
             if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+                SwitchState(gameObject, actor, BehaviourStateProvider.Shooting);
             }
             else if (actor.LastKnownTargetPosition != null)
             {

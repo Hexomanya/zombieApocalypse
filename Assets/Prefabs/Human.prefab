@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1932915544487196015
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +140,7 @@ GameObject:
   - component: {fileID: 1932915544487196011}
   - component: {fileID: 1932915544487196013}
   - component: {fileID: 1932915544487196014}
+  - component: {fileID: 192721830956740972}
   - component: {fileID: 6042487269398963192}
   - component: {fileID: 7566043882818752807}
   - component: {fileID: 7848520412413653698}
@@ -259,9 +263,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Typ>k__BackingField: 2
   <MeleeDamage>k__BackingField: 5
-  <AttackCooldown>k__BackingField: 2
+  <MeleeAttackCooldown>k__BackingField: 2
   <ConcentrationTime>k__BackingField: 5
   <PlayerCommandCooldown>k__BackingField: 2
+  <PatrollRoute>k__BackingField: {fileID: 0}
+--- !u!114 &192721830956740972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932915544487196015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f57178a76222046b77719df79f57ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ProjectileSpritePrefab>k__BackingField: {fileID: 666221489294139177, guid: 770b5d0bb66877a4a8c1dec6cecc3c6c, type: 3}
+  <ProjectileVelocity>k__BackingField: 10
+  <RangedAttackCooldown>k__BackingField: 1
+  <Damage>k__BackingField: 4
+  <Accuracy>k__BackingField: 0.9
 --- !u!114 &6042487269398963192
 MonoBehaviour:
   m_ObjectHideFlags: 0
