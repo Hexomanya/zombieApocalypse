@@ -17,7 +17,7 @@ TagManager:
   - Human
   - HumanDetection
   - Walls
-  - 
+  - Projectiles
   - 
   - 
   - 
@@ -41,14 +41,17 @@ TagManager:
   - name: Background
     uniqueID: 4027106737
     locked: 0
+  - name: Ground
+    uniqueID: 2385745795
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Walls
-    uniqueID: 680789133
-    locked: 0
   - name: Entities
     uniqueID: 1189986069
+    locked: 0
+  - name: Walls
+    uniqueID: 680789133
     locked: 0
   - name: UI_01
     uniqueID: 515862597

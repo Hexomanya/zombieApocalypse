@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Actors.ActorTypes
+﻿using Assets.Scripts.Actors.Interfaces;
+
+namespace Assets.Scripts.Actors.ActorTypes
 {
     public static class ActorTypeProvider
     {
@@ -7,8 +9,10 @@
             return type switch
             {
                 ActorType.HumanFleeing => new HumanTypeFleeing(),
-                ActorType.HumanGuard => new HumanTypeGuard(),
+                ActorType.HumanGuarding => new HumanTypeGuard(),
                 ActorType.Zombie => new ZombieType(),
+                ActorType.HumanPatrolling => new HumanTypePatrolling(),
+                ActorType.HumanGunner => new HumanTypeGunner(),
                 _ => throw new System.ArgumentException($"No Actor of type {type} available."),
             };
         }

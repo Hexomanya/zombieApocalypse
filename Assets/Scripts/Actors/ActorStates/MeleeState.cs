@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Actors.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
 {
@@ -6,17 +7,31 @@ namespace Assets.Scripts.Actors.ActorStates
     {
         public string StateName => "Melee";
 
+        public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
+        {
+            actor.AIBase.canMove = false;
+            actor.AIBase.destination = gameObject.transform.position;
+            actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
+            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
+        }
+
+        public void ExitState(GameObject gameObject, IActor actor)
+        {
+            actor.CurrentMeleeTarget = null;
+            actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
+        }
+
         public void Update(GameObject gameObject, IActor actor)
         {
-            if (actor.AttackTimer <= 0f && actor.CurrentMeleeTarget != null)
+            if (actor.MeleeAttackTimer <= 0f && actor.CurrentMeleeTarget != null)
             {
                 actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage);
-                actor.AttackTimer = actor.AttackCooldown;
+                actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
             }
 
-            if (actor.AttackTimer > 0f)
+            if (actor.MeleeAttackTimer > 0f)
             {
-                actor.AttackTimer -= Time.deltaTime;
+                actor.MeleeAttackTimer -= Time.deltaTime;
             }
         }
     }

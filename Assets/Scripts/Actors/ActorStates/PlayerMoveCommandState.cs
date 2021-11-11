@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Actors.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
 {
@@ -6,13 +7,23 @@ namespace Assets.Scripts.Actors.ActorStates
     {
         public string StateName => "Moving in Position";
 
+        public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
+        {
+            actor.AIBase.destination = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            actor.ConcentrationTimer = actor.ConcentrationTime;
+            actorType.PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;
+            actor.AIBase.canMove = true;
+        }
+
+        public void ExitState(GameObject gameObject, IActor actor)
+        {
+            actor.AIBase.destination = gameObject.transform.position;
+            actor.AIBase.canMove = false;
+        }
+
         public void Update(GameObject gameObject, IActor actor)
         {
-            Vector3 direction = actor.CurrentMoveTarget - gameObject.transform.position;
-            direction = Utility.RemoveNumberFractions(direction, true);
-
-            // TODO: Get Path from pathfinder
-            gameObject.transform.position += direction.normalized * Time.deltaTime * actor.MoveSpeed;        
+            // movement is handled by AIBase of PathFinder
         }
     }
 }

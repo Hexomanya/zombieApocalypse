@@ -1,5 +1,6 @@
-using Assets.Scripts.Actors.ActorStates;
 using Assets.Scripts.Actors.ActorTypes;
+using Assets.Scripts.Actors.Interfaces;
+using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
@@ -12,13 +13,10 @@ namespace Assets.Scripts.Actors
         private ActorType Typ { get; set; } = ActorType.Zombie;
 
         [field: SerializeField]
-        public float MoveSpeed { get; private set; } = 3f;
-
-        [field: SerializeField]
         public float MeleeDamage { get; private set; } = 5f;
 
         [field: SerializeField]
-        public float AttackCooldown { get; private set; } = 2f;
+        public float MeleeAttackCooldown { get; private set; } = 2f;
 
         [field: SerializeField]
         public float ConcentrationTime { get; private set; } = 5f;
@@ -28,29 +26,42 @@ namespace Assets.Scripts.Actors
 
         public AttackableObject CurrentMeleeTarget { get; set; }
 
-        public IBehaviourState CurrenState => myActorType.CurrentState;
+        public IBehaviourState CurrentState => myActorType.CurrentState;
 
-        public float AttackTimer { get; set; } = 0f;
+        public float MeleeAttackTimer { get; set; } = 0f;
 
         public float ConcentrationTimer { get; set; } = 0f;
 
         public DetectionHandler DetectionHandler { get; private set; }
 
-        public MeleeRangeHandler MeleeRange { get; private set; }
+        public MeleeRangeHandler MeleeRangeHandler { get; private set; }
 
-        public Vector3 CurrentMoveTarget { get; set; }
+        public RangeAttackHandler RangeAttackHandler { get; private set; }
+
+        public AIBase AIBase { get; private set; }
+        public Transform LastKnownTargetPosition { get; set; }
+
+        public Vector3 SpawnPos { get; private set; }
+
+        [field: SerializeField]
+        public PatrollRoute PatrollRoute { get; private set; }
+
+        public int WaypointIndex { get; set; } = 0;
 
         void Awake()
         {
             DetectionHandler = GetComponentInChildren<DetectionHandler>();
-            MeleeRange = GetComponentInChildren<MeleeRangeHandler>();
-            AttackTimer = AttackCooldown;
+            MeleeRangeHandler = GetComponentInChildren<MeleeRangeHandler>();
+            RangeAttackHandler = GetComponent<RangeAttackHandler>();
+            MeleeAttackTimer = MeleeAttackCooldown;
             myActorType = ActorTypeProvider.GetActorType(Typ);
+            AIBase = GetComponent<AIBase>();
+            SpawnPos = transform.position;
         }
 
         void Update()
         {
-            CurrenState.Update(gameObject, this);
+            CurrentState.Update(gameObject, this);
             myActorType.DecideOnNextState(gameObject, this);
         }
     }

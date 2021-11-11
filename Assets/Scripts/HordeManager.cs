@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class HordeManager : MonoBehaviour
 {
-    public GameObject horde;
-
-    private List<GameObject> zombies;
-
+    // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame

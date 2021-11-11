@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1932915544487196015
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,12 +138,12 @@ GameObject:
   - component: {fileID: 1932915544487196009}
   - component: {fileID: 1932915544487196010}
   - component: {fileID: 1932915544487196011}
-  - component: {fileID: 1932915544487196012}
   - component: {fileID: 1932915544487196013}
   - component: {fileID: 1932915544487196014}
+  - component: {fileID: 192721830956740972}
   - component: {fileID: 6042487269398963192}
   - component: {fileID: 7566043882818752807}
-  - component: {fileID: -418920077178866309}
+  - component: {fileID: 7848520412413653698}
   m_Layer: 9
   m_Name: Human
   m_TagString: Untagged
@@ -156,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932915544487196015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.23, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1932915543989874961}
@@ -233,27 +236,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &1932915544487196012
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932915544487196015}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &1932915544487196013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,11 +262,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Typ>k__BackingField: 2
-  <MoveSpeed>k__BackingField: 0
   <MeleeDamage>k__BackingField: 5
-  <AttackCooldown>k__BackingField: 2
+  <MeleeAttackCooldown>k__BackingField: 2
   <ConcentrationTime>k__BackingField: 5
   <PlayerCommandCooldown>k__BackingField: 2
+  <PatrollRoute>k__BackingField: {fileID: 0}
+--- !u!114 &192721830956740972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932915544487196015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f57178a76222046b77719df79f57ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ProjectileSpritePrefab>k__BackingField: {fileID: 666221489294139177, guid: 770b5d0bb66877a4a8c1dec6cecc3c6c, type: 3}
+  <ProjectileVelocity>k__BackingField: 10
+  <RangedAttackCooldown>k__BackingField: 1
+  <Damage>k__BackingField: 4
+  <Accuracy>k__BackingField: 0.9
 --- !u!114 &6042487269398963192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +301,8 @@ MonoBehaviour:
   detailedGizmos: 0
   startEndModifier:
     addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
+    exactStartPoint: 0
+    exactEndPoint: 0
     useRaycasting: 0
     mask:
       serializedVersion: 2
@@ -330,39 +329,46 @@ MonoBehaviour:
   height: 2
   repathRate: 0.5
   canSearch: 1
-  canMove: 1
-  maxSpeed: 1
-  gravity: {x: NaN, y: NaN, z: NaN}
+  canMove: 0
+  maxSpeed: 3
+  gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
   centerOffsetCompatibility: NaN
   orientation: 1
-  enableRotation: 1
+  enableRotation: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  endReachedDistance: 1.5
+  slowdownDistance: 0
+  pickNextWaypointDist: 1
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
-  constrainInsideGraph: 0
---- !u!114 &-418920077178866309
-MonoBehaviour:
+  constrainInsideGraph: 1
+--- !u!50 &7848520412413653698
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932915544487196015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 0}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1932915544804265228
 GameObject:
   m_ObjectHideFlags: 0
