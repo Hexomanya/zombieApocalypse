@@ -10,23 +10,24 @@ namespace Assets.Scripts.Actors.ActorStates
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actor.WaypointIndex = actor.PatrollRoute.GetIndexOfClosestWaypoint(gameObject.transform.position);
-            actor.AIBase.destination = actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex);
-            actor.AIBase.canMove = true;
+            actorType.UpdatePath(gameObject.transform.position, actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex), actor);
+            actor.AstarAI.canMove = true;
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.SetPath(null);
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            if (Vector3.Distance(gameObject.transform.position, actor.AIBase.destination) <= actor.AIBase.radius * 2f) // increase actor radius to compensate position inaccuracies
+            if (actor.AstarAI.reachedEndOfPath && !actor.AstarAI.pathPending)
             {
-                actor.WaypointIndex = actor.PatrollRoute.GetNextIndex(actor.WaypointIndex);
-                actor.AIBase.destination = actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex);
+                actor.WaypointIndex = actor.PatrollRoute.GetNextIndex(actor.WaypointIndex);                
             }
+
+            actorType.UpdatePath(gameObject.transform.position, actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex), actor);
         }
     }
 }

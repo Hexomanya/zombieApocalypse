@@ -9,8 +9,8 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.SetPath(null);
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
@@ -18,7 +18,7 @@ namespace Assets.Scripts.Actors.ActorStates
             // do nothing
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             // do nothing
         }

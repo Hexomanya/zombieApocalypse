@@ -4,15 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class HumanTypeGuard : IActorType
+    public class HumanTypeGuard : ActorTypeBase
     {
-        private IBehaviourState currentState = BehaviourStateProvider.Idle;
-
-        public IBehaviourState CurrentState => currentState;
-
-        public float PlayerCommandCooldownTimer { get; set; }
-
-        public void DecideOnNextState(GameObject gameObject, IActor actor)
+        public override void DecideOnNextState(GameObject gameObject, IActor actor)
         {
             switch (currentState)
             {
@@ -40,7 +34,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
-            else if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).sqrMagnitude <= actor.AIBase.radius * actor.AIBase.radius)
+            else if (actor.AstarAI.reachedEndOfPath)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
@@ -88,13 +82,6 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
-        }
-
-        private void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
-        {
-            currentState.ExitState(gameObject, actor);
-            currentState = nextState;
-            currentState.EnterState(gameObject, actor, this);
         }
     }
 }

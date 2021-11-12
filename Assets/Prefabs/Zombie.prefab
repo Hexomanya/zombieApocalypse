@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7727834343445299765}
   - component: {fileID: -7366853818833872172}
   - component: {fileID: 3507609530684028967}
+  - component: {fileID: 2590802595701994565}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
@@ -135,9 +136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Typ>k__BackingField: 0
   <MeleeDamage>k__BackingField: 5
-  <AttackCooldown>k__BackingField: 2
+  <MeleeAttackCooldown>k__BackingField: 2
   <ConcentrationTime>k__BackingField: 5
   <PlayerCommandCooldown>k__BackingField: 2
+  <PatrollRoute>k__BackingField: {fileID: 0}
 --- !u!114 &7727834343445299765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ MonoBehaviour:
       m_Bits: 4294967295
     useGraphRaycasting: 0
   traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  tagPenalties: 00000000983a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
 --- !u!114 &-7366853818833872172
@@ -195,9 +197,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.1
+  slowdownDistance: 0
   pickNextWaypointDist: 1
-  endReachedDistance: 0.1
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -223,6 +225,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2590802595701994565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679703661269681741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45e20632f1604fc6bb73e0e79cd7368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  manager: {fileID: 0}
 --- !u!1 &4679703661505895077
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +365,7 @@ MonoBehaviour:
   detectionRange: 6
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2048
 --- !u!1 &4679703662696763248
 GameObject:
   m_ObjectHideFlags: 0

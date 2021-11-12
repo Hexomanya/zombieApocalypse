@@ -11,20 +11,25 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             if (actor.LastKnownTargetPosition != null)
             {
-                actor.AIBase.destination = actor.LastKnownTargetPosition.position;
-                actor.AIBase.canMove = true;
+                actorType.UpdatePath(gameObject.transform.position, actor.LastKnownTargetPosition.position, actor);
+                actor.AstarAI.canMove = true;
             }
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.SetPath(null);
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            if (Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true).magnitude <= actor.AIBase.radius) 
+            if (actor.LastKnownTargetPosition != null)
+            {
+                actorType.UpdatePath(gameObject.transform.position, actor.LastKnownTargetPosition.position, actor);
+            }            
+
+            if (actor.AstarAI.reachedEndOfPath) 
             {
                 actor.LastKnownTargetPosition = null;
             }

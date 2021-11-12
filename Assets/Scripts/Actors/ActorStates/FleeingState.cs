@@ -9,24 +9,21 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.canMove = true;
+            actor.AstarAI.canMove = true;
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.SetPath(null);
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             Vector3 closestBorder;
             closestBorder = GetClosestSafeMapBorder(gameObject, actor);
 
-            if(actor.AIBase.destination != closestBorder)
-            {
-                actor.AIBase.destination = closestBorder;
-            }
+            actorType.UpdatePath(gameObject.transform.position, closestBorder, actor);
         }
 
         private Vector3 GetClosestSafeMapBorder(GameObject gameObject, IActor actor)
