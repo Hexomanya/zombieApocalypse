@@ -6,6 +6,7 @@ namespace Assets.Scripts.Actors
     public class DetectionHandler : MonoBehaviour
     {
         public float detectionRange = 5f;
+        public LayerMask obstacleLayer = 0;
     
         private List<AttackableObject> possibleTargets = new List<AttackableObject>();
     
@@ -17,6 +18,11 @@ namespace Assets.Scripts.Actors
         private void OnTriggerEnter2D(Collider2D collision)
         {
             AttackableObject attackableObject = collision.GetComponent<AttackableObject>();
+            if (attackableObject == null)
+            {
+                throw new System.ArgumentNullException($"Object '{collision.gameObject.name}' is missing an 'AttackableObject' Script!");
+            }
+
             if (!possibleTargets.Contains(attackableObject))
             {
                 possibleTargets.Add(attackableObject);
@@ -41,10 +47,9 @@ namespace Assets.Scripts.Actors
                 foreach (AttackableObject target in possibleTargets)
                 {
                     Vector3 distance = transform.position - target.transform.position;
-                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, 1 << 0);
-                    Debug.DrawLine(target.transform.position, target.transform.position + distance, Color.red);
+                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, obstacleLayer);
 
-                    if (hits.Length == 0)
+                    if (hits.Length == 0 || (hits.Length == 1 && hits[0].collider.gameObject == target.gameObject))
                     {
                         return target;
                     }
@@ -64,10 +69,9 @@ namespace Assets.Scripts.Actors
                 foreach (AttackableObject target in possibleTargets)
                 {
                     Vector3 distance = transform.position - target.transform.position;
-                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, 1 << 0);
-                    Debug.DrawLine(target.transform.position, target.transform.position + distance, Color.red);
+                    RaycastHit2D[] hits = Physics2D.RaycastAll(target.transform.position, distance.normalized, distance.magnitude, obstacleLayer);                    
 
-                    if (hits.Length == 0)
+                    if (hits.Length == 0 || (hits.Length == 1 && hits[0].collider.gameObject == target.gameObject))
                     {
                         if (distance.magnitude < dis.magnitude)
                         {

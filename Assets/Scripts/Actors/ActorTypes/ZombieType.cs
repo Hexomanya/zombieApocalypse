@@ -1,35 +1,29 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
+using Assets.Scripts.Actors.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class ZombieType : IActorType
+    public class ZombieType : ActorTypeBase
     {
-        private IBehaviourState currentState = BehaviourStateProvider.Idle;
-
-        public IBehaviourState CurrentState => currentState;
-
-        private float PlayerCommandCooldownTimer { get; set; } = 0f;
-
-        public void DecideOnNextState(GameObject gameObject, IActor actor)
+        public override void DecideOnNextState(GameObject gameObject, IActor actor)
         {
-            actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
             // prevent underflow
             if (PlayerCommandCooldownTimer > 0f)
             {
                 PlayerCommandCooldownTimer -= Time.deltaTime;
             }
 
-            switch (actor.CurrenState)
+            switch (currentState)
             {
                 case IdleState _:
-                    HandleIdleState(actor);
+                    HandleIdleState(gameObject, actor);
                     break;
                 case EngageState _:
-                    HandleEngagingState(actor);
+                    HandleEngagingState(gameObject, actor);
                     break;
                 case MeleeState _:
-                    HandleMeleeState(actor);
+                    HandleMeleeState(gameObject, actor);
                     break;
                 case SearchState _:
                     HandleSearchingState(gameObject, actor);
@@ -40,59 +34,59 @@ namespace Assets.Scripts.Actors.ActorTypes
             }
         }
 
-        private void HandleMeleeState(IActor actor)
+        private void HandleMeleeState(GameObject gameObject, IActor actor)
         {
-            if (actor.CurrentMeleeTarget == null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() == null)
             {
-                currentState = BehaviourStateProvider.Searching;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 
         private void HandleSearchingState(GameObject gameObject, IActor actor)
         {
-            actor.AIBase.destination = actor.DetectionHandler.GetAnyTargetWithLoS() != null
-                ? actor.DetectionHandler.GetClosestTargetWithLoS().transform.position
-                : gameObject.transform.position;
-
             if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
             {
-                SwitchToPlayerMoveCommandState(actor);
+                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
             }
-            else if (actor.AIBase.destination != gameObject.transform.position)
+            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                currentState = BehaviourStateProvider.Engaging;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
             }
-            else if (!actor.DetectionHandler.IsAnyTargetInRange())
+            else if (actor.LastKnownTargetPosition == null)
             {
-                currentState = BehaviourStateProvider.Idle;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
-        private void HandleEngagingState(IActor actor)
+        private void HandleEngagingState(GameObject gameObject, IActor actor)
         {
-            if (actor.CurrentMeleeTarget != null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
-                currentState = BehaviourStateProvider.Melee;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
             else if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
             {
-                SwitchToPlayerMoveCommandState(actor);
+                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
             }
             else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
-                currentState = BehaviourStateProvider.Idle;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }
         }
 
-        private void HandleIdleState(IActor actor)
+        private void HandleIdleState(GameObject gameObject, IActor actor)
         {
             if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
             {
-                SwitchToPlayerMoveCommandState(actor);
+                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
             }
-            else if (actor.DetectionHandler.IsAnyTargetInRange())
+            else if (actor.DetectionHandler.GetAnyTargetWithLoS() != null)
             {
-                currentState = BehaviourStateProvider.Searching;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Engaging);
+            }
+            else if (actor.LastKnownTargetPosition != null)
+            {
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
         }
 
@@ -100,15 +94,15 @@ namespace Assets.Scripts.Actors.ActorTypes
         {
             if (Input.GetMouseButtonDown(0) && PlayerCommandCooldownTimer <= 0f)
             {
-                SwitchToPlayerMoveCommandState(actor);
+                SwitchState(gameObject, actor, BehaviourStateProvider.PlayerMoveCommandState);
             }
-            else if (actor.CurrentMeleeTarget != null)
+            else if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
-                currentState = BehaviourStateProvider.Melee;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
-            else if (actor.ConcentrationTimer <= 0f || Utility.RemoveNumberFractions(actor.AIBase.destination - gameObject.transform.position, true) == Vector3.zero)
+            else if (actor.ConcentrationTimer <= 0f || actor.AstarAI.reachedEndOfPath)
             {
-                currentState = BehaviourStateProvider.Searching;
+                SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
 
             // prevent underflow
@@ -116,14 +110,6 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 actor.ConcentrationTimer -= Time.deltaTime;
             }
-        }
-
-        private void SwitchToPlayerMoveCommandState(IActor actor)
-        {
-            actor.AIBase.destination = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            currentState = BehaviourStateProvider.PlayerMoveCommandState;
-            actor.ConcentrationTimer = actor.ConcentrationTime;
-            PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;
         }
     }
 }

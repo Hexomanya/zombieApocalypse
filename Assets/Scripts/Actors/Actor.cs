@@ -1,6 +1,7 @@
-using Assets.Scripts.Actors.ActorStates;
 using Assets.Scripts.Actors.ActorTypes;
+using Assets.Scripts.Actors.Interfaces;
 using Pathfinding;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
@@ -16,7 +17,7 @@ namespace Assets.Scripts.Actors
         public float MeleeDamage { get; private set; } = 5f;
 
         [field: SerializeField]
-        public float AttackCooldown { get; private set; } = 2f;
+        public float MeleeAttackCooldown { get; private set; } = 2f;
 
         [field: SerializeField]
         public float ConcentrationTime { get; private set; } = 5f;
@@ -26,9 +27,9 @@ namespace Assets.Scripts.Actors
 
         public AttackableObject CurrentMeleeTarget { get; set; }
 
-        public IBehaviourState CurrenState => myActorType.CurrentState;
+        public IBehaviourState CurrentState => myActorType.CurrentState;
 
-        public float AttackTimer { get; set; } = 0f;
+        public float MeleeAttackTimer { get; set; } = 0f;
 
         public float ConcentrationTimer { get; set; } = 0f;
 
@@ -36,20 +37,49 @@ namespace Assets.Scripts.Actors
 
         public MeleeRangeHandler MeleeRangeHandler { get; private set; }
 
-        public AIBase AIBase { get; private set; }
+        public RangeAttackHandler RangeAttackHandler { get; private set; }
+
+        public IAstarAI AstarAI { get; private set; }
+        public Transform LastKnownTargetPosition { get; set; }
+
+        public Vector3 SpawnPos { get; private set; }
+
+        [field: SerializeField]
+        public PatrollRoute PatrollRoute { get; private set; }
+
+        public int WaypointIndex { get; set; } = 0;
+
+        public SingleNodeBlocker NodeBlocker { get; set; }
+
+        public BlockManager BlockManager { get; private set; }
+
+        public ActorManager ActorManager { get; private set; }
 
         void Awake()
         {
             DetectionHandler = GetComponentInChildren<DetectionHandler>();
             MeleeRangeHandler = GetComponentInChildren<MeleeRangeHandler>();
-            AttackTimer = AttackCooldown;
+            RangeAttackHandler = GetComponent<RangeAttackHandler>();
+            NodeBlocker = GetComponent<SingleNodeBlocker>();
+            BlockManager = FindObjectOfType<BlockManager>();
+            
+            if (transform.parent.GetComponent<ActorManager>() == null)
+            {
+                throw new ArgumentException($"{gameObject.name} is not folded under a ActorManager Script!");
+            }
+
+            ActorManager = transform.parent.GetComponent<ActorManager>();
+            MeleeAttackTimer = MeleeAttackCooldown;
             myActorType = ActorTypeProvider.GetActorType(Typ);
-            AIBase = GetComponent<AIBase>();
+            AstarAI = GetComponent<IAstarAI>();
+            SpawnPos = transform.position;
         }
 
         void Update()
         {
-            CurrenState.Update(gameObject, this);
+            NodeBlocker?.Unblock();
+            NodeBlocker?.BlockAtCurrentPosition();
+            CurrentState.Update(gameObject, this, myActorType);
             myActorType.DecideOnNextState(gameObject, this);
         }
     }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Actors.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
 {
@@ -6,13 +7,23 @@ namespace Assets.Scripts.Actors.ActorStates
     {
         public string StateName => "Fleeing";
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
+        {
+            actor.AstarAI.canMove = true;
+        }
+
+        public void ExitState(GameObject gameObject, IActor actor)
+        {
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.SetPath(null);
+        }
+
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             Vector3 closestBorder;
             closestBorder = GetClosestSafeMapBorder(gameObject, actor);
 
-            actor.AIBase.destination = closestBorder;
-            actor.AIBase.canMove = true;
+            actorType.UpdatePath(gameObject.transform.position, closestBorder, actor);
         }
 
         private Vector3 GetClosestSafeMapBorder(GameObject gameObject, IActor actor)

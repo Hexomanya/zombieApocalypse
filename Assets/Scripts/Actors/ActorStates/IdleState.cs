@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Actors.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
 {
@@ -6,10 +7,20 @@ namespace Assets.Scripts.Actors.ActorStates
     {
         public string StateName => "Idle";
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AIBase.canMove = false;
-            actor.AIBase.destination = gameObject.transform.position;
+            actor.AstarAI.canMove = false;
+            actor.AstarAI.SetPath(null);
+        }
+
+        public void ExitState(GameObject gameObject, IActor actor)
+        {
+            // do nothing
+        }
+
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
+        {
+            // do nothing
         }
     }
 }

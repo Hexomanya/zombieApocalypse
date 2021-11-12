@@ -25,7 +25,15 @@ namespace Assets.Scripts
         private void Die()
         {
             // TODO: Do something
-            Destroy(gameObject);
+            ActorManager actorManager = transform.parent?.GetComponent<ActorManager>();
+            if (actorManager == null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                actorManager.DeleteActor(gameObject);
+            }
         }
 
         public void ApplyDamage(float damage)
