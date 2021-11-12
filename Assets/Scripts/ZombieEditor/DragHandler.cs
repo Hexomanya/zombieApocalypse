@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+[RequireComponent(typeof(CanvasGroup))]
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    [field: SerializeField]
-    public BodyPartType BodyPartType { get; set; } = BodyPartType.Head;
+    public BodyPart bodyPart;
 
-    public bool wasPlaced = false;
+    public bool WasPlaced { get; set; } = false;
 
     private CanvasGroup canvasGroup;
 
     private Vector3 dragStartingPosition;
+
+    private Inventory inventory;
+
+    private void Start()
+    {
+        inventory = Inventory.instance;
+    }
 
     private void Awake()
     {
@@ -32,7 +40,13 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
-        if(!wasPlaced)
+        if(WasPlaced)
+        {
+            Debug.Log("Placed: " + bodyPart.name);
+            inventory.RemoveBodyPart(bodyPart);
+            //Place BodyPart on Zombie
+        }
+        else
         {
             gameObject.transform.position = dragStartingPosition;
         }
