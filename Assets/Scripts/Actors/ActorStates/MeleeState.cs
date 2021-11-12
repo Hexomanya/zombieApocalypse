@@ -10,7 +10,7 @@ namespace Assets.Scripts.Actors.ActorStates
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actor.AstarAI.canMove = false;
-            actor.AstarAI.destination = gameObject.transform.position;
+            actor.AstarAI.SetPath(null);
             actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
             actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
         }
@@ -21,7 +21,7 @@ namespace Assets.Scripts.Actors.ActorStates
             actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             if (actor.MeleeAttackTimer <= 0f && actor.CurrentMeleeTarget != null)
             {

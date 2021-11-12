@@ -15,18 +15,15 @@ namespace Assets.Scripts.Actors.ActorStates
         public void ExitState(GameObject gameObject, IActor actor)
         {
             actor.AstarAI.canMove = false;
-            actor.AstarAI.destination = gameObject.transform.position;
+            actor.AstarAI.SetPath(null);
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             Vector3 closestBorder;
             closestBorder = GetClosestSafeMapBorder(gameObject, actor);
 
-            if(actor.AstarAI.destination != closestBorder)
-            {
-                actor.AstarAI.destination = closestBorder;
-            }
+            actorType.UpdatePath(gameObject.transform.position, closestBorder, actor);
         }
 
         private Vector3 GetClosestSafeMapBorder(GameObject gameObject, IActor actor)

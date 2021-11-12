@@ -36,5 +36,11 @@ namespace Assets.Scripts.Actors.Interfaces
         public PatrollRoute PatrollRoute { get; }
 
         public int WaypointIndex { get; set; }
+
+        public SingleNodeBlocker NodeBlocker {get; set;}
+
+        public BlockManager BlockManager { get; }
+
+        public ActorManager ActorManager { get; }
     }
 }

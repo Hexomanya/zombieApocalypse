@@ -9,7 +9,7 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AstarAI.destination = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            actorType.UpdatePath(gameObject.transform.position, Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition)), actor);
             actor.ConcentrationTimer = actor.ConcentrationTime;
             actorType.PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;
             actor.AstarAI.canMove = true;
@@ -17,13 +17,13 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            actor.AstarAI.destination = gameObject.transform.position;
+            actor.AstarAI.SetPath(null);
             actor.AstarAI.canMove = false;
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            // movement is handled by AIBase of PathFinder
+            actorType.UpdatePath(gameObject.transform.position, actorType.Path.endPoint, actor);
         }
     }
 }

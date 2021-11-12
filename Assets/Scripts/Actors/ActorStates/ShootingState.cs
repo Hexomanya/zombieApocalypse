@@ -10,7 +10,7 @@ namespace Assets.Scripts.Actors.ActorStates
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actor.AstarAI.canMove = false;
-            actor.AstarAI.destination = gameObject.transform.position;
+            actor.AstarAI.SetPath(null);
             actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
         }
 
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Actors.ActorStates
             actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
         }
 
-        public void Update(GameObject gameObject, IActor actor)
+        public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             AttackableObject attackableObject = actor.DetectionHandler.GetAnyTargetWithLoS();
             if (attackableObject != null)

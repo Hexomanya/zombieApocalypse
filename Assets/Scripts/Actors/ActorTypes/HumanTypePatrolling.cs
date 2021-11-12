@@ -1,19 +1,12 @@
 ﻿using Assets.Scripts.Actors.ActorStates;
 using Assets.Scripts.Actors.Interfaces;
-using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class HumanTypePatrolling : IActorType
+    public class HumanTypePatrolling : ActorTypeBase
     {
-        private IBehaviourState currentState = BehaviourStateProvider.Idle;
-
-        public IBehaviourState CurrentState => currentState;
-
-        public float PlayerCommandCooldownTimer { get; set; }
-
-        public void DecideOnNextState(GameObject gameObject, IActor actor)
+        public override void DecideOnNextState(GameObject gameObject, IActor actor)
         {
             switch (currentState)
             {
@@ -93,13 +86,6 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Patrolling);
             }
-        }
-
-        private void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
-        {
-            currentState.ExitState(gameObject, actor);
-            currentState = nextState;
-            currentState.EnterState(gameObject, actor, this);
         }
     }
 }

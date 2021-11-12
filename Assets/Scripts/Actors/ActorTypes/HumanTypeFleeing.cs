@@ -4,15 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class HumanTypeFleeing : IActorType
+    public class HumanTypeFleeing : ActorTypeBase
     {
-        private IBehaviourState currentState = BehaviourStateProvider.Idle;
-
-        public IBehaviourState CurrentState => currentState;
-
-        public float PlayerCommandCooldownTimer { get; set; }
-
-        public void DecideOnNextState(GameObject gameObject, IActor actor)
+        public override void DecideOnNextState(GameObject gameObject, IActor actor)
         {
             switch (currentState)
             {
@@ -66,13 +60,6 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Fleeing);
             }
-        }
-
-        private void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
-        {
-            currentState.ExitState(gameObject, actor);
-            currentState = nextState;
-            currentState.EnterState(gameObject, actor, this);
         }
     }
 }

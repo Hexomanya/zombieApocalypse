@@ -4,15 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorTypes
 {
-    public class ZombieType : IActorType
+    public class ZombieType : ActorTypeBase
     {
-        private IBehaviourState currentState = BehaviourStateProvider.Idle;
-
-        public IBehaviourState CurrentState => currentState;
-
-        public float PlayerCommandCooldownTimer { get; set; } = 0f;
-
-        public void DecideOnNextState(GameObject gameObject, IActor actor)
+        public override void DecideOnNextState(GameObject gameObject, IActor actor)
         {
             // prevent underflow
             if (PlayerCommandCooldownTimer > 0f)
@@ -106,7 +100,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }
-            else if (actor.ConcentrationTimer <= 0f || actor.AstarAI.reachedDestination)
+            else if (actor.ConcentrationTimer <= 0f || actor.AstarAI.reachedEndOfPath)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Searching);
             }
@@ -116,13 +110,6 @@ namespace Assets.Scripts.Actors.ActorTypes
             {
                 actor.ConcentrationTimer -= Time.deltaTime;
             }
-        }
-
-        private void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
-        {
-            currentState.ExitState(gameObject, actor);
-            currentState = nextState;
-            currentState.EnterState(gameObject, actor, this);
         }
     }
 }

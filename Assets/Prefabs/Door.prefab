@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 581820727751398832}
   - component: {fileID: 581820727751398835}
   - component: {fileID: 581820727751398834}
-  - component: {fileID: 581820727751398862}
   - component: {fileID: 581820727751398833}
   m_Layer: 8
   m_Name: Door
@@ -154,7 +153,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &581820727751398834
 SpriteRenderer:
@@ -207,19 +206,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &581820727751398862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581820727751398837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a192b1f40402bd942b287650a90e756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testDestroyBool: 0
 --- !u!114 &581820727751398833
 MonoBehaviour:
   m_ObjectHideFlags: 0
