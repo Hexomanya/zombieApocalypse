@@ -1,0 +1,39 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+//This class is a Singleton
+//Get it by calling Inventory.instance
+public class Inventory : MonoBehaviour
+{
+    public static Inventory instance;
+    
+    public List<BodyPart> bodyParts = new List<BodyPart>();
+
+    public delegate void OnBodyPartsChanged();
+    public OnBodyPartsChanged onBodyPartsChangedCallback;
+
+
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Debug.LogWarning("More then one Inventory instance has been found!");
+            return;
+        }
+        instance = this;
+    }
+
+    public void AddBodyPart(BodyPart bodyPart)
+    {
+        bodyParts.Add(bodyPart);
+        if (onBodyPartsChangedCallback != null)
+            onBodyPartsChangedCallback.Invoke();
+    }
+
+    public void RemoveBodyPart(BodyPart bodyPart)
+    {
+        bodyParts.Remove(bodyPart);
+        if (onBodyPartsChangedCallback != null)
+            onBodyPartsChangedCallback.Invoke();
+    }
+}

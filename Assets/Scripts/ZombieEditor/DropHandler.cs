@@ -5,18 +5,19 @@ using UnityEngine.EventSystems;
 
 public class DropHandler : MonoBehaviour, IDropHandler
 {
-    [field: SerializeField]
-    private BodyPartType BodyPartType { get; set; } = BodyPartType.Head;
+    public BodyPartType BodyPartType;
+
+  
 
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
             DragHandler dragHandler = eventData.pointerDrag.gameObject.GetComponent<DragHandler>();
-            if (dragHandler != null && dragHandler.BodyPartType == BodyPartType)
+            if (dragHandler != null && dragHandler.bodyPart.Type == BodyPartType)
             {
                 eventData.pointerDrag.gameObject.transform.position = gameObject.transform.position;
-                dragHandler.wasPlaced = true;
+                dragHandler.WasPlaced = true;
             }
         }
        
