@@ -1,4 +1,3 @@
-using Assets.Scripts.Actors;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New BodyPart", menuName = "BodyPart")]
@@ -10,16 +9,18 @@ public class BodyPart : ScriptableObject
 
     public BodyPartType Type;
 
-    public int intelligenceModifier;
-
     public int damageModifier;
 
+    public int healthModifier;
+
     public int speedModifier;
+
+    public int intelligenceModifier;
 
     public void PlaceOnZombie()
     {
         var zombie = Horde.instance.GetSelectedZombie();
-        zombie.GetComponent<BodyPartManager>().AttachBodyPart(this);
+        zombie.AttachBodyPart(this);
     }
 
 }
