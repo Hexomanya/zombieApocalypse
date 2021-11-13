@@ -7,8 +7,6 @@ public class DropHandler : MonoBehaviour, IDropHandler
 {
     public BodyPartType BodyPartType;
 
-  
-
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -18,6 +16,9 @@ public class DropHandler : MonoBehaviour, IDropHandler
             {
                 eventData.pointerDrag.gameObject.transform.position = gameObject.transform.position;
                 dragHandler.WasPlaced = true;
+                eventData.pointerDrag.gameObject.transform.SetParent(gameObject.transform);
+                // Place BodyPart on selected Zombie
+                dragHandler.bodyPart.PlaceOnZombie();
             }
         }
        

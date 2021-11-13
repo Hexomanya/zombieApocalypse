@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Horde : MonoBehaviour
 {
-    public List<Actor> zombies;
+    public List<BodyPartManager> zombies;
 
     public static Horde instance;
 
@@ -24,7 +24,7 @@ public class Horde : MonoBehaviour
         instance = this;
     }
 
-    public Actor GetSelectedZombie()
+    public BodyPartManager GetSelectedZombie()
     {
         if (zombies == null || SelectedIndex > zombies.Count)
             return null;
@@ -32,7 +32,7 @@ public class Horde : MonoBehaviour
         return zombies[SelectedIndex];
     }
 
-    public void AddZombie(Actor zombie)
+    public void AddZombie(BodyPartManager zombie)
     {
         zombies.Add(zombie);
         if (onHordeChangedCallback != null)
@@ -41,10 +41,10 @@ public class Horde : MonoBehaviour
 
     public void AddEmptyZombie()
     {
-        AddZombie(new Actor());
+        AddZombie(new BodyPartManager());
     }
 
-    public void RemoveZombie(Actor zombie)
+    public void RemoveZombie(BodyPartManager zombie)
     {
         zombies.Remove(zombie);
         if (onHordeChangedCallback != null)

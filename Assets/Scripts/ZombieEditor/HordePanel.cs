@@ -1,5 +1,3 @@
-using Assets.Scripts.Actors;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +5,12 @@ public class HordePanel : MonoBehaviour
 {
     public GameObject uiZombie;
 
-    public void InitializeUI(List<Actor> zombies)
+    public void InitializeUI(List<BodyPartManager> zombies)
     {
         UpdateUI(zombies);
     }
 
-    public void UpdateUI(List<Actor> zombies)
+    public void UpdateUI(List<BodyPartManager> zombies)
     {
         ClearUI();
         if (zombies == null || zombies.Count == 0)
@@ -25,7 +23,8 @@ public class HordePanel : MonoBehaviour
         foreach (var zombie in zombies)
         {
             // Instantiate Zombie with its BodyParts
-            Instantiate(uiZombie, transform);
+            var uiZombue = Instantiate(uiZombie, transform);
+            uiZombie.GetComponent<UiZombieHandler>().bodyPartManager = zombie;
         }
     }
 
