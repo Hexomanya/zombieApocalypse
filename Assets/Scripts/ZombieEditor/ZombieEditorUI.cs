@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ZombieEditorUI : MonoBehaviour
 {
@@ -61,6 +63,11 @@ public class ZombieEditorUI : MonoBehaviour
         {
             panel.UpdateUI(_inventory.bodyParts);
         }
+    }
+
+    public void LoadTestScene()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
 }
