@@ -9,13 +9,13 @@ public class BodyPart : ScriptableObject
 
     public BodyPartType Type;
 
-    public int damageModifier;
+    public float damageModifier = 0f;
 
-    public int healthModifier;
+    public float healthModifier = 0f;
 
-    public int speedModifier;
+    public float speedModifier = 0f;
 
-    public int intelligenceModifier;
+    public float intelligenceModifier = 0f;
 
     public void AttachToSelectedZombie()
     {
