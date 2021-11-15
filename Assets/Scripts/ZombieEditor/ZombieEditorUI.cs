@@ -1,53 +1,66 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ZombieEditorUI : MonoBehaviour
 {
-    private Inventory inventory;
+    private Inventory _inventory;
 
-    private Horde horde;
-    
-    private BodyPartPanel[] bodyPartPanels;
+    private Horde _horde;
 
-    private HordePanel hordePanel;
+    private TemplatePanel[] _templatePanels;
+
+    private BodyPartPanel[] _bodyPartPanels;
+
+    private HordePanel _hordePanel;
 
     void Awake()
     {
-        bodyPartPanels = GetComponentsInChildren<BodyPartPanel>();
-        hordePanel = GetComponentInChildren<HordePanel>();
+        _templatePanels = GetComponentsInChildren<TemplatePanel>();
+        _bodyPartPanels = GetComponentsInChildren<BodyPartPanel>();
+        _hordePanel = GetComponentInChildren<HordePanel>();
     }
 
 
     void Start()
     {
-        inventory = Inventory.instance;
+        _inventory = Inventory.instance;
         //Subscribing to Inventory Event
-        inventory.onBodyPartsChangedCallback += UpdateUI;
+        _inventory.onBodyPartsChangedCallback += UpdateUI;
 
-        horde = Horde.instance;
-        horde.onHordeChangedCallback += UpdateUI;
+        _horde = Horde.instance;
+        _horde.onHordeChangedCallback += UpdateUI;
+
+        if(_horde.zombies.Count == 0)
+        {
+            _horde.AddEmptyZombie();
+        }
 
         InitializeUI();
     }
 
     void InitializeUI()
     {
-        foreach (var panel in bodyPartPanels)
+        _hordePanel.InitializeUI(_horde.zombies);
+        foreach (var panel in _templatePanels)
         {
-            panel.InitializeUI(inventory.bodyParts);
+            panel.InitializeUI(_horde.GetSelectedZombie());
         }
-        hordePanel.InitializeUI(horde.zombies);
+        foreach (var panel in _bodyPartPanels)
+        {
+            panel.InitializeUI(_inventory.bodyParts);
+        }
     }
 
     void UpdateUI()
     {
-        foreach (var panel in bodyPartPanels)
+        _hordePanel.UpdateUI(_horde.zombies);
+        foreach (var panel in _templatePanels)
         {
-            panel.UpdateUI(inventory.bodyParts);
+            panel.InitializeUI(_horde.GetSelectedZombie());
         }
-
-        hordePanel.UpdateUI(horde.zombies);
+        foreach (var panel in _bodyPartPanels)
+        {
+            panel.UpdateUI(_inventory.bodyParts);
+        }
     }
 
 }

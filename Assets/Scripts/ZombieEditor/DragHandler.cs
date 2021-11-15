@@ -42,9 +42,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         canvasGroup.blocksRaycasts = true;
         if(WasPlaced)
         {
-            Debug.Log("Placed: " + bodyPart.name);
             inventory.RemoveBodyPart(bodyPart);
-            //Place BodyPart on Zombie
+            bodyPart.AttachToSelectedZombie();
         }
         else
         {

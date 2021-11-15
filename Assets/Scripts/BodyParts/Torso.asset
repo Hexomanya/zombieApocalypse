@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
-  m_Name: LeftFoot
+  m_Name: Torso
   m_EditorClassIdentifier: 
-  name: LeftFoot
-  sprite: {fileID: -980516788960830398, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
-  Type: 4
+  name: Torso
+  sprite: {fileID: 6284166523789267160, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  Type: 2
   damageModifier: 0
   healthModifier: 0
   speedModifier: 0

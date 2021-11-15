@@ -18,7 +18,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
                 dragHandler.WasPlaced = true;
                 eventData.pointerDrag.gameObject.transform.SetParent(gameObject.transform);
                 // Place BodyPart on selected Zombie
-                dragHandler.bodyPart.PlaceOnZombie();
+                dragHandler.bodyPart.AttachToSelectedZombie();
             }
         }
        
