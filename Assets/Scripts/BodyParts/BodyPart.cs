@@ -17,10 +17,9 @@ public class BodyPart : ScriptableObject
 
     public int intelligenceModifier;
 
-    public void PlaceOnZombie()
+    public void AttachToSelectedZombie()
     {
-        var zombie = Horde.instance.GetSelectedZombie();
-        zombie.AttachBodyPart(this);
+        Horde.instance.AttachBodyPartToSelectedZombie(this);
     }
 
 }

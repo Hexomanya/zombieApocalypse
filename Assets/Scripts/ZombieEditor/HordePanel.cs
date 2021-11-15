@@ -1,30 +1,44 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HordePanel : MonoBehaviour
 {
     public GameObject uiZombie;
 
+    private List<UiZombieHandler> uiZombies;
+
+
     public void InitializeUI(List<BodyPartManager> zombies)
     {
+        uiZombies = new List<UiZombieHandler>();
         UpdateUI(zombies);
     }
 
     public void UpdateUI(List<BodyPartManager> zombies)
     {
         ClearUI();
-        if (zombies == null || zombies.Count == 0)
+
+        for(int i=0; i < zombies.Count; i++)
         {
-            // Instantiate empty Zombie
-            Instantiate(uiZombie, transform);
-            return;
+            // Instantiate UiZombie with its BodyParts
+            var currentZombie = Instantiate(uiZombie, transform);
+
+            // Highlight selected Zombie
+            if( i == Horde.instance.SelectedIndex)
+            {
+                var selectedUiZombieImage = currentZombie.GetComponent<Image>();
+                selectedUiZombieImage.color = new Color(selectedUiZombieImage.color.r, selectedUiZombieImage.color.g, selectedUiZombieImage.color.b, 1);
+            }
+            var currentUiZombieHandler = currentZombie.GetComponent<UiZombieHandler>();
+            currentUiZombieHandler.BodyPartManager = zombies[i];
+            currentUiZombieHandler.Index = i;
+            uiZombies.Add(currentUiZombieHandler);
         }
 
-        foreach (var zombie in zombies)
+        foreach(var uiZombieHandler in uiZombies)
         {
-            // Instantiate Zombie with its BodyParts
-            var uiZombue = Instantiate(uiZombie, transform);
-            uiZombie.GetComponent<UiZombieHandler>().bodyPartManager = zombie;
+            uiZombieHandler.UpdateUI();
         }
     }
 
@@ -32,6 +46,7 @@ public class HordePanel : MonoBehaviour
     {
         foreach (Transform child in transform)
             Destroy(child.gameObject);
+        uiZombies = new List<UiZombieHandler>();
     }
 
 }

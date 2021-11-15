@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BodyPartManager : MonoBehaviour
@@ -5,11 +6,21 @@ public class BodyPartManager : MonoBehaviour
     // This represents the attached BodyParts to a Zombie
     // [0] for example is the head of the Zombie, if the does not have any it is null
     public BodyPart[] currentBodyParts;
-    
+
+    public BodyPartManager()
+    {
+        InitializeCurrentBodyParts();
+    }
+
 
     private void Start()
     {
-        // Create the BodyPartsArray with Length 5 (Head, LeftArm, RightArm, LeftFoot, RightFoot)
+        InitializeCurrentBodyParts();
+    }
+
+    public void InitializeCurrentBodyParts()
+    {
+        // Create the BodyPartsArray with Length 5 (Head, LeftArm, Torso, RightArm, LeftFoot, RightFoot)
         if (currentBodyParts == null)
         {
             currentBodyParts = new BodyPart[System.Enum.GetNames(typeof(BodyPartType)).Length];
