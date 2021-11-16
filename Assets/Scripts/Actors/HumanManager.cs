@@ -1,15 +1,20 @@
 using Assets.Scripts.Actors;
+using UnityEngine;
+
 public class HumanManager : ActorManagerBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void ActorDied(GameObject gameObject)
     {
-        InitializeNodeBlocker();
-    }
+        float dropRate = UnityEngine.Random.Range(0.25f, 0.5f);
+        foreach (var item in Inventory.instance.bodyPartPrefabs)
+        {
+            float roll = UnityEngine.Random.Range(0f, 1f);
+            if (roll <= dropRate)
+            {
+                Inventory.instance.AddBodyPart(item.New());
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DeleteActor(gameObject);   
     }
 }

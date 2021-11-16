@@ -25,11 +25,7 @@ namespace Assets.Scripts.Actors
             }
         }
 
-        public void ActorDied(GameObject gameObject)
-        {
-            // TODO: Drop BodyParts
-            DeleteActor(gameObject);
-        }
+        public abstract void ActorDied(GameObject gameObject);
 
         public void DeleteActor(GameObject gameObject)
         {

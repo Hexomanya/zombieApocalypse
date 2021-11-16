@@ -1,3 +1,4 @@
+using Assets.Scripts.Actors;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -24,15 +25,14 @@ namespace Assets.Scripts
 
         private void Die()
         {
-            // TODO: Do something
-            ZombieManager actorManager = transform.parent?.GetComponent<ZombieManager>();
+            ActorManagerBase actorManager = transform.parent?.GetComponent<ActorManagerBase>();
             if (actorManager == null)
             {
                 Destroy(gameObject);
             }
             else
             {
-                actorManager.DeleteActor(gameObject);
+                actorManager.ActorDied(gameObject);
             }
         }
 
