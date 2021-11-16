@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayButtonPressed()
     {
         Debug.Log("Zombie Editor loaded");
-        //SceneManager.LoadScene("ZombieEditor");
+        SceneManager.LoadScene("ZombieEditor");
     }
 
     public void QuitButtonPressed()

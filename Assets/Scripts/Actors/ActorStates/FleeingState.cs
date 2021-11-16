@@ -23,6 +23,12 @@ namespace Assets.Scripts.Actors.ActorStates
             Vector3 closestBorder;
             closestBorder = GetClosestSafeMapBorder(gameObject, actor);
 
+            // Actor reached MapBorder
+            if (Vector3.Distance(closestBorder, gameObject.transform.position) < 1f)
+            {
+                actor.ActorManager.DeleteActor(gameObject);
+            }
+
             actorType.UpdatePath(gameObject.transform.position, closestBorder, actor);
         }
 

@@ -36,11 +36,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleFleeingState(GameObject gameObject, IActor actor)
         {
-            // TODO: Implement "Got away"
-            if (false)
-            {
-            }
-            else if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
+            if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
             }

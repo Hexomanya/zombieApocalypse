@@ -14,13 +14,13 @@ namespace Assets.Scripts.Actors
         private ActorType Typ { get; set; } = ActorType.Zombie;
 
         [field: SerializeField]
-        public float MeleeDamage { get; private set; } = 5f;
+        public float MeleeDamage { get; set; } = 5f;
 
         [field: SerializeField]
         public float MeleeAttackCooldown { get; private set; } = 2f;
 
         [field: SerializeField]
-        public float ConcentrationTime { get; private set; } = 5f;
+        public float ConcentrationTime { get; set; } = 5f;
 
         [field: SerializeField]
         public float PlayerCommandCooldown { get; private set; } = 2f;
@@ -53,22 +53,23 @@ namespace Assets.Scripts.Actors
 
         public BlockManager BlockManager { get; private set; }
 
-        public ActorManager ActorManager { get; private set; }
+        public ActorManagerBase ActorManager { get; private set; }
 
-        void Awake()
+        void Start()
         {
             DetectionHandler = GetComponentInChildren<DetectionHandler>();
             MeleeRangeHandler = GetComponentInChildren<MeleeRangeHandler>();
             RangeAttackHandler = GetComponent<RangeAttackHandler>();
             NodeBlocker = GetComponent<SingleNodeBlocker>();
             BlockManager = FindObjectOfType<BlockManager>();
+            NodeBlocker.manager = BlockManager;
             
-            if (transform.parent.GetComponent<ActorManager>() == null)
+            if (transform.parent.GetComponent<ActorManagerBase>() == null)
             {
                 throw new ArgumentException($"{gameObject.name} is not folded under a ActorManager Script!");
             }
 
-            ActorManager = transform.parent.GetComponent<ActorManager>();
+            ActorManager = transform.parent.GetComponent<ActorManagerBase>();
             MeleeAttackTimer = MeleeAttackCooldown;
             myActorType = ActorTypeProvider.GetActorType(Typ);
             AstarAI = GetComponent<IAstarAI>();

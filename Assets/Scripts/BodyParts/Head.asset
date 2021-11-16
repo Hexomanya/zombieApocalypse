@@ -15,3 +15,7 @@ MonoBehaviour:
   name: Head
   sprite: {fileID: 6019453725058403666, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   Type: 0
+  damageModifier: 0
+  healthModifier: 5
+  speedModifier: 1
+  intelligenceModifier: 5

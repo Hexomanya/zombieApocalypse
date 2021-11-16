@@ -5,7 +5,7 @@ namespace Assets.Scripts
     public class AttackableObject : MonoBehaviour
     {
         [field: SerializeField]
-        public float MaxHealth { get; private set; } = 20f;
+        public float MaxHealth { get; set; } = 20f;
 
         public float CurrentHealth { get; private set; }
     
@@ -25,7 +25,7 @@ namespace Assets.Scripts
         private void Die()
         {
             // TODO: Do something
-            ActorManager actorManager = transform.parent?.GetComponent<ActorManager>();
+            ZombieManager actorManager = transform.parent?.GetComponent<ZombieManager>();
             if (actorManager == null)
             {
                 Destroy(gameObject);

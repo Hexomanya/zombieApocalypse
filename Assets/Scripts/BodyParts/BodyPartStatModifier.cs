@@ -1,12 +1,12 @@
 
 public class BodyPartStatModifier
 {
-    public int DamageModifier { get; set; } = 0;
+    public float DamageModifier { get; set; } = 0f;
 
-    public int HealthModifier { get; set; } = 0;
+    public float HealthModifier { get; set; } = 0f;
 
-    public int SpeedModifier { get; set; } = 0;
+    public float SpeedModifier { get; set; } = 0f;
 
-    public int IntelligenceModifier { get; set; } = 0;
+    public float IntelligenceModifier { get; set; } = 0f;
 
 }

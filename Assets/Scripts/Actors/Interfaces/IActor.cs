@@ -11,13 +11,13 @@ namespace Assets.Scripts.Actors.Interfaces
 
         public RangeAttackHandler RangeAttackHandler { get; }
 
-        public float MeleeDamage { get; }
+        public float MeleeDamage { get; set; }
 
         public float MeleeAttackCooldown { get; }
 
         public float MeleeAttackTimer { get; set; }
 
-        public float ConcentrationTime { get; }
+        public float ConcentrationTime { get; set; }
 
         public float ConcentrationTimer { get; set; }
 
@@ -41,6 +41,6 @@ namespace Assets.Scripts.Actors.Interfaces
 
         public BlockManager BlockManager { get; }
 
-        public ActorManager ActorManager { get; }
+        public ActorManagerBase ActorManager { get; }
     }
 }
