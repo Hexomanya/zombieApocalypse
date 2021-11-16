@@ -25,6 +25,12 @@ namespace Assets.Scripts.Actors
             }
         }
 
+        public void ActorDied(GameObject gameObject)
+        {
+            // TODO: Drop BodyParts
+            DeleteActor(gameObject);
+        }
+
         public void DeleteActor(GameObject gameObject)
         {
             blockerList.Remove(gameObject.GetComponent<SingleNodeBlocker>());
