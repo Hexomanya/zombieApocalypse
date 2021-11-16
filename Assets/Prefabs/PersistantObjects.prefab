@@ -142,8 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b2fdd046e55d145b6307866e2895e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombies:
-  - {fileID: 7456866110623810564, guid: c46436f5e8579a64fbfaf84fc60bce23, type: 3}
-  - {fileID: 7456866110623810564, guid: c46436f5e8579a64fbfaf84fc60bce23, type: 3}
-  - {fileID: 7456866110623810564, guid: c46436f5e8579a64fbfaf84fc60bce23, type: 3}
-  - {fileID: 7456866110623810564, guid: c46436f5e8579a64fbfaf84fc60bce23, type: 3}
+  zombies: []
+  availableBodyParts:
+  - {fileID: 11400000, guid: d0c41baacca037d489aea6361bf4643e, type: 2}
+  - {fileID: 11400000, guid: 189e26550c47ed840929c2043f268ab1, type: 2}
+  - {fileID: 11400000, guid: 388d8cd31b5b7f443bb6f0253c1124cf, type: 2}
+  - {fileID: 11400000, guid: 7ef33570c5d76454a911dcea9225bd4f, type: 2}
+  - {fileID: 11400000, guid: f6e4c6209cec9a94eaf847adb30db969, type: 2}
+  - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
