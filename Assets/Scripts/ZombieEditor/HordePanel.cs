@@ -9,13 +9,13 @@ public class HordePanel : MonoBehaviour
     private List<UiZombieHandler> uiZombies;
 
 
-    public void InitializeUI(List<BodyPartManager> zombies)
+    public void InitializeUI(List<GameObject> zombies)
     {
         uiZombies = new List<UiZombieHandler>();
         UpdateUI(zombies);
     }
 
-    public void UpdateUI(List<BodyPartManager> zombies)
+    public void UpdateUI(List<GameObject> zombies)
     {
         ClearUI();
 
@@ -31,7 +31,7 @@ public class HordePanel : MonoBehaviour
                 selectedUiZombieImage.color = new Color(selectedUiZombieImage.color.r, selectedUiZombieImage.color.g, selectedUiZombieImage.color.b, 1);
             }
             var currentUiZombieHandler = currentZombie.GetComponent<UiZombieHandler>();
-            currentUiZombieHandler.BodyPartManager = zombies[i];
+            currentUiZombieHandler.BodyPartManager = zombies[i].GetComponent<BodyPartManager>();
             currentUiZombieHandler.Index = i;
             uiZombies.Add(currentUiZombieHandler);
         }

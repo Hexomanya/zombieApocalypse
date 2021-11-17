@@ -1055,6 +1055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PersistantObjects
       objectReference: {fileID: 0}
+    - target: {fileID: 576710673539785371, guid: 4bb588deb3f3f4146af4c5129df416ce, type: 3}
+      propertyPath: emptyBodyPartManager
+      value: 
+      objectReference: {fileID: 4026145449183609967, guid: 88446880aa4cb304f87258ca064b35a0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bb588deb3f3f4146af4c5129df416ce, type: 3}
 --- !u!1 &747866185
