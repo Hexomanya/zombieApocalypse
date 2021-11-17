@@ -54,6 +54,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
   - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
   - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
+  bodyPartPrefabs:
+  - {fileID: 11400000, guid: d0c41baacca037d489aea6361bf4643e, type: 2}
+  - {fileID: 11400000, guid: 189e26550c47ed840929c2043f268ab1, type: 2}
+  - {fileID: 11400000, guid: f6e4c6209cec9a94eaf847adb30db969, type: 2}
+  - {fileID: 11400000, guid: 7ef33570c5d76454a911dcea9225bd4f, type: 2}
+  - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
 --- !u!1 &576710672753912599
 GameObject:
   m_ObjectHideFlags: 0

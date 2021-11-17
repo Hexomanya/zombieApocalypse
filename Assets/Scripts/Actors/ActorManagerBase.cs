@@ -6,7 +6,26 @@ namespace Assets.Scripts.Actors
 {
     public abstract class ActorManagerBase : MonoBehaviour
     {
-        protected List<SingleNodeBlocker> blockerList = new List<SingleNodeBlocker>();
+        public List<SingleNodeBlocker> blockerList = new List<SingleNodeBlocker>();
+        private EndScreenPopup endScreenPopup;
+
+        public virtual void Awake()
+        {
+            endScreenPopup = FindObjectOfType<EndScreenPopup>();
+        }
+
+        public virtual void Start()
+        {
+            InitializeNodeBlocker();
+        }
+
+        public virtual void Update()
+        {
+            if (transform.childCount == 0)
+            {
+                endScreenPopup.LevelEnded();
+            }
+        }
 
         protected void InitializeNodeBlocker()
         {
@@ -25,11 +44,7 @@ namespace Assets.Scripts.Actors
             }
         }
 
-        public void ActorDied(GameObject gameObject)
-        {
-            // TODO: Drop BodyParts
-            DeleteActor(gameObject);
-        }
+        public abstract void ActorDied(GameObject gameObject);
 
         public void DeleteActor(GameObject gameObject)
         {

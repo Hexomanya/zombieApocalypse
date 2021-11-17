@@ -22,4 +22,18 @@ public class BodyPart : ScriptableObject
         Horde.instance.AttachBodyPartToSelectedZombie(this);
     }
 
+    public BodyPart New()
+    {
+        BodyPart bodyPart = CreateInstance<BodyPart>();
+        bodyPart.name = name;
+        bodyPart.sprite = sprite;
+        bodyPart.Type = Type;
+        bodyPart.damageModifier = damageModifier;
+        bodyPart.healthModifier = healthModifier;
+        bodyPart.speedModifier = speedModifier;
+        bodyPart.intelligenceModifier = intelligenceModifier;
+
+        return bodyPart;
+    }
+
 }

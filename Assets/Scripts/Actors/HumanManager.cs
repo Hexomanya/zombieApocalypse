@@ -1,15 +1,27 @@
 using Assets.Scripts.Actors;
+using UnityEngine;
+
 public class HumanManager : ActorManagerBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void ActorDied(GameObject gameObject)
     {
-        InitializeNodeBlocker();
-    }
+        float dropRate = Random.Range(0.25f, 0.5f);
+        foreach (var item in Horde.instance.availableBodyParts)
+        {
+            if (item.Type == BodyPartType.Torso)
+            {
+                continue;
+            }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            float roll = Random.Range(0f, 1f);
+            if (roll <= dropRate)
+            {
+                BodyPart bodyPart = item.New();
+                Inventory.instance.AddNewBodyPart(bodyPart);
+                PickUpMessageHandler.Instance.AddNewMessage(bodyPart.name);
+            }
+        }
+
+        DeleteActor(gameObject);   
     }
 }
