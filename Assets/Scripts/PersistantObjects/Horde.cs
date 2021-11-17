@@ -4,7 +4,7 @@ using UnityEngine;
 public class Horde : MonoBehaviour
 {
     // Empty GameObject with a BodyPartManager Component
-    public List<GameObject> zombies;
+    public List<BodyPartManager> zombies;
 
     public GameObject emptyBodyPartManager;
 
@@ -33,7 +33,7 @@ public class Horde : MonoBehaviour
         if (zombies == null || zombies.Count <= SelectedIndex)
             return;
 
-        zombies[SelectedIndex].GetComponent<BodyPartManager>().AttachBodyPart(bodyPart);
+        zombies[SelectedIndex].AttachBodyPart(bodyPart);
     }
 
     public BodyPartManager GetSelectedZombie()
@@ -41,7 +41,7 @@ public class Horde : MonoBehaviour
         if (zombies == null || zombies.Count <= SelectedIndex)
             return null;
 
-        return zombies[SelectedIndex].GetComponent<BodyPartManager>();
+        return zombies[SelectedIndex];
     }
 
     public void SetSelectedZombie(int index)
@@ -58,14 +58,14 @@ public class Horde : MonoBehaviour
     {
         if (zombies == null)
         {
-            zombies = new List<GameObject>();
+            zombies = new List<BodyPartManager>();
         }
 
         
         if (zombies.Count > 0)
         {
             // Do not add a new empty Zombie if the last Zombie in the List has no other BodyParts than a Torso
-            var lastZombiesBodyParts = zombies[zombies.Count - 1].GetComponent<BodyPartManager>().currentBodyParts;
+            var lastZombiesBodyParts = zombies[zombies.Count - 1].currentBodyParts;
             if (lastZombiesBodyParts[0] == null && lastZombiesBodyParts[1] == null && lastZombiesBodyParts[3] == null && lastZombiesBodyParts[4] == null && lastZombiesBodyParts[5] == null)
             {
                 // Last Zombie only has a Torso!
@@ -75,7 +75,7 @@ public class Horde : MonoBehaviour
                 
         }
 
-        var newZombie = Instantiate(emptyBodyPartManager, transform);
+        var newZombie = Instantiate(emptyBodyPartManager, transform).GetComponent<BodyPartManager>();
 
         // Empty zombies can not exist, they need at least a torso
         // Not elegant, this approach offers room for improvement
@@ -83,7 +83,7 @@ public class Horde : MonoBehaviour
         {
             if (bodyPart.Type == BodyPartType.Torso)
             {
-                newZombie.GetComponent<BodyPartManager>().currentBodyParts[(int)BodyPartType.Torso] = bodyPart;
+                newZombie.currentBodyParts[(int)BodyPartType.Torso] = bodyPart;
             }
         }
 
