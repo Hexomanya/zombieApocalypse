@@ -24,7 +24,7 @@ public class BodyPart : ScriptableObject
 
     public BodyPart New()
     {
-        BodyPart bodyPart = new BodyPart();
+        BodyPart bodyPart = CreateInstance<BodyPart>();
         bodyPart.name = name;
         bodyPart.sprite = sprite;
         bodyPart.Type = Type;

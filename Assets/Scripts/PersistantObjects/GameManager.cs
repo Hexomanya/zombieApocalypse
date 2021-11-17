@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.LogWarning("More then one Horde instance has been found!");
+            Destroy(gameObject);
             return;
         }
 
@@ -20,5 +21,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void LoadEditorScene()
+    {
+        Inventory.instance.newParts.Clear();
+        SceneManager.LoadScene("ZombieEditor");
     }
 }

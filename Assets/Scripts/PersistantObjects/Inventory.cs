@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     
     public List<BodyPart> bodyParts = new List<BodyPart>();
-    public List<BodyPart> bodyPartPrefabs = new List<BodyPart>();
+    public List<BodyPart> newParts = new List<BodyPart>();
 
     public delegate void OnBodyPartsChanged();
     public OnBodyPartsChanged onBodyPartsChangedCallback;
@@ -22,6 +22,12 @@ public class Inventory : MonoBehaviour
             return;
         }
         instance = this;
+    }
+
+    public void AddNewBodyPart(BodyPart bodyPart)
+    {
+        newParts.Add(bodyPart);
+        AddBodyPart(bodyPart);
     }
 
     public void AddBodyPart(BodyPart bodyPart)

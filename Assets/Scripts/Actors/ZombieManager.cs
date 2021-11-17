@@ -8,7 +8,7 @@ public class ZombieManager : ActorManagerBase
 {
     public GameObject ZombiePrefab;
 
-    void Start()
+    public override void Start()
     {
         for (int i = 0; i < Horde.instance.zombies.Count; i++)
         {
@@ -18,14 +18,9 @@ public class ZombieManager : ActorManagerBase
         InitializeNodeBlocker();
     }
 
-    void Update()
-    {
-    }
-
     private void SpawnZombie(BodyPartManager bodyPartManager, int index)
     {
         GameObject gameObject = Instantiate(ZombiePrefab, transform);
-        Debug.Log(gameObject.GetComponent<BodyPartManager>().currentBodyParts);
         gameObject.GetComponent<BodyPartManager>().currentBodyParts = bodyPartManager.currentBodyParts;
         gameObject.transform.position = SpawnPositions.Instance.Positions[index].position;
         IActor actor = gameObject.GetComponent<IActor>();
@@ -48,7 +43,7 @@ public class ZombieManager : ActorManagerBase
                 float roll = Random.Range(0f, 1f);
                 if (roll <= dropRate)
                 {
-                    Inventory.instance.AddBodyPart(item);
+                    Inventory.instance.AddNewBodyPart(item);
                 }
             }
         }
