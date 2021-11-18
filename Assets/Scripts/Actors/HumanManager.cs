@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class HumanManager : ActorManagerBase
 {
+    public void Update()
+    {
+        if (transform.childCount == 0)
+        {
+            endScreenPopup.LevelWon();
+        }
+    }
+
     public override void ActorDied(GameObject gameObject)
     {
         float dropRate = Random.Range(0.25f, 0.5f);

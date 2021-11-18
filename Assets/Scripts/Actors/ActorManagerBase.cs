@@ -7,7 +7,7 @@ namespace Assets.Scripts.Actors
     public abstract class ActorManagerBase : MonoBehaviour
     {
         public List<SingleNodeBlocker> blockerList = new List<SingleNodeBlocker>();
-        private EndScreenPopup endScreenPopup;
+        protected EndScreenPopup endScreenPopup;
 
         public virtual void Awake()
         {
@@ -17,14 +17,6 @@ namespace Assets.Scripts.Actors
         public virtual void Start()
         {
             InitializeNodeBlocker();
-        }
-
-        public virtual void Update()
-        {
-            if (transform.childCount == 0)
-            {
-                endScreenPopup.LevelEnded();
-            }
         }
 
         protected void InitializeNodeBlocker()

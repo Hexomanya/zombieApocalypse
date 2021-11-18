@@ -20,6 +20,14 @@ public class ZombieManager : ActorManagerBase
         InitializeNodeBlocker();
     }
 
+    public void Update()
+    {
+        if(transform.childCount == 0)
+        {
+            endScreenPopup.GameOver();
+        }
+    }
+
     private void SpawnZombie(BodyPartManager bodyPartManager, int index)
     {
         GameObject gameObject = Instantiate(ZombiePrefab, transform);
