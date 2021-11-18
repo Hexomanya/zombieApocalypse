@@ -48,5 +48,4 @@ public class HordePanel : MonoBehaviour
             Destroy(child.gameObject);
         uiZombies = new List<UiZombieHandler>();
     }
-
 }

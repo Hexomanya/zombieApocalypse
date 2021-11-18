@@ -64,15 +64,16 @@ public class ZombieEditorUI : MonoBehaviour
         }
     }
 
-    public void LoadTestScene()
-    {
-        _inventory.onBodyPartsChangedCallback = null;
-        SceneManager.LoadScene("SampleScene");
-    }
 
     public void LoadLevelSeletionScreen()
     {
         _inventory.onBodyPartsChangedCallback = null;
+        _horde.onHordeChangedCallback = null;
         SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void OnZombieAddButtonClicked()
+    {
+        _horde.AddEmptyZombie();
     }
 }
