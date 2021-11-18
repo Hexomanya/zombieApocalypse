@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     
     public List<BodyPart> bodyParts = new List<BodyPart>();
+    public List<BodyPart> newParts = new List<BodyPart>();
 
     public delegate void OnBodyPartsChanged();
     public OnBodyPartsChanged onBodyPartsChangedCallback;
@@ -23,17 +24,21 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
 
+    public void AddNewBodyPart(BodyPart bodyPart)
+    {
+        newParts.Add(bodyPart);
+        AddBodyPart(bodyPart);
+    }
+
     public void AddBodyPart(BodyPart bodyPart)
     {
         bodyParts.Add(bodyPart);
-        if (onBodyPartsChangedCallback != null)
-            onBodyPartsChangedCallback.Invoke();
+        onBodyPartsChangedCallback?.Invoke();
     }
 
     public void RemoveBodyPart(BodyPart bodyPart)
     {
         bodyParts.Remove(bodyPart);
-        if (onBodyPartsChangedCallback != null)
-            onBodyPartsChangedCallback.Invoke();
+        onBodyPartsChangedCallback?.Invoke();
     }
 }

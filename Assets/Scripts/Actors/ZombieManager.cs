@@ -8,7 +8,7 @@ public class ZombieManager : ActorManagerBase
 {
     public GameObject ZombiePrefab;
 
-    void Start()
+    public override void Start()
     {
         if(Horde.instance == null) { return; }
 
@@ -20,13 +20,9 @@ public class ZombieManager : ActorManagerBase
         InitializeNodeBlocker();
     }
 
-    void Update()
-    {
-    }
-
     private void SpawnZombie(BodyPartManager bodyPartManager, int index)
     {
-        GameObject gameObject = Instantiate<GameObject>(ZombiePrefab, transform);
+        GameObject gameObject = Instantiate(ZombiePrefab, transform);
         gameObject.GetComponent<BodyPartManager>().currentBodyParts = bodyPartManager.currentBodyParts;
         gameObject.transform.position = SpawnPositions.Instance.Positions[index].position;
         IActor actor = gameObject.GetComponent<IActor>();
@@ -36,5 +32,24 @@ public class ZombieManager : ActorManagerBase
         gameObject.GetComponent<AttackableObject>().MaxHealth = bodyPartManager.GetAllBodyPartStatModifiers().HealthModifier;
 
         blockerList.Add(gameObject.GetComponent<SingleNodeBlocker>());
+    }
+
+    public override void ActorDied(GameObject gameObject)
+    {
+        BodyPartManager bodyPartManager = gameObject.GetComponent<BodyPartManager>();
+        float dropRate = Random.Range(0.25f, 0.5f);
+        foreach (var item in bodyPartManager.currentBodyParts)
+        {
+            if (item.Type != BodyPartType.Torso)
+            {
+                float roll = Random.Range(0f, 1f);
+                if (roll <= dropRate)
+                {
+                    Inventory.instance.AddNewBodyPart(item);
+                }
+            }
+        }
+
+        DeleteActor(gameObject);
     }
 }
