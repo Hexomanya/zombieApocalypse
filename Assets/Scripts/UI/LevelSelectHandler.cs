@@ -19,15 +19,15 @@ public class LevelSelectHandler : MonoBehaviour
         {
             case "Level01":
                 Debug.Log("Level 1 Loaded");
-                //SceneManager.LoadScene("Level01");
+                SceneManager.LoadScene("Level01");
                 break;
             case "Level02":
                 Debug.Log("Level 1 Loaded");
-                //SceneManager.LoadScene("Level02");
+                SceneManager.LoadScene("Level02");
                 break;
             case "Level03":
                 Debug.Log("Level 1 Loaded");
-                //SceneManager.LoadScene("Level03");
+                SceneManager.LoadScene("Level03");
                 break;
 
             default:

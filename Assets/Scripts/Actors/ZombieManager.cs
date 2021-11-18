@@ -10,6 +10,8 @@ public class ZombieManager : ActorManagerBase
 
     public override void Start()
     {
+        if(Horde.instance == null) { return; }
+
         for (int i = 0; i < Horde.instance.zombies.Count; i++)
         {
             SpawnZombie(Horde.instance.zombies[i].GetComponent<BodyPartManager>(), i);

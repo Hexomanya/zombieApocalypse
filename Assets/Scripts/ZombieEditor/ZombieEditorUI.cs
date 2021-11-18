@@ -70,4 +70,9 @@ public class ZombieEditorUI : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void LoadLevelSeletionScreen()
+    {
+        _inventory.onBodyPartsChangedCallback = null;
+        SceneManager.LoadScene("LevelSelection");
+    }
 }
