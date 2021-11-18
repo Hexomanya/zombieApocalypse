@@ -15,7 +15,7 @@ MonoBehaviour:
   name: RightArm
   sprite: {fileID: -8585762769051335824, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   Type: 3
-  damageModifier: 0
-  healthModifier: 0
+  damageModifier: 5
+  healthModifier: 2
   speedModifier: 0
   intelligenceModifier: 0

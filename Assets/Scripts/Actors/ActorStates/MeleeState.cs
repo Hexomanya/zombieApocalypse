@@ -27,6 +27,9 @@ namespace Assets.Scripts.Actors.ActorStates
             {
                 actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage);
                 actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
+            }else if(actor.CurrentMeleeTarget == null)
+            {
+                actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
             }
 
             if (actor.MeleeAttackTimer > 0f)

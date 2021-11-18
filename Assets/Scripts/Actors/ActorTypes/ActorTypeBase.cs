@@ -25,12 +25,17 @@ namespace Assets.Scripts.Actors.ActorTypes
             Path.BlockUntilCalculated();
             if (!Path.error)
             {
+                actor.DeativatePathBlocking = false;
                 actor.AstarAI.SetPath(Path);
                 // Draw the path in the scene view
                 for (int i = 0; i < Path.vectorPath.Count - 1; i++)
                 {
                     Debug.DrawLine(Path.vectorPath[i], Path.vectorPath[i + 1], Color.green);
                 }
+            }
+            else
+            {
+                actor.DeativatePathBlocking = true;
             }
         }
 

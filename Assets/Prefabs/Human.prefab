@@ -263,8 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Typ>k__BackingField: 2
-  <MeleeDamage>k__BackingField: 5
-  <MeleeAttackCooldown>k__BackingField: 2
+  <MeleeDamage>k__BackingField: 2.5
+  <MeleeAttackCooldown>k__BackingField: 2.5
   <ConcentrationTime>k__BackingField: 5
   <PlayerCommandCooldown>k__BackingField: 2
   <PatrollRoute>k__BackingField: {fileID: 0}

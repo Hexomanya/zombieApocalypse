@@ -42,5 +42,7 @@ namespace Assets.Scripts.Actors.Interfaces
         public BlockManager BlockManager { get; }
 
         public ActorManagerBase ActorManager { get; }
+
+        public bool DeativatePathBlocking { get; set; }
     }
 }

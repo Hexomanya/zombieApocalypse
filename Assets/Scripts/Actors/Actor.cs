@@ -54,6 +54,7 @@ namespace Assets.Scripts.Actors
         public BlockManager BlockManager { get; private set; }
 
         public ActorManagerBase ActorManager { get; private set; }
+        public bool DeativatePathBlocking { get; set; }
 
         void Start()
         {
@@ -79,7 +80,10 @@ namespace Assets.Scripts.Actors
         void Update()
         {
             NodeBlocker?.Unblock();
-            NodeBlocker?.BlockAtCurrentPosition();
+            if (!DeativatePathBlocking)
+            {
+                NodeBlocker?.BlockAtCurrentPosition();
+            }
             CurrentState.Update(gameObject, this, myActorType);
             myActorType.DecideOnNextState(gameObject, this);
         }
