@@ -27215,7 +27215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockerList: []
-  ZombiePrefab: {fileID: 0}
+  ZombiePrefab: {fileID: 4679703661269681741, guid: 01361fa586d76d544a96548bd875609b, type: 3}
 --- !u!1001 &1639538447
 PrefabInstance:
   m_ObjectHideFlags: 0

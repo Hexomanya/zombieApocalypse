@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f857185e69e1544e96036c81a5c9307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockerList: []
 --- !u!1 &69267097
 GameObject:
   m_ObjectHideFlags: 0
@@ -22942,7 +22943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5ca6dafc8703a42a91eeea97a62b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombiePrefab: {fileID: 0}
+  blockerList: []
+  ZombiePrefab: {fileID: 4679703661269681741, guid: 01361fa586d76d544a96548bd875609b, type: 3}
 --- !u!1001 &1646801409
 PrefabInstance:
   m_ObjectHideFlags: 0
