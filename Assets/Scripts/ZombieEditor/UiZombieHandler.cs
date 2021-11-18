@@ -59,43 +59,44 @@ public class UiZombieHandler : MonoBehaviour
     public void UpdateUI()
     {
         ClearUI();
-        for (int i = 0; i< BodyPartManager.currentBodyParts.Length; i++)
+        foreach (var bodyPart in BodyPartManager.currentBodyParts)
         {
-            if (BodyPartManager.currentBodyParts[i] != null)
+            if (bodyPart != null)
             {
-                switch (i)
+                switch (bodyPart.Type)
                 {
-                    case (int)BodyPartType.Head:
-                        _head.sprite = BodyPartManager.currentBodyParts[i].sprite;
+                    case BodyPartType.Head:
+                        _head.sprite = bodyPart.sprite;
                         _head.color = new Color(_head.color.r, _head.color.g, _head.color.b, 1);
                         break;
 
-                    case (int)BodyPartType.LeftArm:
-                        _leftArm.sprite = BodyPartManager.currentBodyParts[i].sprite;
+                    case BodyPartType.LeftArm:
+                        _leftArm.sprite = bodyPart.sprite;
                         _leftArm.color = new Color(_head.color.r, _head.color.g, _head.color.b, 1);
                         break;
 
-                    case (int)BodyPartType.Torso:
-                        _torso.sprite = BodyPartManager.currentBodyParts[i].sprite;
+                    case BodyPartType.Torso:
+                        _torso.sprite = bodyPart.sprite;
                         _torso.color = new Color(_head.color.r, _head.color.g, _head.color.b, 1);
                         break;
 
-                    case (int)BodyPartType.RightArm:
-                        _rightArm.sprite = BodyPartManager.currentBodyParts[i].sprite;
+                    case BodyPartType.RightArm:
+                        _rightArm.sprite = bodyPart.sprite;
                         _rightArm.color = new Color(_head.color.r, _head.color.g, _head.color.b, 1);
                         break;
 
-                    case (int)BodyPartType.LeftFoot:
-                        _leftFoot.sprite = BodyPartManager.currentBodyParts[i].sprite;
+                    case BodyPartType.LeftFoot:
+                        _leftFoot.sprite = bodyPart.sprite;
                         _leftFoot.color = new Color(_head.color.r, _head.color.g, _head.color.b, 1);
                         break;
 
-                    case (int)BodyPartType.RightFoot:
-                        _rightFoot.sprite = BodyPartManager.currentBodyParts[i].sprite;
+                    case BodyPartType.RightFoot:
+                        _rightFoot.sprite = bodyPart.sprite;
                         _rightFoot.color = new Color(_head.color.r, _head.color.g, _head.color.b, 1);
                         break;
                 }
             }
+        
         }
     }
 

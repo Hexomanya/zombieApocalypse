@@ -14,9 +14,10 @@ public class TemplatePanel : MonoBehaviour
     public void UpdateUI(BodyPartManager zombie)
     {
         ClearUI();
-        if(zombie.currentBodyParts[(int) bodyPartType] != null)
+        foreach (var bodyPart in zombie.currentBodyParts)
         {
-            Instantiate(uiBodyPart, transform);
+            if (bodyPart != null && bodyPart.Type == bodyPartType)
+                Instantiate(uiBodyPart, transform);
         }
     }
 

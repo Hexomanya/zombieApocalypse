@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class Horde : MonoBehaviour
 {
+    // Empty GameObject with a BodyPartManager Component
     public List<BodyPartManager> zombies;
+
+    public GameObject emptyBodyPartManager;
 
     public static Horde instance;
 
@@ -51,17 +54,6 @@ public class Horde : MonoBehaviour
         }
     }
 
-    public void AddZombie(BodyPartManager zombie)
-    {
-        if(zombies == null)
-        {
-            zombies = new List<BodyPartManager>();
-        }
-        zombies.Add(zombie);
-        if (onHordeChangedCallback != null)
-            onHordeChangedCallback.Invoke();
-    }
-
     public void AddEmptyZombie()
     {
         if (zombies == null)
@@ -72,8 +64,8 @@ public class Horde : MonoBehaviour
         
         if (zombies.Count > 0)
         {
-            var lastZombiesBodyParts = zombies[zombies.Count - 1].currentBodyParts;
-            if (lastZombiesBodyParts[0] == null && lastZombiesBodyParts[1] == null && lastZombiesBodyParts[3] == null && lastZombiesBodyParts[4] == null && lastZombiesBodyParts[5] == null)
+            // Do not add a new empty Zombie if the last Zombie in the List has no other BodyParts than a Torso
+            if(zombies[zombies.Count - 1].currentBodyParts.Count == 1)
             {
                 // Last Zombie only has a Torso!
                 Debug.Log("Can not add a zombie when the last one does not have BodyParts!");
@@ -81,32 +73,22 @@ public class Horde : MonoBehaviour
             }
                 
         }
-        
-        var newZombie = new BodyPartManager();
+
+        var newZombie = Instantiate(emptyBodyPartManager, transform).GetComponent<BodyPartManager>();
 
         // Empty zombies can not exist, they need at least a torso
         // Not elegant, this approach offers room for improvement
         foreach (var bodyPart in availableBodyParts)
         {
-            if (bodyPart.Type == BodyPartType.Torso)
+            if (bodyPart != null && bodyPart.Type == BodyPartType.Torso)
             {
-                newZombie.currentBodyParts[(int)BodyPartType.Torso] = bodyPart;
+                newZombie.AttachBodyPart(bodyPart);
             }
         }
 
-        AddZombie(newZombie);
+        zombies.Add(newZombie);
         if (onHordeChangedCallback != null)
             onHordeChangedCallback.Invoke();
     }
 
-    public void RemoveZombie(BodyPartManager zombie)
-    {
-        if (zombies == null)
-        {
-            return;
-        }
-        zombies.Remove(zombie);
-        if (onHordeChangedCallback != null)
-            onHordeChangedCallback.Invoke();
-    }
 }
