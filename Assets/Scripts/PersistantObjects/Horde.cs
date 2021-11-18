@@ -65,8 +65,7 @@ public class Horde : MonoBehaviour
         if (zombies.Count > 0)
         {
             // Do not add a new empty Zombie if the last Zombie in the List has no other BodyParts than a Torso
-            var lastZombiesBodyParts = zombies[zombies.Count - 1].currentBodyParts;
-            if (lastZombiesBodyParts[0] == null && lastZombiesBodyParts[1] == null && lastZombiesBodyParts[3] == null && lastZombiesBodyParts[4] == null && lastZombiesBodyParts[5] == null)
+            if(zombies[zombies.Count - 1].currentBodyParts.Count == 1)
             {
                 // Last Zombie only has a Torso!
                 Debug.Log("Can not add a zombie when the last one does not have BodyParts!");
@@ -81,9 +80,9 @@ public class Horde : MonoBehaviour
         // Not elegant, this approach offers room for improvement
         foreach (var bodyPart in availableBodyParts)
         {
-            if (bodyPart.Type == BodyPartType.Torso)
+            if (bodyPart != null && bodyPart.Type == BodyPartType.Torso)
             {
-                newZombie.currentBodyParts[(int)BodyPartType.Torso] = bodyPart;
+                newZombie.AttachBodyPart(bodyPart);
             }
         }
 
