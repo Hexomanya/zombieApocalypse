@@ -2143,7 +2143,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6343380689330445621}
         m_TargetAssemblyTypeName: ZombieEditorUI, Assembly-CSharp
-        m_MethodName: LoadTestScene
+        m_MethodName: LoadLevelSeletionScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
