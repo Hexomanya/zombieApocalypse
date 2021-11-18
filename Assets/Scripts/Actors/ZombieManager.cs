@@ -10,6 +10,8 @@ public class ZombieManager : ActorManagerBase
 
     void Start()
     {
+        if(Horde.instance == null) { return; }
+
         for (int i = 0; i < Horde.instance.zombies.Count; i++)
         {
             SpawnZombie(Horde.instance.zombies[i], i);
