@@ -10,7 +10,7 @@ namespace Assets.Scripts.Actors.ActorStates
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actor.WaypointIndex = actor.PatrollRoute.GetIndexOfClosestWaypoint(gameObject.transform.position);
-            actorType.UpdatePath(gameObject.transform.position, actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex), actor);
+            actorType.UpdatePath(gameObject.transform.position, actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex), actor, true);
             actor.AstarAI.canMove = true;
         }
 
@@ -22,9 +22,9 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            if (actor.AstarAI.reachedEndOfPath && !actor.AstarAI.pathPending)
+            if (Vector3.Distance(gameObject.transform.position, actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex)) < 2f)
             {
-                actor.WaypointIndex = actor.PatrollRoute.GetNextIndex(actor.WaypointIndex);                
+                actor.WaypointIndex = actor.PatrollRoute.GetNextIndex(actor.WaypointIndex);
             }
 
             actorType.UpdatePath(gameObject.transform.position, actor.PatrollRoute.GetWaypointPosition(actor.WaypointIndex), actor);

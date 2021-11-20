@@ -13,6 +13,6 @@ namespace Assets.Scripts.Actors.Interfaces
 
         public void DecideOnNextState(GameObject gameObject, IActor actor);
 
-        public void UpdatePath(Vector3 currentPos, Vector3 destination, IActor actor);
+        public void UpdatePath(Vector3 currentPos, Vector3 destination, IActor actor, bool forceCall = false, bool ignorePathBlocking = false);
     }
 }

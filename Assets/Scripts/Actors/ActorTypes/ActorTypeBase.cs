@@ -7,6 +7,8 @@ namespace Assets.Scripts.Actors.ActorTypes
 {
     public abstract class ActorTypeBase : IActorType
     {
+        private float pathUpdateTimer = 0f;
+
         protected IBehaviourState currentState = BehaviourStateProvider.Idle;
 
         public IBehaviourState CurrentState => currentState;
@@ -17,26 +19,41 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         public abstract void DecideOnNextState(GameObject gameObject, IActor actor);
 
-        public void UpdatePath(Vector3 currentPos, Vector3 destination, IActor actor)
+        public void UpdatePath(Vector3 currentPos, Vector3 destination, IActor actor, bool forceCall = false, bool ignorePathBlocking = false)
         {
+            if(Path != null)
+            {
+                for (int i = 0; i < Path.vectorPath.Count - 1; i++)
+                {
+                    Debug.DrawLine(Path.vectorPath[i], Path.vectorPath[i + 1], Color.green);
+                }
+            }
+
+            if (pathUpdateTimer > 0f && !forceCall)
+            {
+                pathUpdateTimer -= Time.deltaTime;
+                return;
+            }
+
             Path = ABPath.Construct(currentPos, destination);
-            Path.traversalProvider = new BlockManager.TraversalProvider(actor.BlockManager, BlockManager.BlockMode.OnlySelector, actor.ActorManager.GetNodeBlockers(actor.NodeBlocker));
+            if (!ignorePathBlocking)
+            {
+                Path.traversalProvider = new BlockManager.TraversalProvider(actor.BlockManager, BlockManager.BlockMode.OnlySelector, actor.ActorManager.GetNodeBlockers(actor.NodeBlocker));
+            }
+            
             AstarPath.StartPath(Path);
             Path.BlockUntilCalculated();
             if (!Path.error)
             {
                 actor.DeativatePathBlocking = false;
                 actor.AstarAI.SetPath(Path);
-                // Draw the path in the scene view
-                for (int i = 0; i < Path.vectorPath.Count - 1; i++)
-                {
-                    Debug.DrawLine(Path.vectorPath[i], Path.vectorPath[i + 1], Color.green);
-                }
             }
             else
             {
                 actor.DeativatePathBlocking = true;
             }
+
+            pathUpdateTimer = 0.1f * Vector3.Distance(Path.startPoint, Path.endPoint);
         }
 
         protected void SwitchState(GameObject gameObject, IActor actor, IBehaviourState nextState)
