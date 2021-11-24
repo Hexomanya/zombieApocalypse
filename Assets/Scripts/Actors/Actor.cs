@@ -17,7 +17,7 @@ namespace Assets.Scripts.Actors
         public float MeleeDamage { get; set; } = 5f;
 
         [field: SerializeField]
-        public float MeleeAttackCooldown { get; private set; } = 2f;
+        public float MeleeAttackCooldown { get; set; } = 2f;
 
         [field: SerializeField]
         public float ConcentrationTime { get; set; } = 5f;
@@ -54,6 +54,9 @@ namespace Assets.Scripts.Actors
         public BlockManager BlockManager { get; private set; }
 
         public ActorManagerBase ActorManager { get; private set; }
+
+        public BodyPartManager BodyPartManager { get; set; }
+
         public bool DeativatePathBlocking { get; set; }
 
         void Start()

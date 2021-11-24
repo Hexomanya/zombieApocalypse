@@ -51,6 +51,7 @@ namespace Assets.Scripts.Actors.ActorTypes
             else
             {
                 actor.DeativatePathBlocking = true;
+                actor.DetectionHandler.gameObject.transform.parent.position += new Vector3(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f), 0f);
             }
 
             pathUpdateTimer = 0.1f * Vector3.Distance(Path.startPoint, Path.endPoint);

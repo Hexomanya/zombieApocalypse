@@ -12,7 +12,7 @@ namespace Assets.Scripts.Actors
     
         void Start()
         {
-            gameObject.GetComponent<CircleCollider2D>().radius = detectionRange;
+            SetDetectionRange(detectionRange);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +32,12 @@ namespace Assets.Scripts.Actors
         private void OnTriggerExit2D(Collider2D collision)
         {
             possibleTargets.Remove(collision.GetComponent<AttackableObject>());
+        }
+
+        public void SetDetectionRange(float range)
+        {
+            detectionRange = range;
+            gameObject.GetComponent<CircleCollider2D>().radius = detectionRange;
         }
 
         public bool IsAnyTargetInRange()

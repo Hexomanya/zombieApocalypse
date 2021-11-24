@@ -45,9 +45,12 @@ public class ZombieManager : ActorManagerBase
         gameObject.transform.position = SpawnPositions.Instance.Positions[posIndex].position;
 
         IActor actor = gameObject.GetComponent<IActor>();
+        actor.BodyPartManager = bodyPartManager;
         gameObject.GetComponent<IAstarAI>().maxSpeed = bodyPartManager.GetAllBodyPartStatModifiers().SpeedModifier;
-        actor.MeleeDamage = bodyPartManager.GetAllBodyPartStatModifiers().DamageModifier;
+        actor.MeleeDamage = bodyPartManager.GetAllBodyPartStatModifiers().MeleeDamageModifier;
         actor.ConcentrationTime = bodyPartManager.GetAllBodyPartStatModifiers().IntelligenceModifier;
+        actor.MeleeAttackCooldown = bodyPartManager.GetAllBodyPartStatModifiers().MeleeCooldownTime;
+        gameObject.GetComponentInChildren<DetectionHandler>().SetDetectionRange(bodyPartManager.GetAllBodyPartStatModifiers().DetectionRange);
         gameObject.GetComponent<AttackableObject>().MaxHealth = bodyPartManager.GetAllBodyPartStatModifiers().HealthModifier;
 
         blockerList.Add(gameObject.GetComponent<SingleNodeBlocker>());
@@ -55,20 +58,20 @@ public class ZombieManager : ActorManagerBase
 
     public override void ActorDied(GameObject gameObject)
     {
-        BodyPartManager bodyPartManager = gameObject.GetComponent<BodyPartManager>();
-        float dropRate = Random.Range(0.25f, 0.5f);
+        BodyPartManager bodyPartManager = gameObject.GetComponent<IActor>().BodyPartManager;
         foreach (var item in bodyPartManager.currentBodyParts)
         {
             if (item.type != BodyPartType.Torso)
             {
                 float roll = Random.Range(0f, 1f);
-                if (roll <= dropRate)
+                if (roll <= GameManager.Instance.BodyPartDropChance)
                 {
                     Inventory.instance.AddNewBodyPart(item);
                 }
             }
         }
 
+        Horde.instance.RemoveZombie(bodyPartManager);
         DeleteActor(gameObject);
     }
 }

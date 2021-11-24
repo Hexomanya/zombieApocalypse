@@ -9,7 +9,7 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actorType.UpdatePath(gameObject.transform.position, actor.SpawnPos, actor);
+            actorType.UpdatePath(gameObject.transform.position, actor.SpawnPos, actor, true);
             actor.AstarAI.canMove = true;
         }
 

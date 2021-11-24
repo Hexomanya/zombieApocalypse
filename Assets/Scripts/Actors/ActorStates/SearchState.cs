@@ -11,7 +11,7 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             if (actor.LastKnownTargetPosition != null)
             {
-                actorType.UpdatePath(gameObject.transform.position, actor.LastKnownTargetPosition.position, actor);
+                actorType.UpdatePath(gameObject.transform.position, actor.LastKnownTargetPosition.position, actor, true);
                 actor.AstarAI.canMove = true;
             }
         }
