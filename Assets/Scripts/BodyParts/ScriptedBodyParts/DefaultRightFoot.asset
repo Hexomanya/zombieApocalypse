@@ -16,7 +16,9 @@ MonoBehaviour:
   sprite: {fileID: 8842116216140488249, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   type: 5
   zombieType: 0
-  damageModifier: 2
-  healthModifier: 1
+  meleeDamageModifier: 1
+  meleeCooldownTime: -0.1
+  healthModifier: 10
   speedModifier: 1
   intelligenceModifier: 0
+  detectionRange: 0

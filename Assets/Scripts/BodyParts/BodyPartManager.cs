@@ -29,16 +29,16 @@ public class BodyPartManager : MonoBehaviour
     {
         var result = new BodyPartStatModifier();
 
-        for (int i = 0; i < currentBodyParts.Count; i++)
+        foreach (var item in currentBodyParts)
         {
-            if(currentBodyParts[i] != null)
-            {
-                result.DamageModifier += currentBodyParts[i].damageModifier;
-                result.HealthModifier += currentBodyParts[i].healthModifier;
-                result.SpeedModifier += currentBodyParts[i].speedModifier;
-                result.IntelligenceModifier += currentBodyParts[i].intelligenceModifier;
-            }
+            result.MeleeDamageModifier += item.meleeDamageModifier;
+            result.MeleeCooldownTime += item.meleeCooldownTime;
+            result.HealthModifier += item.healthModifier;
+            result.SpeedModifier += item.speedModifier;
+            result.IntelligenceModifier += item.intelligenceModifier;
+            result.DetectionRange += item.detectionRange;
         }
+
         return result;
     }
 
