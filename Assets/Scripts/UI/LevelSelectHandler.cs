@@ -4,19 +4,14 @@ using System.Collections.Generic;
 
 public class LevelSelectHandler : MonoBehaviour
 {
-    [SerializeField] List<GameObject> disableOnStart = new List<GameObject>();
-
-    private void Start()
-    {
-        foreach (GameObject item in disableOnStart)
-        {
-            item.SetActive(false);
-        }
-    }
     public void LevelSelectButtonPressed(string sceneName)
     {
         switch (sceneName)
         {
+            case "Level00":
+                Debug.Log("Level 0 Loaded");
+                SceneManager.LoadScene("Level00");
+                break;
             case "Level01":
                 Debug.Log("Level 1 Loaded");
                 SceneManager.LoadScene("Level01");

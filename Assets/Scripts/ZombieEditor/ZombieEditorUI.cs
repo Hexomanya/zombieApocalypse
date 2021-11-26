@@ -69,6 +69,12 @@ public class ZombieEditorUI : MonoBehaviour
     {
         _inventory.onBodyPartsChangedCallback = null;
         _horde.onHordeChangedCallback = null;
+
+        if (LevelProgression.instance != null)
+        {
+            LevelProgression.instance.UnlockNextLevel();
+        }
+
         SceneManager.LoadScene("LevelSelection");
     }
 

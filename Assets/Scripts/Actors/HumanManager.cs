@@ -1,13 +1,20 @@
 using Assets.Scripts.Actors;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HumanManager : ActorManagerBase
 {
+    [SerializeField] private bool debugSkipWon = true;
+
     public void Update()
     {
-        if (transform.childCount == 0)
+        if (transform.childCount == 0 || debugSkipWon)
         {
             endScreenPopup.LevelWon();
+
+            string sceneName = SceneManager.GetActiveScene().name;
+            LevelProgression.instance.GetLevelByName(sceneName).Completed = true;
+            Destroy(this);
         }
     }
 
