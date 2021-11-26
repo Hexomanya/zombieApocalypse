@@ -5,9 +5,24 @@ public class BodyPartManager : MonoBehaviour
 {
     public List<BodyPart> currentBodyParts = new List<BodyPart>();
 
-    public void AttachBodyPart(BodyPart bodyPart)
+    public bool AttachBodyPart(BodyPart bodyPart)
     {
-        currentBodyParts.Add(bodyPart);
+        if (!HasBodyPartOfType(bodyPart.Type))
+        {
+            currentBodyParts.Add(bodyPart);
+            return true;
+        }
+        return false;
+    }
+
+    public bool HasBodyPartOfType(BodyPartType bodyPartType)
+    {
+        foreach(var bodyPart in currentBodyParts)
+        {
+            if (bodyPart.Type == bodyPartType)
+                return true;
+        }
+        return false;
     }
 
     public BodyPartStatModifier GetAllBodyPartStatModifiers()

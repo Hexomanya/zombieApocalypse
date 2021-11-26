@@ -17,9 +17,9 @@ public class BodyPart : ScriptableObject
 
     public float intelligenceModifier = 0f;
 
-    public void AttachToSelectedZombie()
+    public bool AttachToSelectedZombie()
     {
-        Horde.instance.AttachBodyPartToSelectedZombie(this);
+        return Horde.instance.AttachBodyPartToSelectedZombie(this);
     }
 
     public BodyPart New()

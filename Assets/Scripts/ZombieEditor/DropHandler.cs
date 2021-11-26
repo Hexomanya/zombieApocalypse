@@ -14,11 +14,13 @@ public class DropHandler : MonoBehaviour, IDropHandler
             DragHandler dragHandler = eventData.pointerDrag.gameObject.GetComponent<DragHandler>();
             if (dragHandler != null && dragHandler.bodyPart.Type == BodyPartType)
             {
-                eventData.pointerDrag.gameObject.transform.position = gameObject.transform.position;
-                dragHandler.WasPlaced = true;
-                eventData.pointerDrag.gameObject.transform.SetParent(gameObject.transform);
                 // Place BodyPart on selected Zombie
-                dragHandler.bodyPart.AttachToSelectedZombie();
+                if (dragHandler.bodyPart.AttachToSelectedZombie())
+                {
+                    dragHandler.WasPlaced = true;
+                    eventData.pointerDrag.gameObject.transform.position = gameObject.transform.position;
+                    eventData.pointerDrag.gameObject.transform.SetParent(gameObject.GetComponentInChildren<TemplatePanel>().transform);
+                }
             }
         }
        

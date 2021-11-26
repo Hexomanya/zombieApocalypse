@@ -28,13 +28,16 @@ public class Horde : MonoBehaviour
         instance = this;
     }
 
-    public void AttachBodyPartToSelectedZombie(BodyPart bodyPart)
+
+    /// <returns>True if BodyPart was attached successfully, else false</returns>
+    public bool AttachBodyPartToSelectedZombie(BodyPart bodyPart)
     {
         if (zombies == null || zombies.Count <= SelectedIndex)
-            return;
+            return false;
 
-        zombies[SelectedIndex].AttachBodyPart(bodyPart);
+        return zombies[SelectedIndex].AttachBodyPart(bodyPart);
     }
+
 
     public BodyPartManager GetSelectedZombie()
     {
@@ -87,6 +90,7 @@ public class Horde : MonoBehaviour
         }
 
         zombies.Add(newZombie);
+        SelectedIndex = zombies.Count - 1;
         if (onHordeChangedCallback != null)
             onHordeChangedCallback.Invoke();
     }

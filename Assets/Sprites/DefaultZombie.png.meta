@@ -20,6 +20,30 @@ TextureImporter:
   - first:
       213: 9211052458692073003
     second: Zombie_5
+  - first:
+      213: -1977811604655986376
+    second: Zombie_6
+  - first:
+      213: 2485403828518691469
+    second: Zombie_7
+  - first:
+      213: 8903996987598677169
+    second: DefaultZombie_0
+  - first:
+      213: 2152377124456824251
+    second: DefaultZombie_1
+  - first:
+      213: -398297275650540392
+    second: DefaultZombie_2
+  - first:
+      213: -1464266523200089135
+    second: DefaultZombie_3
+  - first:
+      213: -7419302531251149107
+    second: DefaultZombie_4
+  - first:
+      213: 8842116216140488249
+    second: DefaultZombie_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_0
+      name: DefaultZombie_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 579
-        width: 222
-        height: 197
+        x: 338
+        y: 620
+        width: 234
+        height: 207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25d02004545698350800000000000000
-      internalID: 6019453725058403666
+      spriteID: 1b4a7f6b51a519b70800000000000000
+      internalID: 8903996987598677169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_1
+      name: DefaultZombie_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 340
-        width: 89
-        height: 219
+        x: 235
+        y: 376
+        width: 94
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f11c2037e09608dd0800000000000000
-      internalID: -2485871483528494817
+      spriteID: bbdfce54797cedd10800000000000000
+      internalID: 2152377124456824251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_2
+      name: DefaultZombie_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 304
-        width: 137
-        height: 223
+        x: 370
+        y: 316
+        width: 144
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d05cdf8828d53750800000000000000
-      internalID: 6284166523789267160
+      spriteID: 89cf7d1fcb6f87af0800000000000000
+      internalID: -398297275650540392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_3
+      name: DefaultZombie_3
       rect:
         serializedVersion: 2
-        x: 309
-        y: 327
-        width: 95
-        height: 232
+        x: 613
+        y: 308
+        width: 114
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 073cbe8304e39d880800000000000000
-      internalID: -8585762769051335824
+      spriteID: 1d3992cea51edabe0800000000000000
+      internalID: -1464266523200089135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_4
+      name: DefaultZombie_4
       rect:
         serializedVersion: 2
-        x: 79
-        y: 22
-        width: 115
-        height: 267
+        x: 236
+        y: 41
+        width: 120
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24cdea9ec218462f0800000000000000
-      internalID: -980516788960830398
+      spriteID: dc66e9f28a7590990800000000000000
+      internalID: -7419302531251149107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_5
+      name: DefaultZombie_5
       rect:
         serializedVersion: 2
-        x: 249
-        y: 36
-        width: 127
-        height: 249
+        x: 525
+        y: 55
+        width: 135
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2654dfa86b34df70800000000000000
-      internalID: 9211052458692073003
+      spriteID: 93e56cdd9d185ba70800000000000000
+      internalID: 8842116216140488249
       vertices: []
       indices: 
       edges: []
