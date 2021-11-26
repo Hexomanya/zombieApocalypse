@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
-  m_Name: LeftArm
+  m_Name: DefaultTorso
   m_EditorClassIdentifier: 
-  name: LeftArm
-  sprite: {fileID: -2485871483528494817, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
-  Type: 1
-  damageModifier: 5
-  healthModifier: 2
-  speedModifier: 0
-  intelligenceModifier: 0
+  name: Torso
+  sprite: {fileID: 6284166523789267160, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  Type: 2
+  damageModifier: 1
+  healthModifier: 10
+  speedModifier: 1
+  intelligenceModifier: 3

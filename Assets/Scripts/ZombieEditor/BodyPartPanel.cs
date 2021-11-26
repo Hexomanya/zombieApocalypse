@@ -13,14 +13,15 @@ public class BodyPartPanel : MonoBehaviour
         bodyPartSlots = GetComponentsInChildren<BodyPartSlot>();
     }
 
-    public void ToggleBodyPartSlots()
+    public void ToggleBodyPartSlots(bool expand)
     {
-        isExpanded = !isExpanded;
+        isExpanded = expand;
         foreach (var slot in bodyPartSlots)
         {
             slot.gameObject.SetActive(isExpanded);
         }
     }
+
 
     public void InitializeUI(List<BodyPart> bodyParts)
     {
@@ -28,7 +29,7 @@ public class BodyPartPanel : MonoBehaviour
         {
             slot.InitializeUI(bodyParts);
         }
-        ToggleBodyPartSlots();
+        ToggleBodyPartSlots(false);
     }
 
     public void UpdateUI(List<BodyPart> bodyParts)

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
-  m_Name: Head
+  m_Name: DefaultRightArm
   m_EditorClassIdentifier: 
-  name: Head
-  sprite: {fileID: 6019453725058403666, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
-  Type: 0
-  damageModifier: 3
+  name: RightArm
+  sprite: {fileID: -8585762769051335824, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  Type: 3
+  damageModifier: 5
   healthModifier: 2
   speedModifier: 0
-  intelligenceModifier: 5
+  intelligenceModifier: 0

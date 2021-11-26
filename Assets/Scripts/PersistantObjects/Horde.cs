@@ -81,13 +81,16 @@ public class Horde : MonoBehaviour
 
         // Empty zombies can not exist, they need at least a torso
         // Not elegant, this approach offers room for improvement
+        List<BodyPart> allTorsos = new List<BodyPart>();
         foreach (var bodyPart in availableBodyParts)
         {
             if (bodyPart != null && bodyPart.Type == BodyPartType.Torso)
             {
-                newZombie.AttachBodyPart(bodyPart);
+                allTorsos.Add(bodyPart);
             }
         }
+
+        newZombie.AttachBodyPart(allTorsos[Random.Range(0,allTorsos.Count)]);
 
         zombies.Add(newZombie);
         SelectedIndex = zombies.Count - 1;

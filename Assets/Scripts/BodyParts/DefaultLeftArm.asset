@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
-  m_Name: LeftFoot
+  m_Name: DefaultLeftArm
   m_EditorClassIdentifier: 
-  name: LeftFoot
-  sprite: {fileID: -980516788960830398, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
-  Type: 4
-  damageModifier: 2
-  healthModifier: 1
-  speedModifier: 1
+  name: LeftArm
+  sprite: {fileID: -2485871483528494817, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  Type: 1
+  damageModifier: 5
+  healthModifier: 2
+  speedModifier: 0
   intelligenceModifier: 0

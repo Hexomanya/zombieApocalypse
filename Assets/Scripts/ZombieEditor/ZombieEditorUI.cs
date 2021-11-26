@@ -64,6 +64,14 @@ public class ZombieEditorUI : MonoBehaviour
         }
     }
 
+    public void FoldAllBodyPartPanels()
+    {
+        foreach (var panel in _bodyPartPanels)
+        {
+            panel.ToggleBodyPartSlots(false);
+        }
+    }
+
 
     public void LoadLevelSeletionScreen()
     {
