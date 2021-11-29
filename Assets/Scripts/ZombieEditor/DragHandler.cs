@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
@@ -13,19 +13,26 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
 
     private CanvasGroup canvasGroup;
 
+    private Image image;
+
     private Vector3 dragStartingPosition;
 
     private Inventory inventory;
 
-    private void Start()
-    {
-        inventory = Inventory.instance;
-    }
 
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        //image = GetComponentInChildren<Image>();
     }
+
+    private void Start()
+    {
+        inventory = Inventory.instance;
+        //image.sprite = bodyPart.sprite;
+    }
+   
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = false;

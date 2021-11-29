@@ -6,8 +6,6 @@ public class BodyPartPanel : MonoBehaviour
 {
     private BodyPartSlot[] bodyPartSlots;
 
-    private bool isExpanded = true;
-
     private void Awake()
     {
         bodyPartSlots = GetComponentsInChildren<BodyPartSlot>();
@@ -15,10 +13,15 @@ public class BodyPartPanel : MonoBehaviour
 
     public void ToggleBodyPartSlots(bool expand)
     {
-        isExpanded = expand;
+        var imageComponent = GetComponent<Image>();
+        if (expand)
+            imageComponent.color = Color.white;
+        else
+            imageComponent.color = Color.grey;
+
         foreach (var slot in bodyPartSlots)
         {
-            slot.gameObject.SetActive(isExpanded);
+            slot.gameObject.SetActive(expand);
         }
     }
 

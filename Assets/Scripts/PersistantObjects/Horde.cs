@@ -101,7 +101,6 @@ public class Horde : MonoBehaviour
 
     public void RemoveTorsoOnlyZombies()
     {
-        Debug.Log("In Remove Torso Only");
         if (zombies[zombies.Count-1].currentBodyParts.Count <= 1)
         {
             zombies.RemoveAt(zombies.Count - 1);

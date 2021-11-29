@@ -18,6 +18,8 @@ public class ZombieEditorUI : MonoBehaviour
         _templatePanels = GetComponentsInChildren<TemplatePanel>();
         _bodyPartPanels = GetComponentsInChildren<BodyPartPanel>();
         _hordePanel = GetComponentInChildren<HordePanel>();
+
+        
     }
 
 
@@ -30,10 +32,8 @@ public class ZombieEditorUI : MonoBehaviour
         _horde = Horde.instance;
         _horde.onHordeChangedCallback += UpdateUI;
 
-        if(_horde.zombies.Count == 0)
-        {
+        if (_horde.zombies.Count == 0)
             _horde.AddEmptyZombie();
-        }
 
         InitializeUI();
     }
@@ -75,7 +75,6 @@ public class ZombieEditorUI : MonoBehaviour
 
     public void LoadLevelSeletionScreen()
     {
-        Debug.Log("To Level Selection Screen");
         _horde.RemoveTorsoOnlyZombies();
         _inventory.onBodyPartsChangedCallback = null;
         _horde.onHordeChangedCallback = null;
