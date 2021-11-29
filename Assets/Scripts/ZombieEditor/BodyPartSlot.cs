@@ -10,15 +10,18 @@ public class BodyPartSlot : MonoBehaviour
 
     public BodyPartType bodyPartType;
 
+    public ZombieType zombieType;
+
 
     public void InitializeUI(List<BodyPart> bodyParts)
     {
         UpdateBodyPartCount(bodyParts);
         foreach (var bodyPart in bodyParts)
         {
-            if (bodyPart.Type == bodyPartType)
+            if (bodyPart.type == bodyPartType && bodyPart.zombieType == zombieType)
             {
-                Instantiate(bodyPartPrefab, transform);
+                var dragHandler = Instantiate(bodyPartPrefab, transform).GetComponent<DragHandler>();
+                dragHandler.bodyPart = bodyPart;
             }
         }
     }
@@ -28,7 +31,7 @@ public class BodyPartSlot : MonoBehaviour
         int count = 0;
         foreach (var bodyPart in bodyParts)
         {
-            if (bodyPart.Type == bodyPartType)
+            if (bodyPart.type == bodyPartType && bodyPart.zombieType == zombieType)
                 count++;
         }
 

@@ -48,7 +48,7 @@ public class ZombieManager : ActorManagerBase
         float dropRate = Random.Range(0.25f, 0.5f);
         foreach (var item in bodyPartManager.currentBodyParts)
         {
-            if (item.Type != BodyPartType.Torso)
+            if (item.type != BodyPartType.Torso)
             {
                 float roll = Random.Range(0f, 1f);
                 if (roll <= dropRate)

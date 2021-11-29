@@ -12,7 +12,7 @@ public class DropHandler : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null)
         {
             DragHandler dragHandler = eventData.pointerDrag.gameObject.GetComponent<DragHandler>();
-            if (dragHandler != null && dragHandler.bodyPart.Type == BodyPartType)
+            if (dragHandler != null && dragHandler.bodyPart.type == BodyPartType)
             {
                 // Place BodyPart on selected Zombie
                 if (dragHandler.bodyPart.AttachToSelectedZombie())

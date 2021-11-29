@@ -84,7 +84,7 @@ public class Horde : MonoBehaviour
         List<BodyPart> allTorsos = new List<BodyPart>();
         foreach (var bodyPart in availableBodyParts)
         {
-            if (bodyPart != null && bodyPart.Type == BodyPartType.Torso)
+            if (bodyPart != null && bodyPart.type == BodyPartType.Torso)
             {
                 allTorsos.Add(bodyPart);
             }
@@ -95,15 +95,15 @@ public class Horde : MonoBehaviour
 
         zombies.Add(newZombie);
         SelectedIndex = zombies.Count - 1;
-        if (onHordeChangedCallback != null)
-            onHordeChangedCallback.Invoke();
+        onHordeChangedCallback?.Invoke();
     }
 
     public void RemoveTorsoOnlyZombies()
     {
-        if (zombies[zombies.Count-1].currentBodyParts.Count <= 1)
+        for (int i = 0; i < zombies.Count; i++)
         {
-            zombies.RemoveAt(zombies.Count - 1);
+            if (zombies[i].currentBodyParts.Count <= 1)
+                zombies.RemoveAt(i);
         }
     }
 

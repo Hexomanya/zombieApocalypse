@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: LongHairHead
   sprite: {fileID: -6596767587272577575, guid: 82531937b01f3df40a1397f17b7651b8, type: 3}
-  Type: 0
+  type: 0
+  zombieType: 2
   damageModifier: 0
   healthModifier: 0
   speedModifier: 0

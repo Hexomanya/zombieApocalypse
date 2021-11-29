@@ -16,8 +16,11 @@ public class TemplatePanel : MonoBehaviour
         ClearUI();
         foreach (var bodyPart in zombie.currentBodyParts)
         {
-            if (bodyPart != null && bodyPart.Type == bodyPartType)
-                Instantiate(uiBodyPart, transform);
+            if (bodyPart != null && bodyPart.type == bodyPartType)
+            {
+                var dragHandler = Instantiate(uiBodyPart, transform).GetComponent<DragHandler>();
+                dragHandler.bodyPart = bodyPart;
+            }
         }
     }
 

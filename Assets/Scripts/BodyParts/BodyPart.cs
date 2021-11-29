@@ -7,7 +7,9 @@ public class BodyPart : ScriptableObject
 
     public Sprite sprite = null;
 
-    public BodyPartType Type;
+    public BodyPartType type;
+
+    public ZombieType zombieType;
 
     public float damageModifier = 0f;
 
@@ -27,7 +29,7 @@ public class BodyPart : ScriptableObject
         BodyPart bodyPart = CreateInstance<BodyPart>();
         bodyPart.name = name;
         bodyPart.sprite = sprite;
-        bodyPart.Type = Type;
+        bodyPart.type = type;
         bodyPart.damageModifier = damageModifier;
         bodyPart.healthModifier = healthModifier;
         bodyPart.speedModifier = speedModifier;

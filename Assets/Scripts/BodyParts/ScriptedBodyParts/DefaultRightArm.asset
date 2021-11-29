@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: DefaultRightArm
   sprite: {fileID: -1464266523200089135, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
-  Type: 3
+  type: 3
+  zombieType: 0
   damageModifier: 5
   healthModifier: 2
   speedModifier: 0

@@ -7,7 +7,7 @@ public class BodyPartManager : MonoBehaviour
 
     public bool AttachBodyPart(BodyPart bodyPart)
     {
-        if (!HasBodyPartOfType(bodyPart.Type))
+        if (!HasBodyPartOfType(bodyPart.type))
         {
             currentBodyParts.Add(bodyPart);
             return true;
@@ -19,7 +19,7 @@ public class BodyPartManager : MonoBehaviour
     {
         foreach(var bodyPart in currentBodyParts)
         {
-            if (bodyPart.Type == bodyPartType)
+            if (bodyPart.type == bodyPartType)
                 return true;
         }
         return false;

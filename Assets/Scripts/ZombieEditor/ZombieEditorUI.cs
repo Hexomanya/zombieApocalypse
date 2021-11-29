@@ -13,13 +13,14 @@ public class ZombieEditorUI : MonoBehaviour
 
     private HordePanel _hordePanel;
 
+    private TorsoTemplate _torsoTemplate;
+
     void Awake()
     {
         _templatePanels = GetComponentsInChildren<TemplatePanel>();
         _bodyPartPanels = GetComponentsInChildren<BodyPartPanel>();
         _hordePanel = GetComponentInChildren<HordePanel>();
-
-        
+        _torsoTemplate = GetComponentInChildren<TorsoTemplate>();
     }
 
 
@@ -41,6 +42,7 @@ public class ZombieEditorUI : MonoBehaviour
     void InitializeUI()
     {
         _hordePanel.InitializeUI(_horde.zombies);
+        _torsoTemplate.InitializeUI(_horde.GetSelectedZombie());
         foreach (var panel in _templatePanels)
         {
             panel.InitializeUI(_horde.GetSelectedZombie());
@@ -54,6 +56,7 @@ public class ZombieEditorUI : MonoBehaviour
     void UpdateUI()
     {
         _hordePanel.UpdateUI(_horde.zombies);
+        _torsoTemplate.UpdateUI(_horde.GetSelectedZombie());
         foreach (var panel in _templatePanels)
         {
             panel.InitializeUI(_horde.GetSelectedZombie());
