@@ -75,6 +75,8 @@ public class ZombieEditorUI : MonoBehaviour
 
     public void LoadLevelSeletionScreen()
     {
+        Debug.Log("To Level Selection Screen");
+        _horde.RemoveTorsoOnlyZombies();
         _inventory.onBodyPartsChangedCallback = null;
         _horde.onHordeChangedCallback = null;
         SceneManager.LoadScene("LevelSelection");

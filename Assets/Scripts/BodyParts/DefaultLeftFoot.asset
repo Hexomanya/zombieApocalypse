@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultLeftFoot
   m_EditorClassIdentifier: 
   name: LeftFoot
-  sprite: {fileID: -980516788960830398, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  sprite: {fileID: -7419302531251149107, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   Type: 4
   damageModifier: 2
   healthModifier: 1

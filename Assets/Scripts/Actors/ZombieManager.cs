@@ -14,11 +14,7 @@ public class ZombieManager : ActorManagerBase
 
         for (int i = 0; i < Horde.instance.zombies.Count; i++)
         {
-            // Does Zombie have more than a Torso
-            if (Horde.instance.zombies[i].currentBodyParts.Count > 1)
-            {
-                SpawnZombie(Horde.instance.zombies[i], i);
-            }
+            SpawnZombie(Horde.instance.zombies[i], i);
         }
 
         InitializeNodeBlocker();

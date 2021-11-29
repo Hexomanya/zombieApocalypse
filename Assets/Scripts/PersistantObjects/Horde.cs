@@ -90,12 +90,22 @@ public class Horde : MonoBehaviour
             }
         }
 
-        newZombie.AttachBodyPart(allTorsos[Random.Range(0,allTorsos.Count)]);
+        // Give new Zombie a Random Torso
+        newZombie.AttachBodyPart(allTorsos[Random.Range(0, allTorsos.Count)]);
 
         zombies.Add(newZombie);
         SelectedIndex = zombies.Count - 1;
         if (onHordeChangedCallback != null)
             onHordeChangedCallback.Invoke();
+    }
+
+    public void RemoveTorsoOnlyZombies()
+    {
+        Debug.Log("In Remove Torso Only");
+        if (zombies[zombies.Count-1].currentBodyParts.Count <= 1)
+        {
+            zombies.RemoveAt(zombies.Count - 1);
+        }
     }
 
 }

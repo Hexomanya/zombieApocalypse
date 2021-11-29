@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultRightArm
   m_EditorClassIdentifier: 
   name: RightArm
-  sprite: {fileID: -8585762769051335824, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  sprite: {fileID: -1464266523200089135, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   Type: 3
   damageModifier: 5
   healthModifier: 2

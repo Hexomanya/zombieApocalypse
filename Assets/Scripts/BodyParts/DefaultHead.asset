@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultHead
   m_EditorClassIdentifier: 
   name: Head
-  sprite: {fileID: 6019453725058403666, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
+  sprite: {fileID: 8903996987598677169, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   Type: 0
   damageModifier: 3
   healthModifier: 2
