@@ -78,6 +78,11 @@ public class ZombieEditorUI : MonoBehaviour
 
     public void LoadLevelSeletionScreen()
     {
+        if (_horde.zombies.Count <= 1 && _horde.zombies[0].currentBodyParts.Count <= 1)
+        {
+            Debug.Log("Can not start Level with 0 Zombies");
+            return;
+        }
         _horde.RemoveTorsoOnlyZombies();
         _inventory.onBodyPartsChangedCallback = null;
         _horde.onHordeChangedCallback = null;
