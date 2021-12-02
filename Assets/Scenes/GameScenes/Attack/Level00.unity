@@ -379,6 +379,148 @@ PrefabInstance:
       objectReference: {fileID: 36930622}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+--- !u!1001 &155707002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 659639327}
+    m_Modifications:
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_text
+      value: 'Are you nervous? Well, you shouldn''t be. It''s just a bunch of meat
+        sacks after all. They don''t even have guns!
+
+        
+
+        Now to
+        the important parts:
+
+        - To move your hoard, just click on the position
+        you want them to move with the left mouse button.
+
+        - To move the
+        camera, use the WSAD-Keys or bring your cursor near the screen border.
+
+        
+
+        Easy
+        enough, isn''t it?
+
+        
+
+        It is essential that you kill as
+        many survivors as you can. Some will fight and some will run away. Just kill
+        everything nearby and make sure you lose as few zombies as you can.
+
+        
+
+        Have
+        fun killing!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501829162399066, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_text
+      value: Your first assault!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409589, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_Name
+      value: TutorialPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -460
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -260
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409591, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+--- !u!224 &155707003 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+  m_PrefabInstance: {fileID: 155707002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &223088208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2483,10 +2625,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2527,6 +2669,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2578804126224601723}
+  - {fileID: 155707003}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

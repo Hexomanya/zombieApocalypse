@@ -39,12 +39,21 @@ public class LevelProgression : MonoBehaviour
         {
             if (levels[currentLevel-1].Completed)
             {
+                levels[currentLevel - 1].Locked = true;
                 levels[currentLevel].Locked = false;
                 currentLevel++;
             }
             else
             {
                 Debug.Log("Tried to Unlock Level, without completing it.");
+            }
+        }
+        else
+        {
+            GameManager.AllLevelsComplete = true;
+            foreach (Level level in Levels)
+            {
+                level.Locked = false;
             }
         }
     }

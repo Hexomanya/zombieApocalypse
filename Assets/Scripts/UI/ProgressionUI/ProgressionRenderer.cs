@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
 public class ProgressionRenderer : MonoBehaviour
 {
     [SerializeField] private GameObject[] mapMarkers;
+    [SerializeField] private GameObject[] connectingLines = new GameObject[3];
+    [SerializeField] private PopUpMessageHandler messageHandler;
 
     private Level[] levels;
-    private LineRenderer lineRenderer;
 
     private void Start()
     {
         levels = LevelProgression.instance.Levels;
-        lineRenderer = this.GetComponent<LineRenderer>();
 
         if(mapMarkers.Length != levels.Length)
         {
@@ -23,6 +22,11 @@ public class ProgressionRenderer : MonoBehaviour
 
         ActivateMapMarkers();
         DrawConnectingLine();
+
+        if (GameManager.AllLevelsComplete)
+        {
+            messageHandler.ShowMessage("Congratulations! You completed all Levels and insured the downfall of humanity! You can now replay all levels!");
+        }
     }
 
     private void ActivateMapMarkers()
@@ -31,28 +35,31 @@ public class ProgressionRenderer : MonoBehaviour
         {
             if (levels[i].Locked)
             {
-                mapMarkers[i].SetActive(false);
+                if (levels[i].Completed)
+                {
+                    PopUpHandler handler = mapMarkers[i].GetComponentInChildren<PopUpHandler>(true);
+                    handler.Deactivate();
+                }
+                else
+                {
+                    mapMarkers[i].SetActive(false);
+                }
             }
         }
     }
 
     private void DrawConnectingLine()
     {
-        List<Vector3> positions = new List<Vector3>();
-
-        for (int i = 0; i < mapMarkers.Length; i++)
+        for (int i = 0; i < connectingLines.Length; i++)
         {
-            if (levels[i].Locked)
+            if (levels[i].Completed && levels[i + 1].Completed || levels[i].Completed && !levels[i + 1].Locked)
             {
-                //Vector3 pos = mapMarkers[i].GetComponent<RectTransform>().transform.position;
-                positions.Add(mapMarkers[i].transform.position);
+                connectingLines[i].gameObject.SetActive(true);
             }
-        }
-
-        if (positions.Count > 1)
-        {
-            lineRenderer.positionCount = positions.Count;
-            lineRenderer.SetPositions(positions.ToArray());
+            else
+            {
+                connectingLines[i].gameObject.SetActive(false);
+            }
         }
     }
 }

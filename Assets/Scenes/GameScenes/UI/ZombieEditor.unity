@@ -2140,6 +2140,140 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &1493633985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6343380689330445623}
+    m_Modifications:
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_text
+      value: "In this little place you will create your new brain hungry friends!\n\nOn
+        the left, you can see the zombie you are currently assembling.\nOn the right,
+        you can see the available body parts. It's best to use them all.\n\nTo add
+        a body part, just simply drag it from the right to the left. Just remember
+        that we don't have a knife or chainsaw nearby. So once a body part is attached,
+        it will stay there!\n\nIf you want to create a new zombie, simply click on
+        the \"+\" Button. You can also select your other zombies from the bar left
+        of it.\n\nEvery body part has four values attached to it: Life, Attack, Speed
+        and Intilligents.\nLife determines how many punches your zombie can take.\nAttack
+        determines the Strength of your zombie's punches.\nSpeed determines how fast
+        your little friend will move \nand Intilligents helps the zombie concentrate
+        on the orders you will give him.\n\nAfter you are finished with assembling,
+        simply click the \"Start Game\" Button to start your assault!\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501829162399066, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_text
+      value: Welcome to the Zombie-Editor!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409589, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_Name
+      value: TutorialPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -460
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -260
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501830155409591, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+--- !u!224 &1493633986 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4657501830155409590, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+  m_PrefabInstance: {fileID: 1493633985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1508182651
 GameObject:
   m_ObjectHideFlags: 0
@@ -3921,10 +4055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4009,6 +4143,7 @@ RectTransform:
   m_Children:
   - {fileID: 6343380689828893582}
   - {fileID: 842152709}
+  - {fileID: 1493633986}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

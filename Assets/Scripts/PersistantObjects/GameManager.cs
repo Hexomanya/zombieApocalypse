@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private static string selectedLevel;
+    public static bool FirstEnterSelection { get; set; } = true;
+    public static bool FirstEnterEditor { get; set; } = true;
+    public static bool FirstEnterLevel { get; set; } = true;
+    public static bool AllLevelsComplete { get; set; } = false;
 
     void Start()
     {
