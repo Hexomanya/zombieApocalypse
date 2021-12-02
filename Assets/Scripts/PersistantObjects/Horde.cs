@@ -25,6 +25,7 @@ public class Horde : MonoBehaviour
             Debug.LogWarning("More then one Horde instance has been found!");
             return;
         }
+        DontDestroyOnLoad(this.transform.parent);
         instance = this;
     }
 

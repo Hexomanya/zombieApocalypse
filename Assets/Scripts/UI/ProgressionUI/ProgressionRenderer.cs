@@ -23,7 +23,6 @@ public class ProgressionRenderer : MonoBehaviour
 
         ActivateMapMarkers();
         DrawConnectingLine();
-        
     }
 
     private void ActivateMapMarkers()
@@ -54,10 +53,6 @@ public class ProgressionRenderer : MonoBehaviour
         {
             lineRenderer.positionCount = positions.Count;
             lineRenderer.SetPositions(positions.ToArray());
-        }
-        else
-        {
-            Destroy(lineRenderer);
         }
     }
 }

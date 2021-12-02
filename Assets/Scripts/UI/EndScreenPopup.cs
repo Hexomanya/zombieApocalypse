@@ -15,7 +15,7 @@ public class EndScreenPopup : MonoBehaviour
 
     public void ClickContinue()
     {
-        GameManager.Instance.LoadEditorScene();
+        GameManager.Instance.LoadLevelSeletionScreen();
     }
 
     public void OnReturnClicked()

@@ -62,5 +62,4 @@ public class LevelProgression : MonoBehaviour
         Debug.LogWarning("GetLevelByName: Could not find level!");
         return null;
     }
-    
 }

@@ -64,22 +64,14 @@ public class ZombieEditorUI : MonoBehaviour
         }
     }
 
-
-    public void LoadLevelSeletionScreen()
-    {
-        _inventory.onBodyPartsChangedCallback = null;
-        _horde.onHordeChangedCallback = null;
-
-        if (LevelProgression.instance != null)
-        {
-            LevelProgression.instance.UnlockNextLevel();
-        }
-
-        SceneManager.LoadScene("LevelSelection");
-    }
-
     public void OnZombieAddButtonClicked()
     {
         _horde.AddEmptyZombie();
+    }
+
+    public void OnStartGameButtonClicked()
+    {
+        //Do animations here
+        GameManager.Instance.LoadNextLevel();
     }
 }

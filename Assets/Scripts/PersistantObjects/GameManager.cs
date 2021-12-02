@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }    
+    public static GameManager Instance { get; private set; }
+
+    private static string selectedLevel;
 
     void Start()
     {
@@ -18,15 +20,40 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadEditorScene(string nextSceneName)
     {
+        selectedLevel = nextSceneName;
+
+        if(Inventory.instance != null)
+        {
+            Inventory.instance.newParts.Clear();
+        }
         
+        SceneManager.LoadScene("ZombieEditor");
     }
 
-    public void LoadEditorScene()
+    public void LoadLevelSeletionScreen()
     {
-        Inventory.instance.newParts.Clear();
-        SceneManager.LoadScene("ZombieEditor");
+        if (LevelProgression.instance != null)
+        {
+            LevelProgression.instance.UnlockNextLevel();
+        }
+
+        SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void LoadNextLevel()
+    {
+        if(selectedLevel != null)
+        {
+            Inventory.instance.onBodyPartsChangedCallback = null;
+            Horde.instance.onHordeChangedCallback = null;
+
+            SceneManager.LoadScene(selectedLevel);
+        }
+        else
+        {
+            Debug.LogError("SelectedLevel is undefined!");
+        }
     }
 }

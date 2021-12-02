@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockerList: []
+  debugSkipWon: 1
 --- !u!1001 &102482893
 PrefabInstance:
   m_ObjectHideFlags: 0
