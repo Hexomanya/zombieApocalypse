@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
+  m_AssetsPPU: 96
   m_RefResolutionX: 1920
   m_RefResolutionY: 1080
   m_UpscaleRT: 0
@@ -117,4 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479a610f566c3ca47b4572f79af88a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 3
+  velocity: 10
+  panAreaPercent: 0.05
+  borderProvider: {fileID: 0}

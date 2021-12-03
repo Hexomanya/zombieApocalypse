@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
             Debug.LogWarning("More then one Inventory instance has been found!");
             return;
         }
+        DontDestroyOnLoad(this.transform.parent);
         instance = this;
     }
 

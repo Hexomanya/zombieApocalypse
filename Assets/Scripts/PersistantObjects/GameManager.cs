@@ -6,6 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    private static string selectedLevel;
+    public bool FirstEnterSelection { get; set; } = true;
+    public bool FirstEnterEditor { get; set; } = true;
+    public bool FirstEnterLevel { get; set; } = true;
+    public bool AllLevelsComplete { get; set; } = false;
+
     void Start()
     {
         if (Instance != null)
@@ -18,15 +24,51 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadEditorScene(string nextSceneName)
     {
+        selectedLevel = nextSceneName;
+
+        if(Inventory.instance != null)
+        {
+            Inventory.instance.newParts.Clear();
+        }
         
+        SceneManager.LoadScene("ZombieEditor");
     }
 
-    public void LoadEditorScene()
+    public void LoadLevelSeletionScreen()
     {
-        Inventory.instance.newParts.Clear();
-        SceneManager.LoadScene("ZombieEditor");
+        if (LevelProgression.instance != null)
+        {
+            LevelProgression.instance.UnlockNextLevel();
+        }
+
+        SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void LoadNextLevel()
+    {
+        if(selectedLevel != null)
+        {
+            if (Horde.instance.zombies.Count <= 1 && Horde.instance.zombies[0].currentBodyParts.Count <= 1)
+            {
+                Debug.LogWarning("Can not start Level with 0 Zombies");
+                return;
+            }
+            Horde.instance.RemoveTorsoOnlyZombies();
+            Inventory.instance.onBodyPartsChangedCallback = null;
+            Horde.instance.onHordeChangedCallback = null;
+
+            SceneManager.LoadScene(selectedLevel);
+        }
+        else
+        {
+            Debug.LogError("SelectedLevel is undefined!");
+        }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

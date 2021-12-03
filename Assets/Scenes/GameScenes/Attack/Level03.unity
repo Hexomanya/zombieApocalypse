@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockerList: []
+  debugSkipWon: 0
 --- !u!1 &69267097
 GameObject:
   m_ObjectHideFlags: 0
@@ -40794,6 +40795,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5766986112033302088, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
+      propertyPath: borderProvider
+      value: 
+      objectReference: {fileID: 388981477}
     - target: {fileID: 5766986112033302090, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_Name
       value: Main Camera
