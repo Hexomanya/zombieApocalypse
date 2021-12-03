@@ -2158,7 +2158,7 @@ PrefabInstance:
         the \"+\" Button. You can also select your other zombies from the bar left
         of it.\n\nEvery body part has four values attached to it: Life, Attack, Speed
         and Intilligents.\nLife determines how many punches your zombie can take.\nAttack
-        determines the Strength of your zombie's punches.\nSpeed determines how fast
+        determines the strength of your zombie's punches.\nSpeed determines how fast
         your little friend will move \nand Intilligents helps the zombie concentrate
         on the orders you will give him.\n\nAfter you are finished with assembling,
         simply click the \"Start Game\" Button to start your assault!\n"

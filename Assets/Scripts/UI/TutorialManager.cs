@@ -19,11 +19,11 @@ public class TutorialManager : MonoBehaviour
         switch (this.type)
         {
             case TutorialTypes.Selection:
-                return GameManager.FirstEnterSelection;
+                return GameManager.Instance.FirstEnterSelection;
             case TutorialTypes.Editor:
-                return GameManager.FirstEnterEditor;
+                return GameManager.Instance.FirstEnterEditor;
             case TutorialTypes.Level:
-                return GameManager.FirstEnterLevel;
+                return GameManager.Instance.FirstEnterLevel;
         }
 
         return false;
@@ -34,13 +34,13 @@ public class TutorialManager : MonoBehaviour
         switch (this.type)
         {
             case TutorialTypes.Selection:
-                GameManager.FirstEnterSelection = false;
+                GameManager.Instance.FirstEnterSelection = false;
                 break;
             case TutorialTypes.Editor:
-                GameManager.FirstEnterEditor = false;
+                GameManager.Instance.FirstEnterEditor = false;
                 break;
             case TutorialTypes.Level:
-                GameManager.FirstEnterLevel = false;
+                GameManager.Instance.FirstEnterLevel = false;
                 break;
         }
     }

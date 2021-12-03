@@ -23,7 +23,7 @@ public class ProgressionRenderer : MonoBehaviour
         ActivateMapMarkers();
         DrawConnectingLine();
 
-        if (GameManager.AllLevelsComplete)
+        if (GameManager.Instance.AllLevelsComplete)
         {
             messageHandler.ShowMessage("Congratulations! You completed all Levels and insured the downfall of humanity! You can now replay all levels!");
         }

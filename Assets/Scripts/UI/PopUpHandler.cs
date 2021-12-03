@@ -11,7 +11,7 @@ public class PopUpHandler : MonoBehaviour
 
     private void Start()
     {
-        if(GameManager.FirstEnterSelection && !hideOnStart) 
+        if(GameManager.Instance.FirstEnterSelection && !hideOnStart) 
         {
             this.gameObject.SetActive(true);
         }

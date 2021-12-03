@@ -38,6 +38,14 @@ public class ZombieEditorUI : MonoBehaviour
         InitializeUI();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.LoadLevelSeletionScreen();
+        }
+    }
+
     void InitializeUI()
     {
         _hordePanel.InitializeUI(_horde.zombies);

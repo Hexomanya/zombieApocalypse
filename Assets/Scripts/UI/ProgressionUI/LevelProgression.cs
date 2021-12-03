@@ -27,7 +27,6 @@ public class LevelProgression : MonoBehaviour
     {
         if(levels.Length > 0)
         {
-            levels[0].Completed = true;
             levels[0].Locked = false;
         }
     }
@@ -50,10 +49,24 @@ public class LevelProgression : MonoBehaviour
         }
         else
         {
-            GameManager.AllLevelsComplete = true;
-            foreach (Level level in Levels)
+            if(!GameManager.Instance.AllLevelsComplete){
+                bool allCompleted = true;
+
+                foreach (Level level in Levels)
+                {
+                    if (!level.Completed) { allCompleted = false; }
+                }
+
+                GameManager.Instance.AllLevelsComplete = allCompleted;
+            }
+            
+
+            if(GameManager.Instance.AllLevelsComplete) 
             {
-                level.Locked = false;
+                foreach (Level level in Levels)
+                {
+                    level.Locked = false;
+                }
             }
         }
     }
