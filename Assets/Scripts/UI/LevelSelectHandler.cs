@@ -6,10 +6,12 @@ public class LevelSelectHandler : MonoBehaviour
 {
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameManager.Instance.LoadMainMenu();
         }
+        */
     }
 
     public void LevelSelectButtonPressed(string sceneName)

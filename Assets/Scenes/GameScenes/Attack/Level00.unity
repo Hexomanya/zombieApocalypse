@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockerList: []
-  debugSkipWon: 0
+  debugSkipWon: 1
 --- !u!1001 &102482893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +417,14 @@ PrefabInstance:
 
         Have
         fun killing!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4657501829162399066, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
       propertyPath: m_text

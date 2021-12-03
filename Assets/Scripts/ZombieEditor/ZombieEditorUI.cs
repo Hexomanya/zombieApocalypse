@@ -38,7 +38,6 @@ public class ZombieEditorUI : MonoBehaviour
 
         InitializeUI();
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -46,7 +45,6 @@ public class ZombieEditorUI : MonoBehaviour
             GameManager.Instance.LoadLevelSeletionScreen();
         }
     }
-
     void InitializeUI()
     {
         _hordePanel.InitializeUI(_horde.zombies);
@@ -79,26 +77,13 @@ public class ZombieEditorUI : MonoBehaviour
     {
         _horde.AddEmptyZombie();
     }
+
     public void FoldAllBodyPartPanels()
     {
         foreach (var panel in _bodyPartPanels)
         {
             panel.ToggleBodyPartSlots(false);
         }
-    }
-
-
-    public void LoadLevelSeletionScreen()
-    {
-        if (_horde.zombies.Count <= 1 && _horde.zombies[0].currentBodyParts.Count <= 1)
-        {
-            Debug.Log("Can not start Level with 0 Zombies");
-            return;
-        }
-        _horde.RemoveTorsoOnlyZombies();
-        _inventory.onBodyPartsChangedCallback = null;
-        _horde.onHordeChangedCallback = null;
-        SceneManager.LoadScene("LevelSelection");
     }
 
     public void OnStartGameButtonClicked()
