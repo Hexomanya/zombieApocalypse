@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockerList: []
-  debugSkipWon: 1
+  debugSkipWon: 0
 --- !u!1001 &102482893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -391,29 +391,29 @@ PrefabInstance:
       value: 'Are you nervous? Well, you shouldn''t be. It''s just a bunch of meat
         sacks after all. They don''t even have guns!
 
-        
 
-        Now to
-        the important parts:
 
-        - To move your hoard, just click on the position
-        you want them to move with the left mouse button.
+        Now to the important
+        parts:
 
-        - To move the
-        camera, use the WSAD-Keys or bring your cursor near the screen border.
+        - To move your hoard, just click on the position you want
+        them to move with the left mouse button.
 
-        
+        - To move the camera, use
+        the WSAD-Keys or bring your cursor near the screen border.
+
+
 
         Easy
         enough, isn''t it?
 
-        
 
-        It is essential that you kill as
-        many survivors as you can. Some will fight and some will run away. Just kill
-        everything nearby and make sure you lose as few zombies as you can.
 
-        
+        It is essential that you kill as many survivors
+        as you can. Some will fight and some will run away. Just kill everything
+        nearby and make sure you lose as few zombies as you can.
+
+
 
         Have
         fun killing!'

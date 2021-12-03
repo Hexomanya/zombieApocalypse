@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockerList: []
-  debugSkipWon: 1
+  debugSkipWon: 0
 --- !u!1 &140875804
 GameObject:
   m_ObjectHideFlags: 0
