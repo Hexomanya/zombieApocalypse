@@ -25,7 +25,9 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             if (actor.MeleeAttackTimer <= 0f && actor.CurrentMeleeTarget != null)
             {
-                actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage);
+                Vector3 dir = (actor.CurrentMeleeTarget.transform.position - gameObject.transform.position).normalized;
+                Quaternion rotation = Quaternion.FromToRotation(Vector3.right, dir);
+                actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage, rotation);
                 actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
             }else if(actor.CurrentMeleeTarget == null)
             {

@@ -24,7 +24,9 @@ public class Projectile : MonoBehaviour
         AttackableObject attackableObject = collision.gameObject.GetComponent<AttackableObject>();
         if (attackableObject != null)
         {
-            attackableObject.ApplyDamage(Damage);
+            Vector3 dir = (attackableObject.transform.position - transform.position).normalized;
+            Quaternion rotation = Quaternion.FromToRotation(Vector3.right, dir);
+            attackableObject.ApplyDamage(Damage, rotation);
         }
 
         Destroy(gameObject);

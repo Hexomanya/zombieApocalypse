@@ -1,5 +1,6 @@
 ﻿using Pathfinding;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors
@@ -7,6 +8,7 @@ namespace Assets.Scripts.Actors
     public abstract class ActorManagerBase : MonoBehaviour
     {
         public List<SingleNodeBlocker> blockerList = new List<SingleNodeBlocker>();
+        protected List<GameObject> deleteList = new List<GameObject>();
         protected EndScreenPopup endScreenPopup;
 
         public virtual void Awake()
@@ -17,6 +19,18 @@ namespace Assets.Scripts.Actors
         public virtual void Start()
         {
             InitializeNodeBlocker();
+        }
+
+        public virtual void Update()
+        {
+            foreach (GameObject item in deleteList.ToList())
+            {
+                if(!item.GetComponentInChildren<BloodManager>().IsBloodEffectPlaying())
+                {
+                    deleteList.Remove(item);
+                    Destroy(item);
+                }                
+            }
         }
 
         protected void InitializeNodeBlocker()
@@ -41,7 +55,7 @@ namespace Assets.Scripts.Actors
         public void DeleteActor(GameObject gameObject)
         {
             blockerList.Remove(gameObject.GetComponent<SingleNodeBlocker>());
-            Destroy(gameObject);
+            deleteList.Add(gameObject);
         }
 
         public List<SingleNodeBlocker> GetNodeBlockers(SingleNodeBlocker exemptBlocker)

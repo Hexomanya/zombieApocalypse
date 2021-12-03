@@ -9,36 +9,49 @@ namespace Assets.Scripts
         public float MaxHealth { get; set; } = 20f;
 
         public float CurrentHealth { get; private set; }
+
+        public BloodManager bloodManager;
+
+        private ActorManagerBase actorManagerBase;
     
         void Start()
         {
             CurrentHealth = MaxHealth;
+            actorManagerBase = transform.parent?.GetComponent<ActorManagerBase>();
         }
 
         void Update()
         {
             if (CurrentHealth <= 0f)
             {
-                Die();
+                bloodManager.StopDrop();
+                if ((bloodManager != null && !bloodManager.IsBloodEffectPlaying() || bloodManager == null))
+                {
+                    Die();
+                }
             }
         }
 
         private void Die()
         {
-            ActorManagerBase actorManager = transform.parent?.GetComponent<ActorManagerBase>();
-            if (actorManager == null)
+            if (actorManagerBase == null)
             {
                 Destroy(gameObject);
             }
             else
             {
-                actorManager.ActorDied(gameObject);
+                actorManagerBase.ActorDied(gameObject);
             }
         }
 
-        public void ApplyDamage(float damage)
+        public void ApplyDamage(float damage, Quaternion rotation)
         {
             CurrentHealth -= damage;
+            if(actorManagerBase is HumanManager)
+            {
+                bloodManager.PlaySplatter(rotation);
+                bloodManager.PlayDrop();
+            }
         }
     }
 }

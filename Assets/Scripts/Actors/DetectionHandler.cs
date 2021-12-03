@@ -57,7 +57,10 @@ namespace Assets.Scripts.Actors
 
                     if (hits.Length == 0 || (hits.Length == 1 && hits[0].collider.gameObject == target.gameObject))
                     {
-                        return target;
+                        if(target.CurrentHealth > 0f)
+                        {
+                            return target;
+                        }
                     }
                 }
             }
@@ -79,7 +82,7 @@ namespace Assets.Scripts.Actors
 
                     if (hits.Length == 0 || (hits.Length == 1 && hits[0].collider.gameObject == target.gameObject))
                     {
-                        if (distance.magnitude < dis.magnitude)
+                        if (distance.magnitude < dis.magnitude && target.CurrentHealth > 0f)
                         {
                             dis = distance;
                             closest = target;

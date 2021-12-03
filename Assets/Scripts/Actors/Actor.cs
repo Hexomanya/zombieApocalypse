@@ -59,6 +59,8 @@ namespace Assets.Scripts.Actors
 
         public bool DeativatePathBlocking { get; set; }
 
+        private AttackableObject attackableObject;
+
         void Start()
         {
             DetectionHandler = GetComponentInChildren<DetectionHandler>();
@@ -67,6 +69,7 @@ namespace Assets.Scripts.Actors
             NodeBlocker = GetComponent<SingleNodeBlocker>();
             BlockManager = FindObjectOfType<BlockManager>();
             NodeBlocker.manager = BlockManager;
+            attackableObject = GetComponent<AttackableObject>();
             
             if (transform.parent.GetComponent<ActorManagerBase>() == null)
             {
@@ -82,6 +85,11 @@ namespace Assets.Scripts.Actors
 
         void Update()
         {
+            if (attackableObject.CurrentHealth <= 0f)
+            {
+                return;
+            }
+
             NodeBlocker?.Unblock();
             if (!DeativatePathBlocking)
             {

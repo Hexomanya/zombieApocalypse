@@ -6,8 +6,9 @@ public class HumanManager : ActorManagerBase
 {
     [SerializeField] private bool debugSkipWon = true;
 
-    public void Update()
+    public override void Update()
     {
+        base.Update();
         if (Input.GetKeyDown(KeyCode.U))
         {
             debugSkipWon = true;
@@ -39,8 +40,6 @@ public class HumanManager : ActorManagerBase
                 BodyPart bodyPart = item.New();
                 Inventory.instance.AddNewBodyPart(bodyPart);
                 InGameUi.instance.ShowBodyPartCollectedPopUp(bodyPart);
-                // Old System
-                //PickUpMessageHandler.Instance.AddNewMessage(bodyPart.name);
             }
         }
 
