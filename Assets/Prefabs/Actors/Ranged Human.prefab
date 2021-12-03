@@ -80,6 +80,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1932915544487196014, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: <Typ>k__BackingField
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932915544487196014, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: <MeleeDamage>k__BackingField
       value: 5
       objectReference: {fileID: 0}

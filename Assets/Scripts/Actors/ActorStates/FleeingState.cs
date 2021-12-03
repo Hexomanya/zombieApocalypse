@@ -28,8 +28,10 @@ namespace Assets.Scripts.Actors.ActorStates
             {
                 actor.ActorManager.DeleteActor(gameObject);
             }
-
-            actorType.UpdatePath(gameObject.transform.position, closestBorder, actor);
+            else
+            {
+                actorType.UpdatePath(gameObject.transform.position, closestBorder, actor);
+            }
         }
 
         private Vector3 GetClosestSafeMapBorder(GameObject gameObject, IActor actor)
