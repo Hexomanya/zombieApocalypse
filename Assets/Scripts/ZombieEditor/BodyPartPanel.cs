@@ -6,21 +6,25 @@ public class BodyPartPanel : MonoBehaviour
 {
     private BodyPartSlot[] bodyPartSlots;
 
-    private bool isExpanded = true;
-
     private void Awake()
     {
         bodyPartSlots = GetComponentsInChildren<BodyPartSlot>();
     }
 
-    public void ToggleBodyPartSlots()
+    public void ToggleBodyPartSlots(bool expand)
     {
-        isExpanded = !isExpanded;
+        var imageComponent = GetComponent<Image>();
+        if (expand)
+            imageComponent.color = Color.white;
+        else
+            imageComponent.color = Color.grey;
+
         foreach (var slot in bodyPartSlots)
         {
-            slot.gameObject.SetActive(isExpanded);
+            slot.gameObject.SetActive(expand);
         }
     }
+
 
     public void InitializeUI(List<BodyPart> bodyParts)
     {
@@ -28,7 +32,7 @@ public class BodyPartPanel : MonoBehaviour
         {
             slot.InitializeUI(bodyParts);
         }
-        ToggleBodyPartSlots();
+        ToggleBodyPartSlots(false);
     }
 
     public void UpdateUI(List<BodyPart> bodyParts)

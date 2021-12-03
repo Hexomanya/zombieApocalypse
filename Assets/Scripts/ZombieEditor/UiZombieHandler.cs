@@ -63,7 +63,7 @@ public class UiZombieHandler : MonoBehaviour
         {
             if (bodyPart != null)
             {
-                switch (bodyPart.Type)
+                switch (bodyPart.type)
                 {
                     case BodyPartType.Head:
                         _head.sprite = bodyPart.sprite;

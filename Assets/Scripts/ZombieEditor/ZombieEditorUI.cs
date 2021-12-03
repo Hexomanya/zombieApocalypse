@@ -13,11 +13,14 @@ public class ZombieEditorUI : MonoBehaviour
 
     private HordePanel _hordePanel;
 
+    private TorsoTemplate _torsoTemplate;
+
     void Awake()
     {
         _templatePanels = GetComponentsInChildren<TemplatePanel>();
         _bodyPartPanels = GetComponentsInChildren<BodyPartPanel>();
         _hordePanel = GetComponentInChildren<HordePanel>();
+        _torsoTemplate = GetComponentInChildren<TorsoTemplate>();
     }
 
 
@@ -30,10 +33,8 @@ public class ZombieEditorUI : MonoBehaviour
         _horde = Horde.instance;
         _horde.onHordeChangedCallback += UpdateUI;
 
-        if(_horde.zombies.Count == 0)
-        {
+        if (_horde.zombies.Count == 0)
             _horde.AddEmptyZombie();
-        }
 
         InitializeUI();
     }
@@ -49,6 +50,7 @@ public class ZombieEditorUI : MonoBehaviour
     void InitializeUI()
     {
         _hordePanel.InitializeUI(_horde.zombies);
+        _torsoTemplate.InitializeUI(_horde.GetSelectedZombie());
         foreach (var panel in _templatePanels)
         {
             panel.InitializeUI(_horde.GetSelectedZombie());
@@ -62,6 +64,7 @@ public class ZombieEditorUI : MonoBehaviour
     void UpdateUI()
     {
         _hordePanel.UpdateUI(_horde.zombies);
+        _torsoTemplate.UpdateUI(_horde.GetSelectedZombie());
         foreach (var panel in _templatePanels)
         {
             panel.InitializeUI(_horde.GetSelectedZombie());
@@ -75,6 +78,27 @@ public class ZombieEditorUI : MonoBehaviour
     public void OnZombieAddButtonClicked()
     {
         _horde.AddEmptyZombie();
+    }
+    public void FoldAllBodyPartPanels()
+    {
+        foreach (var panel in _bodyPartPanels)
+        {
+            panel.ToggleBodyPartSlots(false);
+        }
+    }
+
+
+    public void LoadLevelSeletionScreen()
+    {
+        if (_horde.zombies.Count <= 1 && _horde.zombies[0].currentBodyParts.Count <= 1)
+        {
+            Debug.Log("Can not start Level with 0 Zombies");
+            return;
+        }
+        _horde.RemoveTorsoOnlyZombies();
+        _inventory.onBodyPartsChangedCallback = null;
+        _horde.onHordeChangedCallback = null;
+        SceneManager.LoadScene("LevelSelection");
     }
 
     public void OnStartGameButtonClicked()

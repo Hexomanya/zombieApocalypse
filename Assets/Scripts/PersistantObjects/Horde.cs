@@ -29,13 +29,16 @@ public class Horde : MonoBehaviour
         instance = this;
     }
 
-    public void AttachBodyPartToSelectedZombie(BodyPart bodyPart)
+
+    /// <returns>True if BodyPart was attached successfully, else false</returns>
+    public bool AttachBodyPartToSelectedZombie(BodyPart bodyPart)
     {
         if (zombies == null || zombies.Count <= SelectedIndex)
-            return;
+            return false;
 
-        zombies[SelectedIndex].AttachBodyPart(bodyPart);
+        return zombies[SelectedIndex].AttachBodyPart(bodyPart);
     }
+
 
     public BodyPartManager GetSelectedZombie()
     {
@@ -79,17 +82,30 @@ public class Horde : MonoBehaviour
 
         // Empty zombies can not exist, they need at least a torso
         // Not elegant, this approach offers room for improvement
+        List<BodyPart> allTorsos = new List<BodyPart>();
         foreach (var bodyPart in availableBodyParts)
         {
-            if (bodyPart != null && bodyPart.Type == BodyPartType.Torso)
+            if (bodyPart != null && bodyPart.type == BodyPartType.Torso)
             {
-                newZombie.AttachBodyPart(bodyPart);
+                allTorsos.Add(bodyPart);
             }
         }
 
+        // Give new Zombie a Random Torso
+        newZombie.AttachBodyPart(allTorsos[Random.Range(0, allTorsos.Count)]);
+
         zombies.Add(newZombie);
-        if (onHordeChangedCallback != null)
-            onHordeChangedCallback.Invoke();
+        SelectedIndex = zombies.Count - 1;
+        onHordeChangedCallback?.Invoke();
+    }
+
+    public void RemoveTorsoOnlyZombies()
+    {
+        for (int i = 0; i < zombies.Count; i++)
+        {
+            if (zombies[i].currentBodyParts.Count <= 1)
+                zombies.RemoveAt(i);
+        }
     }
 
 }

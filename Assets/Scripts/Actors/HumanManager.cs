@@ -23,7 +23,7 @@ public class HumanManager : ActorManagerBase
         float dropRate = Random.Range(0.25f, 0.5f);
         foreach (var item in Horde.instance.availableBodyParts)
         {
-            if (item.Type == BodyPartType.Torso)
+            if (item.type == BodyPartType.Torso)
             {
                 continue;
             }
