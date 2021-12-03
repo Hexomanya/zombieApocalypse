@@ -15,7 +15,9 @@ MonoBehaviour:
   name: DefaultHead
   sprite: {fileID: 8903996987598677169, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   Type: 0
-  damageModifier: 3
-  healthModifier: 2
+  meleeDamageModifier: 2
+  meleeCooldownTime: -0.5
+  healthModifier: 5
   speedModifier: 0
   intelligenceModifier: 5
+  detectionRange: 3

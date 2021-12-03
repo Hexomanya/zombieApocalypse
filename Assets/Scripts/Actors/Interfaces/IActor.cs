@@ -13,7 +13,7 @@ namespace Assets.Scripts.Actors.Interfaces
 
         public float MeleeDamage { get; set; }
 
-        public float MeleeAttackCooldown { get; }
+        public float MeleeAttackCooldown { get; set; }
 
         public float MeleeAttackTimer { get; set; }
 
@@ -42,6 +42,8 @@ namespace Assets.Scripts.Actors.Interfaces
         public BlockManager BlockManager { get; }
 
         public ActorManagerBase ActorManager { get; }
+
+        public BodyPartManager BodyPartManager { get; set; }
 
         public bool DeativatePathBlocking { get; set; }
     }

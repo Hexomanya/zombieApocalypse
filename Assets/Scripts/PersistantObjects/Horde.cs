@@ -58,6 +58,12 @@ public class Horde : MonoBehaviour
         }
     }
 
+    public void RemoveZombie(BodyPartManager bodyPartManager)
+    {
+        zombies.Remove(bodyPartManager);
+        Destroy(bodyPartManager.gameObject);
+    }
+
     public void AddEmptyZombie()
     {
         if (zombies == null)

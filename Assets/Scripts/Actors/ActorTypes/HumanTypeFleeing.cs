@@ -36,11 +36,7 @@ namespace Assets.Scripts.Actors.ActorTypes
 
         private void HandleFleeingState(GameObject gameObject, IActor actor)
         {
-            if (actor.DetectionHandler.GetAnyTargetWithLoS() == null)
-            {
-                SwitchState(gameObject, actor, BehaviourStateProvider.Idle);
-            }
-            else if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
+            if (actor.MeleeRangeHandler.GetPossibleTarget() != null)
             {
                 SwitchState(gameObject, actor, BehaviourStateProvider.Melee);
             }

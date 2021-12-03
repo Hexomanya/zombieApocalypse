@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public bool FirstEnterLevel { get; set; } = true;
     public bool AllLevelsComplete { get; set; } = false;
 
+    public float BodyPartDropChance = 0.1f;
+
     void Start()
     {
         if (Instance != null)

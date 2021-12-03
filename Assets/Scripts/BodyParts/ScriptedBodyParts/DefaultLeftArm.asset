@@ -17,6 +17,9 @@ MonoBehaviour:
   type: 1
   zombieType: 0
   damageModifier: 5
-  healthModifier: 2
-  speedModifier: 0
+  meleeDamageModifier: 3
+  meleeCooldownTime: -0.4
+  healthModifier: 7
+  speedModifier: 0.2
   intelligenceModifier: 0
+  detectionRange: 0

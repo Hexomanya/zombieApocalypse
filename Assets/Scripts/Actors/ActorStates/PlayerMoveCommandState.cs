@@ -9,7 +9,7 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actorType.UpdatePath(gameObject.transform.position, Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition)), actor, true, true);
+            actorType.UpdatePath(gameObject.transform.position, Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition)), actor, true);
             actor.ConcentrationTimer = actor.ConcentrationTime;
             actorType.PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;
             actor.AstarAI.canMove = true;

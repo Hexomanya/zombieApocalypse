@@ -48,7 +48,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IEndDragHandler, ID
         if(WasPlaced)
         {
             inventory.RemoveBodyPart(bodyPart);
-            bodyPart.AttachToSelectedZombie();
         }
         else
         {
