@@ -32,7 +32,18 @@ public class ZombieManager : ActorManagerBase
     {
         GameObject gameObject = Instantiate(ZombiePrefab, transform);
         gameObject.GetComponent<BodyPartManager>().currentBodyParts = bodyPartManager.currentBodyParts;
-        gameObject.transform.position = SpawnPositions.Instance.Positions[index].position;
+
+        int numSpawnPos = SpawnPositions.Instance.Positions.Length;
+        int posIndex;
+
+        if(index < numSpawnPos){
+            posIndex = index;
+        } else {
+            posIndex = index % numSpawnPos;
+        }
+
+        gameObject.transform.position = SpawnPositions.Instance.Positions[posIndex].position;
+
         IActor actor = gameObject.GetComponent<IActor>();
         gameObject.GetComponent<IAstarAI>().maxSpeed = bodyPartManager.GetAllBodyPartStatModifiers().SpeedModifier;
         actor.MeleeDamage = bodyPartManager.GetAllBodyPartStatModifiers().DamageModifier;
