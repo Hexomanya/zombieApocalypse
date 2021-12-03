@@ -31,8 +31,6 @@ public class ZombieManager : ActorManagerBase
     private void SpawnZombie(BodyPartManager bodyPartManager, int index)
     {
         GameObject gameObject = Instantiate(ZombiePrefab, transform);
-        gameObject.GetComponent<BodyPartManager>().currentBodyParts = bodyPartManager.currentBodyParts;
-
         int numSpawnPos = SpawnPositions.Instance.Positions.Length;
         int posIndex;
 
