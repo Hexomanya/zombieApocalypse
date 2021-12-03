@@ -34,12 +34,14 @@ public class BodyPartPanel : MonoBehaviour
             {
                 slot.InitializeUI(bodyParts);
             }
-            ToggleBodyPartSlots(false);
         }
         else
         {
-            Debug.LogError("Bodypart null");
+            Debug.LogError("Bodyparts are empty. This is only an error if you should have bodyparts!");
         }
+
+
+        ToggleBodyPartSlots(false);
     }
 
     public void UpdateUI(List<BodyPart> bodyParts)
