@@ -13,10 +13,14 @@ public class Inventory : MonoBehaviour
     public delegate void OnBodyPartsChanged();
     public OnBodyPartsChanged onBodyPartsChangedCallback;
 
-
     private void Awake()
     {
-        if(instance != null)
+        if (!GameManager.Instance.FirstEnterEditor)
+        {
+            return;
+        }
+
+        if (instance != null)
         {
             Debug.LogWarning("More then one Inventory instance has been found!");
             return;

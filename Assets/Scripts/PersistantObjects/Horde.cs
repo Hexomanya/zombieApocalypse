@@ -20,6 +20,11 @@ public class Horde : MonoBehaviour
 
     private void Awake()
     {
+        if (!GameManager.Instance.FirstEnterEditor)
+        {
+            return;
+        }
+
         if (instance != null)
         {
             Debug.LogWarning("More then one Horde instance has been found!");
