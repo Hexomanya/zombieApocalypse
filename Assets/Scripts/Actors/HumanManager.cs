@@ -8,6 +8,11 @@ public class HumanManager : ActorManagerBase
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            debugSkipWon = true;
+        }
+
         if (transform.childCount == 0 || debugSkipWon)
         {
             endScreenPopup.LevelWon();

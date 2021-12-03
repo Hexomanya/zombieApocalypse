@@ -23,7 +23,6 @@ public class ZombieEditorUI : MonoBehaviour
         _torsoTemplate = GetComponentInChildren<TorsoTemplate>();
     }
 
-
     void Start()
     {
         _inventory = Inventory.instance;
@@ -31,6 +30,7 @@ public class ZombieEditorUI : MonoBehaviour
         _inventory.onBodyPartsChangedCallback += UpdateUI;
 
         _horde = Horde.instance;
+        _horde.SelectedIndex = 0;
         _horde.onHordeChangedCallback += UpdateUI;
 
         if (_horde.zombies.Count == 0)
@@ -45,6 +45,7 @@ public class ZombieEditorUI : MonoBehaviour
             GameManager.Instance.LoadLevelSeletionScreen();
         }
     }
+
     void InitializeUI()
     {
         _hordePanel.InitializeUI(_horde.zombies);

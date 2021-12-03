@@ -28,18 +28,33 @@ public class BodyPartPanel : MonoBehaviour
 
     public void InitializeUI(List<BodyPart> bodyParts)
     {
-        foreach (var slot in bodyPartSlots)
+        if(bodyParts != null && bodyParts.Count > 0) 
         {
-            slot.InitializeUI(bodyParts);
+            foreach (var slot in bodyPartSlots)
+            {
+                slot.InitializeUI(bodyParts);
+            }
+            ToggleBodyPartSlots(false);
         }
-        ToggleBodyPartSlots(false);
+        else
+        {
+            Debug.LogError("Bodypart null");
+        }
     }
 
     public void UpdateUI(List<BodyPart> bodyParts)
     {
-        foreach (var slot in bodyPartSlots)
+        if(bodyPartSlots != null && bodyPartSlots.Length > 0)
         {
-            slot.UpdateBodyPartCount(bodyParts);
+            foreach (var slot in bodyPartSlots)
+            {
+                slot.UpdateBodyPartCount(bodyParts);
+            }
         }
+        else
+        {
+            Debug.LogError("Bodypartslots null");
+        }
+        
     }
 }
