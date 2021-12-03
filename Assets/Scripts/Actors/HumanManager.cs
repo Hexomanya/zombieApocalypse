@@ -26,7 +26,9 @@ public class HumanManager : ActorManagerBase
             {
                 BodyPart bodyPart = item.New();
                 Inventory.instance.AddNewBodyPart(bodyPart);
-                PickUpMessageHandler.Instance.AddNewMessage(bodyPart.name);
+                InGameUi.instance.ShowBodyPartCollectedPopUp(bodyPart);
+                // Old System
+                //PickUpMessageHandler.Instance.AddNewMessage(bodyPart.name);
             }
         }
 
