@@ -24,7 +24,7 @@ namespace Assets.Scripts
         {
             if (CurrentHealth <= 0f)
             {
-                bloodManager.StopDrop();
+                bloodManager?.StopDrop();
                 if ((bloodManager != null && !bloodManager.IsBloodEffectPlaying() || bloodManager == null))
                 {
                     Die();
