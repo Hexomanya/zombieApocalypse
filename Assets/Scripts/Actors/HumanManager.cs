@@ -20,9 +20,10 @@ public class HumanManager : ActorManagerBase
 
     public override void ActorDied(GameObject gameObject)
     {
+        ZombieType rollType = (ZombieType)Random.Range(0f, 2.9f);
         foreach (var item in Horde.instance.availableBodyParts)
         {
-            if (item.type == BodyPartType.Torso)
+            if (item.type == BodyPartType.Torso || rollType != item.zombieType)
             {
                 continue;
             }

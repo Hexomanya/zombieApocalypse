@@ -31,6 +31,7 @@ public class BodyPart : ScriptableObject
     public BodyPart New()
     {
         BodyPart bodyPart = CreateInstance<BodyPart>();
+        bodyPart.zombieType = zombieType;
         bodyPart.name = name;
         bodyPart.sprite = sprite;
         bodyPart.meleeDamageModifier = meleeDamageModifier;

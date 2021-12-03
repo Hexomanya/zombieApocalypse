@@ -38,6 +38,7 @@ namespace Assets.Scripts.Actors.ActorStates
             Vector3 dir = gameObject.transform.position - actor.DetectionHandler.GetTargetClusterCenter();
             dir = Utility.RemoveZAxis(dir);
 
+            // TODO: humans sometimes run in dumb directions
             if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
             {
                 if (dir.x > 0)
