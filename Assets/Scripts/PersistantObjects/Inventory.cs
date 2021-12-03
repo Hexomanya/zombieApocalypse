@@ -42,4 +42,26 @@ public class Inventory : MonoBehaviour
         bodyParts.Remove(bodyPart);
         onBodyPartsChangedCallback?.Invoke();
     }
+
+    public int GetTotalAmountOfBodyPart(BodyPartType bodyPartType, ZombieType zombieType)
+    {
+        int amount = 0;
+        foreach (var part in bodyParts)
+        {
+            if (part.type == bodyPartType && part.zombieType == zombieType)
+                amount++;
+        }
+        return amount;
+    }
+
+    public int GetAmountOfNewBodyPart(BodyPartType bodyPartType, ZombieType zombieType)
+    {
+        int amount = 0;
+        foreach (var part in newParts)
+        {
+            if (part.type == bodyPartType && part.zombieType == zombieType)
+                amount++;
+        }
+        return amount;
+    }
 }
