@@ -18,7 +18,7 @@ namespace Assets.Scripts.Actors
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            AttackableObject attackableObject = collision.GetComponent<AttackableObject>();
+            AttackableObject attackableObject = collision.transform.parent.GetComponent<AttackableObject>();
             if(!possibleTargets.Contains(attackableObject))
             {
                 possibleTargets.Add(attackableObject);
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Actors
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            possibleTargets.Remove(collision.GetComponent<AttackableObject>());
+            possibleTargets.Remove(collision.transform.parent.GetComponent<AttackableObject>());
         }
 
         public AttackableObject GetPossibleTarget()

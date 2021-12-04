@@ -20,9 +20,10 @@ public class ZombieManager : ActorManagerBase
         InitializeNodeBlocker();
     }
 
-    public void Update()
+    public override void Update()
     {
-        if(transform.childCount == 0)
+        base.Update();
+        if(blockerList.Count == 0)
         {
             endScreenPopup.GameOver();
         }
