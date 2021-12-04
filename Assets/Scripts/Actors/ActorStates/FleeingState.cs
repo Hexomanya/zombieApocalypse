@@ -36,14 +36,52 @@ namespace Assets.Scripts.Actors.ActorStates
 
         private Vector3 GetClosestSafeMapBorder(GameObject gameObject, IActor actor)
         {
-            Vector3 closestBorder;
-            Vector3 dir = gameObject.transform.position - actor.DetectionHandler.GetTargetClusterCenter();
-            dir = Utility.RemoveZAxis(dir);
-
-            // TODO: humans sometimes run in dumb directions
-            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            
+            if (actor.DetectionHandler.IsAnyTargetInRange())
             {
-                if (dir.x > 0)
+                return RunAwayFromZombies(gameObject, actor);
+            }
+
+            return CalcClosestMapBorder(gameObject, actor);
+        }
+
+        private Vector3 CalcClosestMapBorder(GameObject gameObject, IActor actor)
+        {
+            Vector3 closestBorder = new Vector3(MapBorderProvider.Instance.MaxX, gameObject.transform.position.y, 0f);
+            float dist = Vector3.Distance(gameObject.transform.position,closestBorder);
+            
+            if (Vector3.Distance(gameObject.transform.position,
+                new Vector3(MapBorderProvider.Instance.MinX, gameObject.transform.position.y, 0f)) < dist)
+            {
+                closestBorder = new Vector3(MapBorderProvider.Instance.MinX, gameObject.transform.position.y, 0f);
+                dist = Vector3.Distance(gameObject.transform.position, closestBorder);
+            }
+
+            if (Vector3.Distance(gameObject.transform.position,
+                new Vector3(gameObject.transform.position.x, MapBorderProvider.Instance.MaxY, 0f)) < dist)
+            {
+                closestBorder = new Vector3(gameObject.transform.position.x, MapBorderProvider.Instance.MaxY, 0f);
+                dist = Vector3.Distance(gameObject.transform.position, closestBorder);
+            }
+            
+            if (Vector3.Distance(gameObject.transform.position,
+                new Vector3(gameObject.transform.position.x, MapBorderProvider.Instance.MinY, 0f)) < dist)
+            {
+                closestBorder = new Vector3(gameObject.transform.position.x, MapBorderProvider.Instance.MinY, 0f);
+            }
+
+            return closestBorder;
+        }
+
+        private Vector3 RunAwayFromZombies(GameObject gameObject, IActor actor)
+        {
+            Vector3 closestBorder;
+            Vector3 zombiesDir = gameObject.transform.position - actor.DetectionHandler.GetTargetClusterCenter();
+            zombiesDir = Utility.RemoveZAxis(zombiesDir);
+
+            if (Mathf.Abs(zombiesDir.x) > Mathf.Abs(zombiesDir.y))
+            {
+                if (zombiesDir.x > 0)
                 {
                     closestBorder = new Vector3(MapBorderProvider.Instance.MaxX, gameObject.transform.position.y, 0f);
                 }
@@ -54,7 +92,7 @@ namespace Assets.Scripts.Actors.ActorStates
             }
             else
             {
-                if (dir.y > 0)
+                if (zombiesDir.y > 0)
                 {
                     closestBorder = new Vector3(gameObject.transform.position.x, MapBorderProvider.Instance.MaxY, 0f);
                 }
