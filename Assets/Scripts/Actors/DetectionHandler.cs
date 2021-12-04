@@ -17,7 +17,7 @@ namespace Assets.Scripts.Actors
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            AttackableObject attackableObject = collision.GetComponent<AttackableObject>();
+            AttackableObject attackableObject = collision.transform.parent.GetComponent<AttackableObject>();
             if (attackableObject == null)
             {
                 throw new System.ArgumentNullException($"Object '{collision.gameObject.name}' is missing an 'AttackableObject' Script!");
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Actors
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            possibleTargets.Remove(collision.GetComponent<AttackableObject>());
+            possibleTargets.Remove(collision.transform.parent.GetComponent<AttackableObject>());
         }
 
         public void SetDetectionRange(float range)

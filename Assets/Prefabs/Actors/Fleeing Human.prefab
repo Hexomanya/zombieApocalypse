@@ -83,6 +83,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fleeing Human
       objectReference: {fileID: 0}
+    - target: {fileID: 5589766326974019653, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.06530744
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589766326974019653, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589766326974019653, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7566043882818752807, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: maxSpeed
       value: 2

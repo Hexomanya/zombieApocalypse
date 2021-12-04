@@ -14,7 +14,7 @@ public class HumanManager : ActorManagerBase
             debugSkipWon = true;
         }
 
-        if (transform.childCount == 0 || debugSkipWon)
+        if (blockerList.Count == 0 || debugSkipWon)
         {
             endScreenPopup.LevelWon();
 

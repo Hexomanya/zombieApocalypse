@@ -12,7 +12,11 @@ namespace Assets.Scripts
 
         public BloodManager bloodManager;
 
+        public GameObject Visuals = null;
+
         private ActorManagerBase actorManagerBase;
+
+        private bool dead = false;
     
         void Start()
         {
@@ -22,18 +26,17 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (CurrentHealth <= 0f)
+            if (CurrentHealth <= 0f && !dead)
             {
                 bloodManager?.StopDrop();
-                if ((bloodManager != null && !bloodManager.IsBloodEffectPlaying() || bloodManager == null))
-                {
-                    Die();
-                }
+                Visuals?.SetActive(false);
+                Die();
             }
         }
 
         private void Die()
         {
+            dead = true;
             if (actorManagerBase == null)
             {
                 Destroy(gameObject);
@@ -47,7 +50,7 @@ namespace Assets.Scripts
         public void ApplyDamage(float damage, Quaternion rotation)
         {
             CurrentHealth -= damage;
-            if(actorManagerBase is HumanManager)
+            if(bloodManager != null)
             {
                 bloodManager.PlaySplatter(rotation);
                 bloodManager.PlayDrop();

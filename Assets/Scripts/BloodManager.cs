@@ -6,16 +6,6 @@ public class BloodManager : MonoBehaviour
     public ParticleSystem bloodSplatter;
     public ParticleSystem bloodDrop;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public bool IsBloodEffectPlaying()
     {
         return bloodSplatter.isPlaying || bloodDrop.isPlaying;
