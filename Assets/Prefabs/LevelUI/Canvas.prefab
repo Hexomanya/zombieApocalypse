@@ -2097,7 +2097,7 @@ MonoBehaviour:
   bodyPartType: 1
   zombieType: 2
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978644745768489
 GameObject:
@@ -2286,7 +2286,7 @@ MonoBehaviour:
   bodyPartType: 4
   zombieType: 0
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978644838628812
 GameObject:
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   bodyPartType: 5
   zombieType: 0
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645011503327
 GameObject:
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   bodyPartType: 0
   zombieType: 0
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645143090484
 GameObject:
@@ -2935,7 +2935,7 @@ MonoBehaviour:
   bodyPartType: 0
   zombieType: 2
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645208285523
 GameObject:
@@ -2990,7 +2990,7 @@ MonoBehaviour:
   bodyPartType: 0
   zombieType: 1
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645284241004
 GameObject:
@@ -3489,7 +3489,7 @@ MonoBehaviour:
   bodyPartType: 3
   zombieType: 2
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645423185693
 GameObject:
@@ -3962,7 +3962,7 @@ MonoBehaviour:
   bodyPartType: 4
   zombieType: 1
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645587126354
 GameObject:
@@ -4092,7 +4092,7 @@ MonoBehaviour:
   bodyPartType: 1
   zombieType: 1
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645596391958
 GameObject:
@@ -4832,7 +4832,7 @@ MonoBehaviour:
   bodyPartType: 1
   zombieType: 0
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978645992032532
 GameObject:
@@ -4887,7 +4887,7 @@ MonoBehaviour:
   bodyPartType: 5
   zombieType: 2
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978646071600954
 GameObject:
@@ -5360,7 +5360,7 @@ MonoBehaviour:
   bodyPartType: 3
   zombieType: 1
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978646201760812
 GameObject:
@@ -5415,7 +5415,7 @@ MonoBehaviour:
   bodyPartType: 4
   zombieType: 2
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978646249815298
 GameObject:
@@ -5470,7 +5470,7 @@ MonoBehaviour:
   bodyPartType: 5
   zombieType: 1
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978646325990940
 GameObject:
@@ -5659,7 +5659,7 @@ MonoBehaviour:
   bodyPartType: 3
   zombieType: 0
   displayTime: 2
-  offSet: 20
+  offSet: 50
   onlyNewParts: 0
 --- !u!1 &3178978646463132868
 GameObject:

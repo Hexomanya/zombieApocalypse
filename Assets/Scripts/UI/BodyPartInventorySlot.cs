@@ -9,7 +9,7 @@ public class BodyPartInventorySlot : MonoBehaviour
 
     public float displayTime = 2f;
 
-    public int offSet = 20;
+    public int offSet = 80;
 
     public bool onlyNewParts = false;
 
@@ -67,7 +67,7 @@ public class BodyPartInventorySlot : MonoBehaviour
             return;
         _popUp = Instantiate(gameObject, transform);
         Destroy(_popUp.GetComponent<BodyPartInventorySlot>());
-        _popUp.transform.position = new Vector3(_popUp.transform.position.x + 40, _popUp.transform.position.y - offSet, 0);
+        _popUp.transform.position = new Vector3(transform.position.x, transform.position.y - offSet, 0);
         _popUp.GetComponentInChildren<TMP_Text>().text = "+";
     }
 }
