@@ -5,7 +5,7 @@ namespace Assets.Scripts.Actors.ActorStates
 {
     public class PlayerMoveCommandState : IBehaviourState
     {
-        public string StateName => "Moving in Position";
+        public string StateName => "Moving to Position";
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
