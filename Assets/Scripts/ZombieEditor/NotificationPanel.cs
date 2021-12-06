@@ -38,7 +38,7 @@ public class NotificationPanel : MonoBehaviour
     {
         _imageColor = _image.color;
         _textColor = _notificationText.color;
-        Disapear();
+        Hide();
     }
 
     void Update()
@@ -50,7 +50,7 @@ public class NotificationPanel : MonoBehaviour
                 FadeOut();
         }
         else
-            Disapear();
+            Hide();
     }
 
     private void FadeOut()
@@ -63,7 +63,7 @@ public class NotificationPanel : MonoBehaviour
         _notificationText.color = new Color(_textColor.r, _textColor.g, _textColor.b, _textColor.a * alpha);
     }
 
-    private void Disapear()
+    private void Hide()
     {
         _notificationText.text = "";
         _image.color = _imageColor;
