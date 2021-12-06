@@ -19,7 +19,11 @@ public class DropHandler : MonoBehaviour, IDropHandler
                     eventData.pointerDrag.gameObject.transform.position = gameObject.transform.position;
                     eventData.pointerDrag.gameObject.transform.SetParent(gameObject.GetComponentInChildren<TemplatePanel>().transform);
                 }
-            }
+                else
+                    NotificationPanel.instance?.ShowNotification("Could not place Bodypart");
+            } 
+            else
+                NotificationPanel.instance?.ShowNotification("Bodypart can not be placed here");
         }
        
     }

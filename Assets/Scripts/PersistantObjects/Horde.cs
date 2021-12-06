@@ -72,10 +72,7 @@ public class Horde : MonoBehaviour
     public void AddEmptyZombie()
     {
         if (zombies == null)
-        {
             zombies = new List<BodyPartManager>();
-        }
-
         
         if (zombies.Count > 0)
         {
@@ -83,10 +80,9 @@ public class Horde : MonoBehaviour
             if(zombies[zombies.Count - 1].currentBodyParts.Count == 1)
             {
                 // Last Zombie only has a Torso!
-                Debug.Log("Can not add a zombie when the last one does not have BodyParts!");
+                NotificationPanel.instance?.ShowNotification("Can not add a zombie when the last one does not have BodyParts");
                 return;
             }
-                
         }
 
         var newZombie = Instantiate(emptyBodyPartManager, transform).GetComponent<BodyPartManager>();
@@ -108,6 +104,7 @@ public class Horde : MonoBehaviour
         zombies.Add(newZombie);
         SelectedIndex = zombies.Count - 1;
         onHordeChangedCallback?.Invoke();
+        NotificationPanel.instance?.ShowNotification("New Zombie has been added to your Horde");
     }
 
     public void RemoveTorsoOnlyZombies()
