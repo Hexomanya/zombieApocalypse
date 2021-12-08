@@ -40,6 +40,7 @@ namespace Assets.Scripts.Actors
         public RangeAttackHandler RangeAttackHandler { get; private set; }
 
         public IAstarAI AstarAI { get; private set; }
+
         public Transform LastKnownTargetPosition { get; set; }
 
         public Vector3 SpawnPos { get; private set; }
@@ -88,6 +89,11 @@ namespace Assets.Scripts.Actors
             if (attackableObject.CurrentHealth <= 0f)
             {
                 return;
+            }
+
+            if(CurrentMeleeTarget != null && CurrentMeleeTarget.CurrentHealth <= 0f)
+            {
+                CurrentMeleeTarget = null;
             }
 
             NodeBlocker?.Unblock();

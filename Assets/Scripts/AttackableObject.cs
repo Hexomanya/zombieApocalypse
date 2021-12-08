@@ -29,7 +29,7 @@ namespace Assets.Scripts
             if (CurrentHealth <= 0f && !dead)
             {
                 bloodManager?.StopDrop();
-                Visuals?.SetActive(false);
+                Destroy(Visuals);
                 Die();
             }
         }
