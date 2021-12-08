@@ -6,8 +6,9 @@ public class LevelProgression : MonoBehaviour
 {
     public static LevelProgression instance;
 
-    [SerializeField] private Level[] levels;
+    [SerializeField] private LevelList levelList;
 
+    private Level[] levels;
     private int currentLevel = 1;
 
     public Level[] Levels { get => levels; }
@@ -25,6 +26,8 @@ public class LevelProgression : MonoBehaviour
 
     private void Start()
     {
+        levels = levelList.levelList;
+
         if(levels.Length > 0)
         {
             levels[0].Locked = false;
@@ -44,7 +47,7 @@ public class LevelProgression : MonoBehaviour
             }
             else
             {
-                Debug.Log("Tried to Unlock" + levels[currentLevel].name + ", without completing it.");
+                Debug.Log("Tried to Unlock Level: " + levels[currentLevel].name + ", without completing it.");
             }
         }
         else
