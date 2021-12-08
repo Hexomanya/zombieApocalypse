@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: 1e4b880a7053b4f52b7981d828d62bf3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3396017303814347595
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_1"
+  - first:
+      213: -7359164782570210811
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_2"
+  - first:
+      213: 3316128278380319796
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_3"
+  - first:
+      213: -4065571056245691609
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_4"
+  - first:
+      213: 2146832762209642465
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_5"
+  - first:
+      213: 1310873472514295658
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_6"
+  - first:
+      213: -550928797266071981
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_7"
+  - first:
+      213: 6156154118011802124
+    second: "CharaketSheet_Zeichenfl\xE4che 1-12_8"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_1"
+      rect:
+        serializedVersion: 2
+        x: 4737
+        y: 3913
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4e01b414ceed0d0800000000000000
+      internalID: -3396017303814347595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_2"
+      rect:
+        serializedVersion: 2
+        x: 5225
+        y: 3100
+        width: 1407
+        height: 1344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a765bee9efed990800000000000000
+      internalID: -7359164782570210811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_3"
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 3683
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4349c7e7911450e20800000000000000
+      internalID: 3316128278380319796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_4"
+      rect:
+        serializedVersion: 2
+        x: 4190
+        y: 1264
+        width: 582
+        height: 1430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bad572aa03497c0800000000000000
+      internalID: -4065571056245691609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_5"
+      rect:
+        serializedVersion: 2
+        x: 4616
+        y: 80
+        width: 445
+        height: 1790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e72da7d5051bcd10800000000000000
+      internalID: 2146832762209642465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_6"
+      rect:
+        serializedVersion: 2
+        x: 5034
+        y: 1319
+        width: 914
+        height: 1777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6782ba5a78213210800000000000000
+      internalID: 1310873472514295658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_7"
+      rect:
+        serializedVersion: 2
+        x: 5913
+        y: 96
+        width: 447
+        height: 1684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e2c668d25ba58f0800000000000000
+      internalID: -550928797266071981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "CharaketSheet_Zeichenfl\xE4che 1-12_8"
+      rect:
+        serializedVersion: 2
+        x: 6085
+        y: 1198
+        width: 707
+        height: 1515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02d6aabd8d0f6550800000000000000
+      internalID: 6156154118011802124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
