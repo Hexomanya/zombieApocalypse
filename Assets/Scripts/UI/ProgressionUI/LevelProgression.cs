@@ -44,7 +44,7 @@ public class LevelProgression : MonoBehaviour
             }
             else
             {
-                Debug.Log("Tried to Unlock Level, without completing it.");
+                Debug.Log("Tried to Unlock" + levels[currentLevel].name + ", without completing it.");
             }
         }
         else

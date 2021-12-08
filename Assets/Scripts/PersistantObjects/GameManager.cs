@@ -72,5 +72,16 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+
+        //Reset all persistent objects
+        Horde.instance = null;
+        Inventory.instance = null;
+        LevelProgression.instance = null;
+
+        //reset persistent variables
+        FirstEnterSelection = true;
+        FirstEnterEditor = true;
+        FirstEnterLevel  = true;
+        AllLevelsComplete = false;
     }
 }
