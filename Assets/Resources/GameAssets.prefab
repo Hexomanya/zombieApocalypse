@@ -43,4 +43,292 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b029a73c9ac994bafe9cd92ef60801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieSprites: []
+  zombieSprites:
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 7319634412269520860, guid: cda00e7bf286f45918ca78c01dbb13b9, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -4240792656585877389, guid: cda00e7bf286f45918ca78c01dbb13b9, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -1496006456183014991, guid: cda00e7bf286f45918ca78c01dbb13b9, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 5181150164951893878, guid: cda00e7bf286f45918ca78c01dbb13b9, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 6210517829709617921, guid: cda00e7bf286f45918ca78c01dbb13b9, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 5147925213563731111, guid: cda00e7bf286f45918ca78c01dbb13b9, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -5672174647195847901, guid: 21fcbf5d7d8af4a1d8a2dff621c8458b, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 2493137669949773793, guid: 21fcbf5d7d8af4a1d8a2dff621c8458b, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -8626250891554468122, guid: 21fcbf5d7d8af4a1d8a2dff621c8458b, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 820469486126521382, guid: 21fcbf5d7d8af4a1d8a2dff621c8458b, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -5000625968173616541, guid: 21fcbf5d7d8af4a1d8a2dff621c8458b, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -5156191164297775706, guid: 21fcbf5d7d8af4a1d8a2dff621c8458b, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: -9145337994059245623, guid: bfbb93883740c4fb1b91a4ba274b5f68, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 2227043157417854091, guid: bfbb93883740c4fb1b91a4ba274b5f68, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: -6144740167084736837, guid: bfbb93883740c4fb1b91a4ba274b5f68, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: -7367142494903764849, guid: bfbb93883740c4fb1b91a4ba274b5f68, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 426060034720868871, guid: bfbb93883740c4fb1b91a4ba274b5f68, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 6556888097518037328, guid: bfbb93883740c4fb1b91a4ba274b5f68, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 3543933709722782760, guid: 0b41fa3af90ac499abb21a0301da5de8, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -585241323251943597, guid: 0b41fa3af90ac499abb21a0301da5de8, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -4200415222836459077, guid: 0b41fa3af90ac499abb21a0301da5de8, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -7324662474026188595, guid: 0b41fa3af90ac499abb21a0301da5de8, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -4889427748252336863, guid: 0b41fa3af90ac499abb21a0301da5de8, type: 3}
+  - <ZombieType>k__BackingField: 0
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 2021813347937890316, guid: 0b41fa3af90ac499abb21a0301da5de8, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -4593944228995333339, guid: e5c34cab86646474aa0f1a73727fa492, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 5744025139969250229, guid: e5c34cab86646474aa0f1a73727fa492, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 526875722765947617, guid: e5c34cab86646474aa0f1a73727fa492, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 6699909819225301295, guid: e5c34cab86646474aa0f1a73727fa492, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 8307493650247891178, guid: e5c34cab86646474aa0f1a73727fa492, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 1345571356846027832, guid: e5c34cab86646474aa0f1a73727fa492, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 4888195556750200619, guid: 53509793fa8274c1dbb61141e6d9a46f, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -7795212253297139876, guid: 53509793fa8274c1dbb61141e6d9a46f, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 9154485720397668295, guid: 53509793fa8274c1dbb61141e6d9a46f, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -979555484152198597, guid: 53509793fa8274c1dbb61141e6d9a46f, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -7839616036870774891, guid: 53509793fa8274c1dbb61141e6d9a46f, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -7386767819696780073, guid: 53509793fa8274c1dbb61141e6d9a46f, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 8759446796297908897, guid: ea59d841d6a2c4b66a0835279a9acf22, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 5883004865428529324, guid: ea59d841d6a2c4b66a0835279a9acf22, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: -7895572594933513797, guid: ea59d841d6a2c4b66a0835279a9acf22, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 2241578366268366935, guid: ea59d841d6a2c4b66a0835279a9acf22, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 9136207997399716793, guid: ea59d841d6a2c4b66a0835279a9acf22, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: -5398560026506635109, guid: ea59d841d6a2c4b66a0835279a9acf22, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 3700552731075888341, guid: 9250da7c2114a44caa15f09c71d2cd87, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 6690853557961045450, guid: 9250da7c2114a44caa15f09c71d2cd87, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 2864589837270650086, guid: 9250da7c2114a44caa15f09c71d2cd87, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 3795062737638608319, guid: 9250da7c2114a44caa15f09c71d2cd87, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -6620652941389411901, guid: 9250da7c2114a44caa15f09c71d2cd87, type: 3}
+  - <ZombieType>k__BackingField: 1
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 5441450060762938363, guid: 9250da7c2114a44caa15f09c71d2cd87, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -6241237954758484943, guid: 399701336cec949b787fefb94ab22ae6, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -2007202087564264788, guid: 399701336cec949b787fefb94ab22ae6, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -6711100184854135550, guid: 399701336cec949b787fefb94ab22ae6, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: 5809191848032603109, guid: 399701336cec949b787fefb94ab22ae6, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -6476308790249112288, guid: 399701336cec949b787fefb94ab22ae6, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 0
+    <ZombieSprite>k__BackingField: {fileID: -4220919071022163938, guid: 399701336cec949b787fefb94ab22ae6, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 1552349407113720161, guid: 27789f26d4a25423b957ba5208699804, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -4326325790304435724, guid: 27789f26d4a25423b957ba5208699804, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 5238596682234417717, guid: 27789f26d4a25423b957ba5208699804, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: -8092500743372259880, guid: 27789f26d4a25423b957ba5208699804, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 1659880843426301973, guid: 27789f26d4a25423b957ba5208699804, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 1
+    <ZombieSprite>k__BackingField: {fileID: 8625257772576203668, guid: 27789f26d4a25423b957ba5208699804, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 1224946997526435336, guid: d8449fa1e9e4c4acab40da445e7f1e04, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: -6024406241046145057, guid: d8449fa1e9e4c4acab40da445e7f1e04, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 5089396003368713549, guid: d8449fa1e9e4c4acab40da445e7f1e04, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 2920700159639601608, guid: d8449fa1e9e4c4acab40da445e7f1e04, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 213435780352419319, guid: d8449fa1e9e4c4acab40da445e7f1e04, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 2
+    <ZombieSprite>k__BackingField: {fileID: 9177814271217629513, guid: d8449fa1e9e4c4acab40da445e7f1e04, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 0
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -4214545652907007377, guid: f4267869864ee417e806a8c0a7f14e00, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 1
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -6264674123742487114, guid: f4267869864ee417e806a8c0a7f14e00, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 3
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 8607494747491188890, guid: f4267869864ee417e806a8c0a7f14e00, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 2
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 5563798879639768246, guid: f4267869864ee417e806a8c0a7f14e00, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 4
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: 7724012670007897858, guid: f4267869864ee417e806a8c0a7f14e00, type: 3}
+  - <ZombieType>k__BackingField: 2
+    <BodyPartType>k__BackingField: 5
+    <SpriteOrientation>k__BackingField: 3
+    <ZombieSprite>k__BackingField: {fileID: -3384868473802300978, guid: f4267869864ee417e806a8c0a7f14e00, type: 3}

@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: 1996aa6d8432945a69a1a3078b303dc4
+guid: 27789f26d4a25423b957ba5208699804
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8206698062338111884
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_0"
+      213: 1552349407113720161
+    second: Z2_back_0
   - first:
-      213: 7417646341480254923
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_1"
+      213: 5238596682234417717
+    second: Z2_back_1
   - first:
-      213: 1927725505198440580
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_2"
+      213: -4326325790304435724
+    second: Z2_back_2
   - first:
-      213: -6102609329723434920
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_3"
+      213: -8092500743372259880
+    second: Z2_back_3
   - first:
-      213: -3486323041408882000
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_4"
+      213: 1659880843426301973
+    second: Z2_back_4
   - first:
-      213: 5348372165346582998
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_5"
-  - first:
-      213: -2697508168175476299
-    second: "CharaketSheet_Zeichenfl\xE4che 1-04_6"
+      213: 8625257772576203668
+    second: Z2_back_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -67,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,139 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_0"
+      name: Z2_back_0
       rect:
         serializedVersion: 2
-        x: 505
-        y: 232
-        width: 832
-        height: 1841
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c89bc80286c04e170800000000000000
-      internalID: 8206698062338111884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_1"
-      rect:
-        serializedVersion: 2
-        x: 2159
-        y: 692
-        width: 270
-        height: 664
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcd08651c06c0f660800000000000000
-      internalID: 7417646341480254923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_2"
-      rect:
-        serializedVersion: 2
-        x: 2350
-        y: 1528
-        width: 631
-        height: 709
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48040d92228a0ca10800000000000000
-      internalID: 1927725505198440580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_3"
-      rect:
-        serializedVersion: 2
-        x: 2456
-        y: 34
-        width: 205
-        height: 820
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85899dac52d2f4ba0800000000000000
-      internalID: -6102609329723434920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_4"
-      rect:
-        serializedVersion: 2
-        x: 2810
-        y: 21
-        width: 205
-        height: 798
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ba60984aa71e9fc0800000000000000
-      internalID: -3486323041408882000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_5"
-      rect:
-        serializedVersion: 2
-        x: 3011
-        y: 661
-        width: 328
-        height: 705
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d1e112c52c393a40800000000000000
-      internalID: 5348372165346582998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "CharaketSheet_Zeichenfl\xE4che 1-04_6"
-      rect:
-        serializedVersion: 2
-        x: 2464
-        y: 775
-        width: 516
-        height: 750
+        x: 58
+        y: 3178
+        width: 672
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,8 +123,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b1af21fc96809ad0800000000000000
-      internalID: -2697508168175476299
+      spriteID: 1613d42af8d0b8510800000000000000
+      internalID: 1552349407113720161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Z2_back_1
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 3187
+        width: 351
+        height: 751
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5325f1e5deb33b840800000000000000
+      internalID: 5238596682234417717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Z2_back_2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1753
+        width: 289
+        height: 710
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f10b469d9dc5f3c0800000000000000
+      internalID: -4326325790304435724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Z2_back_3
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1517
+        width: 452
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd36b62379a1bf80800000000000000
+      internalID: -8092500743372259880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Z2_back_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 26
+        width: 221
+        height: 866
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51886e925d4190710800000000000000
+      internalID: 1659880843426301973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Z2_back_5
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 52
+        width: 220
+        height: 814
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493e49ede3213b770800000000000000
+      internalID: 8625257772576203668
       vertices: []
       indices: 
       edges: []

@@ -2,7 +2,9 @@ using Assets.Scripts;
 using Assets.Scripts.Actors;
 using Assets.Scripts.Actors.Interfaces;
 using Pathfinding;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ZombieManager : ActorManagerBase
 {
@@ -42,6 +44,17 @@ public class ZombieManager : ActorManagerBase
         }
 
         gameObject.transform.position = SpawnPositions.Instance.Positions[posIndex].position;
+
+        ActorSpriteHandler actorSpriteHandler = gameObject.GetComponentInChildren<ActorSpriteHandler>();
+        foreach (BodyPart bodypart in bodyPartManager.currentBodyParts)
+        {
+            foreach (SpriteOrientation orientation in Enum.GetValues(typeof(SpriteOrientation)))
+            {
+                actorSpriteHandler.SetSprite(GameAssets.Instance.GetZombieSprite(bodypart.zombieType, bodypart.type, orientation), orientation, bodypart.type);
+            }
+
+            actorSpriteHandler.EnableRenderBodyPart(bodypart.type);
+        }
 
         IActor actor = gameObject.GetComponent<IActor>();
         actor.BodyPartManager = bodyPartManager;
