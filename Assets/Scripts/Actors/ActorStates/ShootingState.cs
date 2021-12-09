@@ -28,6 +28,8 @@ namespace Assets.Scripts.Actors.ActorStates
                 {
                     actor.RangeAttackHandler.Shoot((attackableObject.gameObject.transform.position - gameObject.transform.position).normalized);
                     actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
+
+                    SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.PistolShot, actor.AudioSource);
                 }
 
                 actor.LastKnownTargetPosition = attackableObject.transform;

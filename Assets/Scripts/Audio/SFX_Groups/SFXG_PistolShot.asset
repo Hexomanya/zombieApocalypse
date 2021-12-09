@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12f0648840f676846bf8d3678a047241, type: 3}
-  m_Name: SFXG_ZombieEngage
+  m_Name: SFXG_PistolShot
   m_EditorClassIdentifier: 
-  heighestPitch: 1
-  lowestPitch: 0.6
-  playChance: 0.4
+  heighestPitch: 1.2
+  lowestPitch: 0.8
+  normalVolume: 1.5
+  playChance: 1
   audioClips:
-  - {fileID: 8300000, guid: ad171d06f257a004eab8927dfdc7a969, type: 3}
-  - {fileID: 8300000, guid: 83ea70059b83e074da91ffcda415da37, type: 3}
+  - {fileID: 8300000, guid: e7ae69b7fa114d544856fa1bbc9d9faa, type: 3}
+  - {fileID: 8300000, guid: def8e251c1fe4ca4fb0bf9a1a458f926, type: 3}
+  - {fileID: 8300000, guid: 1c15748dcdf087f4ba804c778e706b62, type: 3}

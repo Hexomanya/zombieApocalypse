@@ -13,7 +13,9 @@ public class SoundEffectManager : MonoBehaviour
         PanickedScream,
         DoorBreaking,
         ZombieDeath,
-        ZombieEngage
+        ZombieEngage,
+        PistolShot,
+        GoreAttack
     }
 
     [Header("Sound Effect Groups:")]
@@ -22,6 +24,8 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField] SoundEffectGroup doorBreakingGroup;
     [SerializeField] SoundEffectGroup zombieDeathGroup;
     [SerializeField] SoundEffectGroup zombieEngageGroup;
+    [SerializeField] SoundEffectGroup pistolShotGroup;
+    [SerializeField] SoundEffectGroup goreAttackGroup;
 
     private AudioSource audioSource;
 
@@ -45,18 +49,13 @@ public class SoundEffectManager : MonoBehaviour
         PlaySound(effect, audioSource);
     }
     //TODO: Cleaner
-    public void PlaySound(SoundEffect effect, Vector3 position, float volume = 1f)
+    public void PlaySound(SoundEffect effect, Vector3 position)
     {
         Vector3 oldPos = this.transform.position;
-        float oldVolume = audioSource.volume;
 
         this.transform.position = position;
-        audioSource.volume = volume;
-
         PlaySound(effect, audioSource);
-
         this.transform.position = oldPos;
-        audioSource.volume = oldVolume;
     }
 
     public void PlaySound(SoundEffect effect, AudioSource source)
@@ -71,6 +70,8 @@ public class SoundEffectManager : MonoBehaviour
         if(Random.Range(0, 1f) <= group.playChance)
         {
             source.pitch = Random.Range(group.lowestPitch, group.heighestPitch);
+            source.volume = group.normalVolume;
+
             AudioClip clipToPlay = group.audioClips[Random.Range(0, group.audioClips.Length - 1)];
 
             source.PlayOneShot(clipToPlay);
@@ -96,6 +97,11 @@ public class SoundEffectManager : MonoBehaviour
             case SoundEffect.ZombieEngage:
                 return zombieEngageGroup;
 
+            case SoundEffect.PistolShot:
+                return pistolShotGroup;
+
+            case SoundEffect.GoreAttack:
+                return goreAttackGroup;
             default:
                 return null;
         }
