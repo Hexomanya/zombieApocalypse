@@ -9,8 +9,8 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actor.AstarAI.canMove = false;
             actor.AstarAI.SetPath(null);
+            actor.AstarAI.canMove = false;
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
