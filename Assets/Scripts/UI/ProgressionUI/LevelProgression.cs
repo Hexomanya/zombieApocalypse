@@ -26,7 +26,19 @@ public class LevelProgression : MonoBehaviour
 
     private void Start()
     {
-        levels = levelList.levelList;
+        levels = new Level[levelList.levelList.Length];
+
+        //Copy Levels so it doesn't get permantly saved; TODO: Costructor?
+        for(int i = 0; i < levels.Length; i++)
+        {
+            Level l = new Level();
+            l.Completed = levelList.levelList[i].Completed;
+            l.LevelSoundtrack = levelList.levelList[i].LevelSoundtrack;
+            l.Locked = levelList.levelList[i].Locked;
+            l.SceneName = levelList.levelList[i].SceneName;
+
+            levels[i] = l;
+        }
 
         if(levels.Length > 0)
         {

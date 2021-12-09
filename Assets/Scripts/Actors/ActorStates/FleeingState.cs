@@ -10,6 +10,8 @@ namespace Assets.Scripts.Actors.ActorStates
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actor.AstarAI.canMove = true;
+
+            SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.PanickedScream, actor.AudioSource);
         }
 
         public void ExitState(GameObject gameObject, IActor actor)

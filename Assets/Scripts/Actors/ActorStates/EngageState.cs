@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Actors.Interfaces;
+﻿using Assets.Scripts.Actors.ActorTypes;
+using Assets.Scripts.Actors.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
@@ -11,6 +12,12 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             actorType.UpdatePath(gameObject.transform.position, actor.DetectionHandler.GetClosestTargetWithLoS().transform.position, actor, true);
             actor.AstarAI.canMove = true;
+
+            //TODO Get Zombie type
+            if(actor.ConcentrationTime > 0)
+            {
+                SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.ZombieEngage, actor.AudioSource);
+            }
         }
 
         public void ExitState(GameObject gameObject, IActor actor)

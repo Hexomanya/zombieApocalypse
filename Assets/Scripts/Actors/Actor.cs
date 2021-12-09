@@ -60,6 +60,8 @@ namespace Assets.Scripts.Actors
 
         public bool DeativatePathBlocking { get; set; }
 
+        public AudioSource AudioSource {get; set;}
+
         private AttackableObject attackableObject;
 
         void Start()
@@ -70,6 +72,7 @@ namespace Assets.Scripts.Actors
             NodeBlocker = GetComponent<SingleNodeBlocker>();
             BlockManager = FindObjectOfType<BlockManager>();
             NodeBlocker.manager = BlockManager;
+            AudioSource = GetComponent<AudioSource>();
             attackableObject = GetComponent<AttackableObject>();
             
             if (transform.parent.GetComponent<ActorManagerBase>() == null)

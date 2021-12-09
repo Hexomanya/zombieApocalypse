@@ -74,8 +74,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
 
         //Reset all persistent objects
+        Destroy(Horde.instance.gameObject);
         Horde.instance = null;
+        Destroy(Inventory.instance.gameObject);
         Inventory.instance = null;
+        Destroy(LevelProgression.instance.gameObject);
         LevelProgression.instance = null;
 
         //reset persistent variables

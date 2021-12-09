@@ -84,6 +84,8 @@ public class ZombieManager : ActorManagerBase
         }
 
         Horde.instance.RemoveZombie(bodyPartManager);
+
+        SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.ZombieDeath, gameObject.GetComponent<AudioSource>());
         DeleteActor(gameObject);
     }
 }

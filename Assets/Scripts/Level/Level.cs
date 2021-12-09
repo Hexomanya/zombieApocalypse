@@ -10,6 +10,6 @@ public class Level : ScriptableObject
     [SerializeField] private AudioClip levelSoundtrack;
     public bool Completed { get; set; }
     public bool Locked { get => locked; set => locked = value; }
-    public string SceneName { get => sceneName; }
-    public AudioClip LevelSoundtrack { get => levelSoundtrack; }
+    public string SceneName { get => sceneName; set => sceneName = value; }
+    public AudioClip LevelSoundtrack { get => levelSoundtrack; set => levelSoundtrack = value; }
 }

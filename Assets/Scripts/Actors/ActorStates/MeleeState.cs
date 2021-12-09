@@ -27,6 +27,9 @@ namespace Assets.Scripts.Actors.ActorStates
             {
                 Vector3 dir = (actor.CurrentMeleeTarget.transform.position - gameObject.transform.position).normalized;
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.right, dir);
+
+                SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.Punch, actor.AudioSource);
+
                 actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage, rotation);
                 actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
             }else if(actor.CurrentMeleeTarget == null)
