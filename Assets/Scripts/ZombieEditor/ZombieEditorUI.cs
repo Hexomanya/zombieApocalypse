@@ -76,6 +76,8 @@ public class ZombieEditorUI : MonoBehaviour
 
     public void OnZombieAddButtonClicked()
     {
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         _horde.AddEmptyZombie();
     }
 
@@ -90,6 +92,8 @@ public class ZombieEditorUI : MonoBehaviour
     public void OnStartGameButtonClicked()
     {
         //Do animations here
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         GameManager.Instance.LoadNextLevel();
     }
 }

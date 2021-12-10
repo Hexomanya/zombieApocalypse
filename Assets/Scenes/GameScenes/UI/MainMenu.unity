@@ -586,13 +586,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e268f3091ce03dc4b9515ec41eb6b545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressedGroup: {fileID: 11400000, guid: af49e72c62e60fa49a121a70d1605598, type: 2}
   punchGroup: {fileID: 11400000, guid: 11a2664b49815ed42b9caebecf8afcdd, type: 2}
   panickedScreamGroup: {fileID: 11400000, guid: 1f0dd224ae058ba41b5510013d125624, type: 2}
   doorBreakingGroup: {fileID: 11400000, guid: e1867677f6115eb4fad903715cb428c6, type: 2}
+  zombieConfusedGroup: {fileID: 11400000, guid: 54549efee2d7bd64eb11cfe5d05a5271, type: 2}
   zombieDeathGroup: {fileID: 11400000, guid: 030a380b4c0754e4fb852b940aa1eb82, type: 2}
   zombieEngageGroup: {fileID: 11400000, guid: b2b416b81d647314b8fb3a2645cc0e78, type: 2}
+  zombieGrowlGroup: {fileID: 11400000, guid: fb11272b4360b3246bce8452c2abd5db, type: 2}
   pistolShotGroup: {fileID: 11400000, guid: 014633dc1b6f2fb47bac000d8bb97bbf, type: 2}
+  playerCommandGroup: {fileID: 11400000, guid: 928c94b79c80e3b4e85b5286ddab065a, type: 2}
   goreAttackGroup: {fileID: 11400000, guid: 46c05723b347b484780d723c97508b22, type: 2}
+  growlTimeout: 5
 --- !u!82 &646987280
 AudioSource:
   m_ObjectHideFlags: 0

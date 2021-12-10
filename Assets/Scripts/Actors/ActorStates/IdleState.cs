@@ -11,6 +11,11 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             actor.AstarAI.SetPath(null);
             actor.AstarAI.canMove = false;
+
+            if (actor.ConcentrationTime > 0)
+            {
+                SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.ZombieConfused, actor.AudioSource);
+            }
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
@@ -20,7 +25,11 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            // do nothing
+            //TODO Get Zombie type
+            if (actor.ConcentrationTime > 0)
+            {
+                SoundEffectManager.Instance.PlayZombieGrowl(actor.AudioSource);
+            }
         }
     }
 }

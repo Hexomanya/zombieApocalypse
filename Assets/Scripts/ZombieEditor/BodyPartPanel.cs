@@ -13,6 +13,8 @@ public class BodyPartPanel : MonoBehaviour
 
     public void ToggleBodyPartSlots(bool expand)
     {
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         var imageComponent = GetComponent<Image>();
         if (expand)
             imageComponent.color = Color.white;

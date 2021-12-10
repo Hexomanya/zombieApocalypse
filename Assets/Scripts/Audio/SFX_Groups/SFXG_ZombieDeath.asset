@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heighestPitch: 1.2
   lowestPitch: 0.8
+  normalVolume: 1
+  playChance: 1
   audioClips:
   - {fileID: 8300000, guid: 1115eee9107e05d4f8a35ed7226bf0e1, type: 3}
+  - {fileID: 8300000, guid: ff408d2213a2af745bbf9f3ebd0fc603, type: 3}
+  - {fileID: 8300000, guid: 6e4d2886b9a1a344080d437bf94c7c22, type: 3}
