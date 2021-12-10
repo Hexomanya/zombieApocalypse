@@ -45,6 +45,8 @@ namespace Assets.Scripts.Actors.Interfaces
 
         public BodyPartManager BodyPartManager { get; set; }
 
+        public AudioSource AudioSource { get; set; }
+
         public bool DeativatePathBlocking { get; set; }
     }
 }

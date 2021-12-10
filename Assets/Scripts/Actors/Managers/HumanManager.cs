@@ -43,6 +43,8 @@ public class HumanManager : ActorManagerBase
             }
         }
 
+        SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.GoreAttack, gameObject.GetComponent<AudioSource>());
+
         DeleteActor(gameObject);   
     }
 }

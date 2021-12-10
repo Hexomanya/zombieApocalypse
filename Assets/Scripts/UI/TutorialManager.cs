@@ -47,6 +47,8 @@ public class TutorialManager : MonoBehaviour
 
     public void OnContinueButtonClicked()
     {
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         SetFirstEnter();
         Destroy(this.gameObject);
     }

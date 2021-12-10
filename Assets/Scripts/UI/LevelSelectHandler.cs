@@ -27,6 +27,8 @@ public class LevelSelectHandler : MonoBehaviour
     public void LevelSelectButtonPressed(string sceneName)
     {
         //Do Animations Here
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         GameManager.Instance.LoadEditorScene(sceneName);
     }
 }

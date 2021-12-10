@@ -23,6 +23,8 @@ public class PopUpHandler : MonoBehaviour
 
     public void LocationButtonPressed()
     {
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         if (activated)
         {
             buttonWasPressed = !buttonWasPressed;

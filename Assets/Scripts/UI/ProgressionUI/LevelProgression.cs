@@ -6,11 +6,12 @@ public class LevelProgression : MonoBehaviour
 {
     public static LevelProgression instance;
 
-    [SerializeField] private Level[] levels;
+    [SerializeField] private LevelList levelList;
 
+    private LevelCopy[] levels;
     private int currentLevel = 1;
 
-    public Level[] Levels { get => levels; }
+    public LevelCopy[] Levels { get => levels; }
 
     private void Awake()
     {
@@ -25,6 +26,22 @@ public class LevelProgression : MonoBehaviour
 
     private void Start()
     {
+        levels = new LevelCopy[levelList.levelList.Length];
+
+        //Copy Levels so it doesn't get permantly saved; TODO: Costructor?
+        for(int i = 0; i < levels.Length; i++)
+        {
+            LevelCopy l = new LevelCopy(
+                levelList.levelList[i].SceneName,
+                levelList.levelList[i].Completed,
+                levelList.levelList[i].Locked,
+                levelList.levelList[i].LevelSoundtrack
+            );
+
+
+            levels[i] = l;
+        }
+
         if(levels.Length > 0)
         {
             levels[0].Locked = false;
@@ -44,7 +61,7 @@ public class LevelProgression : MonoBehaviour
             }
             else
             {
-                Debug.Log("Tried to Unlock" + levels[currentLevel].name + ", without completing it.");
+                Debug.Log("Tried to Unlock Level: " + levels[currentLevel].SceneName + ", without completing it.");
             }
         }
         else
@@ -52,7 +69,7 @@ public class LevelProgression : MonoBehaviour
             if(!GameManager.Instance.AllLevelsComplete){
                 bool allCompleted = true;
 
-                foreach (Level level in Levels)
+                foreach (LevelCopy level in Levels)
                 {
                     if (!level.Completed) { allCompleted = false; }
                 }
@@ -63,7 +80,7 @@ public class LevelProgression : MonoBehaviour
 
             if(GameManager.Instance.AllLevelsComplete) 
             {
-                foreach (Level level in Levels)
+                foreach (LevelCopy level in Levels)
                 {
                     level.Locked = false;
                 }
@@ -71,11 +88,11 @@ public class LevelProgression : MonoBehaviour
         }
     }
 
-    public Level GetLevelByName(string searchedName)
+    public LevelCopy GetLevelByName(string searchedName)
     {
-        foreach (Level level in levels)
+        foreach (LevelCopy level in levels)
         {
-            if(level.name == searchedName)
+            if(level.SceneName == searchedName)
             {
                 return level;
             }

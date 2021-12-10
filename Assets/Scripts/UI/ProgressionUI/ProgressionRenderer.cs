@@ -8,7 +8,7 @@ public class ProgressionRenderer : MonoBehaviour
     [SerializeField] private GameObject[] connectingLines = new GameObject[3];
     [SerializeField] private PopUpMessageHandler messageHandler;
 
-    private Level[] levels;
+    private LevelCopy[] levels;
 
     private void Start()
     {

@@ -24,6 +24,11 @@ namespace Assets.Scripts.Actors.ActorStates
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actorType.UpdatePath(gameObject.transform.position, actorType.Path.endPoint, actor);
+
+            if (actor.ConcentrationTime > 0)
+            {
+                SoundEffectManager.Instance.PlayZombieGrowl(actor.AudioSource);
+            }
         }
     }
 }
