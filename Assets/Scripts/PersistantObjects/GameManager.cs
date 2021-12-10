@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         {
             if (Horde.instance.zombies.Count <= 1 && Horde.instance.zombies[0].currentBodyParts.Count <= 1)
             {
-                Debug.LogWarning("Can not start Level with 0 Zombies");
+                NotificationPanel.instance?.ShowNotification("Can not start Level with 0 Zombies");
                 return;
             }
             Horde.instance.RemoveTorsoOnlyZombies();
