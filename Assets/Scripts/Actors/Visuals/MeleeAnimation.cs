@@ -5,16 +5,15 @@ public class MeleeAnimation : StateMachineBehaviour
 {
     private Vector3 targetPos;
     private Vector3 dir;
-    private Vector3 startPos;
     private float playTime = 0f;
-    private float velocity = 10f;
+    private float velocity = 4f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        startPos = animator.transform.position;
-        targetPos = animator.transform.parent.parent.GetComponent<IActor>().CurrentMeleeTarget.transform.position;
-        dir = targetPos - animator.transform.position;
+        animator.transform.parent.localPosition = Vector3.zero;
+        targetPos = animator.transform.parent.parent.parent.GetComponent<IActor>().CurrentMeleeTarget.transform.position;
+        dir = targetPos - animator.transform.parent.position;
         dir = dir.normalized;
         playTime = 0f;
     }
@@ -22,30 +21,23 @@ public class MeleeAnimation : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(playTime >= stateInfo.length / 2f)
+        if (playTime * stateInfo.speed >= stateInfo.length / 2f)
+        {
+            return;
+        }
+
+        if (playTime * stateInfo.speed >= stateInfo.length / 4f)
         {
             dir *= -1f;
         }
 
-        animator.gameObject.transform.position += dir * Time.deltaTime * velocity;
+        animator.transform.parent.position += dir * Time.deltaTime * velocity;
         playTime += Time.deltaTime;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.transform.position = startPos;
+        animator.transform.parent.localPosition = Vector3.zero;
     }
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
