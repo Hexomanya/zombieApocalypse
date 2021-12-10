@@ -15,6 +15,8 @@ public class DropHandler : MonoBehaviour, IDropHandler
                 // Place BodyPart on selected Zombie
                 if (dragHandler.bodyPart.AttachToSelectedZombie())
                 {
+                    SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.GoreAttack);
+
                     dragHandler.WasPlaced = true;
                     eventData.pointerDrag.gameObject.transform.position = gameObject.transform.position;
                     eventData.pointerDrag.gameObject.transform.SetParent(gameObject.GetComponentInChildren<TemplatePanel>().transform);

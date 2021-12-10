@@ -5,7 +5,7 @@ namespace Assets.Scripts.Actors.ActorStates
 {
     public class PlayerMoveCommandState : IBehaviourState
     {
-        public string StateName => "Moving in Position";
+        public string StateName => "Moving to Position";
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
@@ -24,6 +24,11 @@ namespace Assets.Scripts.Actors.ActorStates
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actorType.UpdatePath(gameObject.transform.position, actorType.Path.endPoint, actor);
+
+            if (actor.ConcentrationTime > 0)
+            {
+                SoundEffectManager.Instance.PlayZombieGrowl(actor.AudioSource);
+            }
         }
     }
 }

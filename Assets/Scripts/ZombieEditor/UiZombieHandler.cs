@@ -53,6 +53,8 @@ public class UiZombieHandler : MonoBehaviour
 
     public void SetAsSelectedZombie()
     {
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         Horde.instance.SetSelectedZombie(Index);
     }
 

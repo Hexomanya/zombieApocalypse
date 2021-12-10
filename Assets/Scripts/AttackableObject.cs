@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         public GameObject Visuals = null;
 
+        [SerializeField] private LayerMask doorLayerMask;
+
         private ActorManagerBase actorManagerBase;
 
         private bool dead = false;
@@ -29,7 +31,7 @@ namespace Assets.Scripts
             if (CurrentHealth <= 0f && !dead)
             {
                 bloodManager?.StopDrop();
-                Visuals?.SetActive(false);
+                Destroy(Visuals);
                 Die();
             }
         }
@@ -37,8 +39,16 @@ namespace Assets.Scripts
         private void Die()
         {
             dead = true;
+
             if (actorManagerBase == null)
             {
+                //If Layermask not set, the mask is nothing
+                if (doorLayerMask.value == (doorLayerMask | (1 << gameObject.layer)))
+                {
+                    //TODO Fix: SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.DoorBreaking, gameObject.GetComponent<AudioSource>());
+                    SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.DoorBreaking, gameObject.transform.position);
+                }
+                
                 Destroy(gameObject);
             }
             else

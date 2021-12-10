@@ -35,6 +35,8 @@ public class PopUpMessageHandler : MonoBehaviour
 
     public void OnCloseButtonClicked()
     {
+        SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
+
         this.gameObject.SetActive(false);
         isActivated = false;
     }
