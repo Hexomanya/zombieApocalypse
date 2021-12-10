@@ -10,6 +10,7 @@ namespace Assets.Scripts.Actors.ActorStates
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
             actor.AstarAI.canMove = true;
+            actor.Animator?.SetBool("Walking", true);
 
             SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.PanickedScream, actor.AudioSource);
         }
@@ -18,6 +19,7 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             actor.AstarAI.canMove = false;
             actor.AstarAI.SetPath(null);
+            actor.Animator?.SetBool("Walking", false);
         }
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)

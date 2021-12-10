@@ -30,6 +30,7 @@ namespace Assets.Scripts
         {
             if (CurrentHealth <= 0f && !dead)
             {
+                GetComponentInChildren<Animator>()?.SetTrigger("Dead");
                 bloodManager?.StopDrop();
                 Destroy(Visuals);
                 Die();

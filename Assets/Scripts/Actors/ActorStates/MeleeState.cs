@@ -13,12 +13,14 @@ namespace Assets.Scripts.Actors.ActorStates
             actor.AstarAI.SetPath(null);
             actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
             actor.CurrentMeleeTarget = actor.MeleeRangeHandler.GetPossibleTarget();
+            actor.Animator?.SetBool("Idle", true);
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
             actor.CurrentMeleeTarget = null;
             actor.MeleeAttackTimer = actor.MeleeAttackCooldown;
+            actor.Animator?.SetBool("Idle", false);
         }
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
@@ -27,7 +29,7 @@ namespace Assets.Scripts.Actors.ActorStates
             {
                 Vector3 dir = (actor.CurrentMeleeTarget.transform.position - gameObject.transform.position).normalized;
                 Quaternion rotation = Quaternion.FromToRotation(Vector3.right, dir);
-
+                actor.Animator?.SetTrigger("Melee");
                 SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.Punch, actor.AudioSource);
 
                 actor.CurrentMeleeTarget.ApplyDamage(actor.MeleeDamage, rotation);

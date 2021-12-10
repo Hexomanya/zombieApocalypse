@@ -58,6 +58,8 @@ namespace Assets.Scripts.Actors
 
         public BodyPartManager BodyPartManager { get; set; }
 
+        public Animator Animator { get; private set; }
+
         public bool DeativatePathBlocking { get; set; }
 
         public AudioSource AudioSource {get; set;}
@@ -74,6 +76,7 @@ namespace Assets.Scripts.Actors
             NodeBlocker.manager = BlockManager;
             AudioSource = GetComponent<AudioSource>();
             attackableObject = GetComponent<AttackableObject>();
+            Animator = GetComponentInChildren<Animator>();
             
             if (transform.parent.GetComponent<ActorManagerBase>() == null)
             {
