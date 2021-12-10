@@ -13,6 +13,7 @@ namespace Assets.Scripts.Actors.ActorStates
             {
                 actorType.UpdatePath(gameObject.transform.position, actor.LastKnownTargetPosition.position, actor, true);
                 actor.AstarAI.canMove = true;
+                actor.Animator?.SetBool("Walking", true);
             }
         }
 
@@ -20,6 +21,7 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             actor.AstarAI.canMove = false;
             actor.AstarAI.SetPath(null);
+            actor.Animator?.SetBool("Walking", false);
         }
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)

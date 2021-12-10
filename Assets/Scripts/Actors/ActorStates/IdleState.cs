@@ -11,6 +11,7 @@ namespace Assets.Scripts.Actors.ActorStates
         {
             actor.AstarAI.SetPath(null);
             actor.AstarAI.canMove = false;
+            actor.Animator?.SetBool("Idle", true);
 
             if (actor.ConcentrationTime > 0)
             {
@@ -20,7 +21,7 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
-            // do nothing
+            actor.Animator?.SetBool("Idle", false);
         }
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)

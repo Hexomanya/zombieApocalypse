@@ -12,11 +12,13 @@ namespace Assets.Scripts.Actors.ActorStates
             actor.AstarAI.canMove = false;
             actor.AstarAI.SetPath(null);
             actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
+            actor.Animator?.SetBool("Idle", true);
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
         {
             actor.RangeAttackHandler.RangedAttackTimer = actor.RangeAttackHandler.RangedAttackCooldown;
+            actor.Animator?.SetBool("Idle", false);
         }
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
