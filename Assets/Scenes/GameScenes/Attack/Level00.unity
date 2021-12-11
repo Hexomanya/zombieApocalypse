@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezKptdaVQIAAPwEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2T2jAM/SuMz6WTAClLby2wbA8szNLOXnIxsUI8OHbGH8vX8N8rO4Fk6fSEkJ6k9yQ5F8KlqSCzSi80Z0vFgHzvEW+TL702+AJHulNyw89ww7xzZgsPogHzRi1X6I99mlElWM2zH3InPDhCp5M8V7qcsx1MlbEG3TkVBjCklfXZEl2XHjniT3/iU05oDcbeOqM1iXpXNDOQFnQLHXxNGmg/CabH1lAnM0HLCpjn3ckYNQnDbwEmUVGDiEKFTAnBTUOI2FMVBG+qAjR4xYxT1BdIeLkF8F1hfeFu7irPDdhGvKanGdc4proo+anq2ZXU7GtiH1Q432YQjZ4Cq7rq8h9APw7hXKvy5dY4jnwTW/Bs/0ZPGTW2M92ue/aZuZMHKvZ0K+C9APmqFlo5yTBotfOpzsBg1v69a5sWkO1bf031wemqduK3Zd5W6TVcg/zjVPByGyY/qh0bocK8wwWAxt38QsLhPkxTAr2exR8Dv+mue0hN4JlrYzHUqJSe3lY57aFkHmbm1Tg7VVqC7laoQFJhT2usYx+X+BD7f9Yz9W+m6d7Ebk/hISW4W3wUPYTW6nDflinUYQmmWDkruOwW85FXnNRUSVkfmXmI+ryN0znNunk7x9nn6yKQjMbjGIbDSTKMt09xn23RSlic5CyfJGxEwvlxiUqpWNdUmwHh4mR7ABJP7fYx6S00rcLFM00PC34ulWmRXOZqk2kAuaor3JmDxib4NNmccRzRBqzlMqycXFIiVLYHlt4LpUHq/Gg1TdsqKan4h7Lek5Jp+Hqk5EqufwFQSwMEFAAACAgAAAgh7Oz/RRBsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqqYm5uWGqsbGlqbFhkoWhbkoSkGWaYmialpJmaZpiohQLVF9SWZDql5ibCtETkFiSkZaZl5KZl67nXpSZ4g4yWim2FgBQSwECLQAUAAAICAAACCHsyqbXWlUCAAD8BAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHs7P9FEGwAAAB4AAAACQAkAAAAAAAAAAAAAACiAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAFkDAAAAAA==
+    dataString: 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
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -682,7 +682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2852,7 +2852,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8533746094363212835, guid: f666c4ebc24f07241bd7b2425cf133dd, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533746094363212835, guid: f666c4ebc24f07241bd7b2425cf133dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8344,7 +8344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8405,7 +8405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8438,6 +8438,10 @@ PrefabInstance:
     - target: {fileID: 581820727751398837, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_Name
       value: Door (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 581820727751398837, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
@@ -8540,7 +8544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8574,6 +8578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 581820727751398837, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
 --- !u!1001 &1274844439
@@ -8585,7 +8593,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8647,7 +8655,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17095,7 +17103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3856284954763918610, guid: 3b44c47e12ce1e749a843aa0ef9ffa65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17299,7 +17307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 660188547089980624, guid: 4ff6ff9359bfaba449eb3c84f31911cf, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 660188547089980624, guid: 4ff6ff9359bfaba449eb3c84f31911cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17377,7 +17385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581820727751398832, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17411,7 +17419,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 581820727751398837, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c6bdad1c1b2e1994b953c73b7bbfa24b, type: 3}
 --- !u!1001 &1294262882431648543
 PrefabInstance:
