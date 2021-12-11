@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DestructablePathfindingObject : MonoBehaviour
@@ -7,11 +5,11 @@ public class DestructablePathfindingObject : MonoBehaviour
 
     [SerializeField] private bool testDestroyBool = false;
 
-    Bounds bounds;
+    private Bounds bounds;
 
     private void Start()
     {
-        bounds = this.GetComponent<Collider2D>().bounds;
+        bounds = GetComponentInChildren<Collider2D>().bounds;
     }
 
     private void Update()
