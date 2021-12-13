@@ -8440,14 +8440,6 @@ PrefabInstance:
       propertyPath: borderProvider
       value: 
       objectReference: {fileID: 388981477}
-    - target: {fileID: 5766986112033302089, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: m_AllowMSAA
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766986112033302089, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5766986112033302090, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -8458,7 +8450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766986112033302198, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.15
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 5766986112033302198, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8495,14 +8487,6 @@ PrefabInstance:
     - target: {fileID: 5766986112033302198, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766986112033302199, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: m_AssetsPPU
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766986112033302199, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: m_UpscaleRT
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
