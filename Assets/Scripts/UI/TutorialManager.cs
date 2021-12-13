@@ -11,7 +11,14 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private TutorialTypes type;
     private void Awake()
     {
-        this.gameObject.SetActive(CheckShowTutorial());
+        bool shouldShowTutorial = CheckShowTutorial();
+
+        this.gameObject.SetActive(shouldShowTutorial);
+
+        if (shouldShowTutorial)
+        {
+            Time.timeScale = 0f;
+        }
     }
 
     private bool CheckShowTutorial()
@@ -50,6 +57,9 @@ public class TutorialManager : MonoBehaviour
         SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.ButtonPressed);
 
         SetFirstEnter();
+
+        Time.timeScale = 1f;
+
         Destroy(this.gameObject);
     }
 }
