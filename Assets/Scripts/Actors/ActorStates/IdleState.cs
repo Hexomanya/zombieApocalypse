@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Actors.Interfaces;
+﻿using Assets.Scripts.Actors.ActorTypes;
+using Assets.Scripts.Actors.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.ActorStates
@@ -13,7 +14,7 @@ namespace Assets.Scripts.Actors.ActorStates
             actor.AstarAI.canMove = false;
             actor.Animator?.SetBool("Idle", true);
 
-            if (actor.ConcentrationTime > 0)
+            if (actor.Typ == ActorType.Zombie && actor.ConcentrationTimer <= 0f)
             {
                 SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.ZombieConfused, actor.AudioSource);
             }

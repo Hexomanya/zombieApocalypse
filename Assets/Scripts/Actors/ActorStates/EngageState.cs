@@ -13,8 +13,7 @@ namespace Assets.Scripts.Actors.ActorStates
             actorType.UpdatePath(gameObject.transform.position, actor.DetectionHandler.GetClosestTargetWithLoS().transform.position, actor, true);
             actor.AstarAI.canMove = true;
 
-            //TODO Get Zombie type
-            if(actor.ConcentrationTime > 0)
+            if(actor.Typ == ActorType.Zombie)
             {
                 SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.ZombieEngage, actor.AudioSource);
             }
