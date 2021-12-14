@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 30777661046585929, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3726182030472237562, guid: 4db9554458d99426d8fa61d0d2ce87f1, type: 3}
+    - target: {fileID: 353959230950889872, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 698841120154994533, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 970397295729065546, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8956658261671810116, guid: d0829b8da5657495b81645b4026a49a9, type: 3}
+    - target: {fileID: 1353701891571941307, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1372325659849451921, guid: d58970d27b26b402a8b79c06dce42be8, type: 3}
+    - target: {fileID: 1353701891571941307, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732422654316238067, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1932915543989874959, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: m_Radius
       value: 7
@@ -87,6 +115,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guarding Human
       objectReference: {fileID: 0}
+    - target: {fileID: 3694173918486966972, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988617109651899775, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5589766326974019653, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: m_Color.b
       value: 0.6226415
@@ -99,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7138287521208775326, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 16933880819281142, guid: 11f108c0a420e49a096748eef13a8b92, type: 3}
     - target: {fileID: 7566043882818752807, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: maxSpeed
       value: 1.8
