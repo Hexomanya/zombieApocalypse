@@ -597,6 +597,7 @@ MonoBehaviour:
   pistolShotGroup: {fileID: 11400000, guid: 014633dc1b6f2fb47bac000d8bb97bbf, type: 2}
   playerCommandGroup: {fileID: 11400000, guid: 928c94b79c80e3b4e85b5286ddab065a, type: 2}
   goreAttackGroup: {fileID: 11400000, guid: 46c05723b347b484780d723c97508b22, type: 2}
+  bodyPartCollectedGroup: {fileID: 11400000, guid: 33830b3548f5a494ab89be7be9e002a9, type: 2}
   growlTimeout: 5
 --- !u!82 &646987280
 AudioSource:

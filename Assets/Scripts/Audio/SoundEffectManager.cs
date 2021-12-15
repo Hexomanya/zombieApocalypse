@@ -19,7 +19,8 @@ public class SoundEffectManager : MonoBehaviour
         ZombieGrowl,
         PistolShot,
         PlayerCommand,
-        GoreAttack
+        GoreAttack,
+        BodyPartCollected
     }
 
     [Header("Sound Effect Groups:")]
@@ -34,6 +35,7 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField] private SoundEffectGroup pistolShotGroup;
     [SerializeField] private SoundEffectGroup playerCommandGroup;
     [SerializeField] private SoundEffectGroup goreAttackGroup;
+    [SerializeField] private SoundEffectGroup bodyPartCollectedGroup;
 
     [Header("Zombie Growl Settings:")]
     [SerializeField] private float growlTimeout = 5f;
@@ -153,6 +155,10 @@ public class SoundEffectManager : MonoBehaviour
 
             case SoundEffect.GoreAttack:
                 return goreAttackGroup;
+
+            case SoundEffect.BodyPartCollected:
+                return bodyPartCollectedGroup;
+
             default:
                 return null;
         }

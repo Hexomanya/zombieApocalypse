@@ -55,6 +55,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
   - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
   newParts: []
+  guaranteedBodyPartDropLevel0:
+  - {fileID: 11400000, guid: a6a3925a0e99ce3458e198125840bdbe, type: 2}
+  - {fileID: 11400000, guid: 7febb8b9290268541b19213131d80875, type: 2}
+  - {fileID: 11400000, guid: 7febb8b9290268541b19213131d80875, type: 2}
+  - {fileID: 11400000, guid: d496b082105b1774aa104e54136e637a, type: 2}
+  - {fileID: 11400000, guid: 7ef33570c5d76454a911dcea9225bd4f, type: 2}
+  - {fileID: 11400000, guid: c1d8a2b7289eded48bc92cdd9deca0df, type: 2}
+  - {fileID: 11400000, guid: d496b082105b1774aa104e54136e637a, type: 2}
+  - {fileID: 11400000, guid: c1d8a2b7289eded48bc92cdd9deca0df, type: 2}
+  guaranteedBodyPartDropLevel1:
+  - {fileID: 11400000, guid: 7cf758ab6fa97ca4b92f50bdca627444, type: 2}
+  - {fileID: 11400000, guid: 86fb1df87bb79bf4ea4aecbe67c58f96, type: 2}
+  - {fileID: 11400000, guid: 959254f49f4f63d47b68801a52ea64a6, type: 2}
+  - {fileID: 11400000, guid: f6e4c6209cec9a94eaf847adb30db969, type: 2}
+  - {fileID: 11400000, guid: b073c9cdd81c4b647a7421dd27c4e3cb, type: 2}
+  guaranteedBodyPartDropLevel2:
+  - {fileID: 11400000, guid: 86fb1df87bb79bf4ea4aecbe67c58f96, type: 2}
+  - {fileID: 11400000, guid: 4ed9d718422d57647b440faf18ef2002, type: 2}
+  - {fileID: 11400000, guid: 7cf758ab6fa97ca4b92f50bdca627444, type: 2}
+  - {fileID: 11400000, guid: f6e4c6209cec9a94eaf847adb30db969, type: 2}
+  - {fileID: 11400000, guid: 189e26550c47ed840929c2043f268ab1, type: 2}
 --- !u!1 &576710672753912599
 GameObject:
   m_ObjectHideFlags: 0

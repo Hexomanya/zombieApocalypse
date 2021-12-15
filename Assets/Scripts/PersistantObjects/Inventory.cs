@@ -10,6 +10,10 @@ public class Inventory : MonoBehaviour
     public List<BodyPart> bodyParts = new List<BodyPart>();
     public List<BodyPart> newParts = new List<BodyPart>();
 
+    public List<BodyPart> guaranteedBodyPartDropLevel0 = new List<BodyPart>();
+    public List<BodyPart> guaranteedBodyPartDropLevel1 = new List<BodyPart>();
+    public List<BodyPart> guaranteedBodyPartDropLevel2 = new List<BodyPart>();
+
     public delegate void OnBodyPartsChanged();
     public OnBodyPartsChanged onBodyPartsChangedCallback;
 
@@ -67,5 +71,23 @@ public class Inventory : MonoBehaviour
                 amount++;
         }
         return amount;
+    }
+
+    public void AddGuaranteedBodyPartDrop(string levelName)
+    {
+        switch(levelName)
+        {
+            case "Level00":
+                bodyParts.AddRange(guaranteedBodyPartDropLevel0);
+                break;
+
+            case "Level01":
+                bodyParts.AddRange(guaranteedBodyPartDropLevel1);
+                break;
+
+            case "Level02":
+                bodyParts.AddRange(guaranteedBodyPartDropLevel2);
+                break;
+        }
     }
 }
