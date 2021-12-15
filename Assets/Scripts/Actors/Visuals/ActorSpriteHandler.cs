@@ -72,7 +72,7 @@ public class ActorSpriteHandler : MonoBehaviour
         return Quaternion.FromToRotation(new Vector3(1f, -1f, 0f), target.normalized).eulerAngles.z;
     }
 
-    public void SetSprite(Sprite sprite, SpriteOrientation orientation, BodyPartType bodyPartType)
+    public void SetSprite(Sprite sprite, SpriteOrientation orientation, BodyPartType bodyPartType, int index)
     {
         switch (orientation)
         {
@@ -89,6 +89,14 @@ public class ActorSpriteHandler : MonoBehaviour
                 right.GetComponent<SpriteSetter>().SetSprite(sprite, bodyPartType);
                 break;
         }
+    }
+
+    public void SetSpriteRenderLayer(int zombieIndex)
+    {
+        front.GetComponent<SpriteSetter>().SetSpriteLayer(zombieIndex);
+        back.GetComponent<SpriteSetter>().SetSpriteLayer(zombieIndex);
+        right.GetComponent<SpriteSetter>().SetSpriteLayer(zombieIndex);
+        left.GetComponent<SpriteSetter>().SetSpriteLayer(zombieIndex);
     }
 
     public void EnableRenderBodyPart(BodyPartType bodyPartType)

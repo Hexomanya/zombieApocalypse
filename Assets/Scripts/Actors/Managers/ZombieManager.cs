@@ -46,11 +46,12 @@ public class ZombieManager : ActorManagerBase
         gameObject.transform.position = SpawnPositions.Instance.Positions[posIndex].position;
 
         ActorSpriteHandler actorSpriteHandler = gameObject.GetComponentInChildren<ActorSpriteHandler>();
+        actorSpriteHandler.SetSpriteRenderLayer(index);
         foreach (BodyPart bodypart in bodyPartManager.currentBodyParts)
         {
             foreach (SpriteOrientation orientation in Enum.GetValues(typeof(SpriteOrientation)))
             {
-                actorSpriteHandler.SetSprite(GameAssets.Instance.GetZombieSprite(bodypart.zombieType, bodypart.type, orientation), orientation, bodypart.type);
+                actorSpriteHandler.SetSprite(GameAssets.Instance.GetZombieSprite(bodypart.zombieType, bodypart.type, orientation), orientation, bodypart.type, index);
             }
 
             actorSpriteHandler.EnableRenderBodyPart(bodypart.type);

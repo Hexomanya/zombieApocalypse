@@ -34,7 +34,7 @@ namespace Assets.Scripts.Actors
             possibleTargets.Remove(collision.transform.parent.GetComponent<AttackableObject>());
         }
 
-        public void SetDetectionRange(float range)
+        public void SetDetectionRange(float range) 
         {
             detectionRange = range;
             gameObject.GetComponent<CircleCollider2D>().radius = detectionRange;
