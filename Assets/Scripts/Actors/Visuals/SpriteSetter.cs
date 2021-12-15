@@ -37,6 +37,17 @@ public class SpriteSetter : MonoBehaviour
         }
     }
 
+    public void SetSpriteLayer(int zombieIndex)
+    {
+        int layer = 2 * zombieIndex;
+        Head.sortingOrder += layer;
+        LArm.sortingOrder += layer;
+        RArm.sortingOrder += layer;
+        Torso.sortingOrder += layer;
+        LFoot.sortingOrder += layer;
+        RFoot.sortingOrder += layer;
+    }
+
     public void ActivateRenderer(BodyPartType bodyPartType)
     {
         switch (bodyPartType)
