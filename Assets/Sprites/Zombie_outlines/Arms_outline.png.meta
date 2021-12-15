@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 68796ebb84d454987a01ee6eee6d04bf
+guid: 82668a18bbfc0b340b0a97fc754d86c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4304446102398311253
-    second: QuitButton_0
+      213: 265419032416853757
+    second: Arms_outline_0
   - first:
-      213: -8948310650188516998
-    second: QuitButton_1
+      213: -1668871632474211213
+    second: Arms_outline_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QuitButton_0
+      name: Arms_outline_0
       rect:
         serializedVersion: 2
-        x: 1374
-        y: 1134
-        width: 1262
-        height: 277
+        x: 170
+        y: 46
+        width: 94
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b14489ce67cbb30800000000000000
-      internalID: 4304446102398311253
+      spriteID: dfe95d72435fea300800000000000000
+      internalID: 265419032416853757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: QuitButton_1
+      name: Arms_outline_1
       rect:
         serializedVersion: 2
-        x: 1366
-        y: 839
-        width: 1262
-        height: 283
+        x: 372
+        y: 34
+        width: 114
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a713ba3bfd631d380800000000000000
-      internalID: -8948310650188516998
+      spriteID: 37cf5a2a71af6d8e0800000000000000
+      internalID: -1668871632474211213
       vertices: []
       indices: 
       edges: []

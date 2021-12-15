@@ -67,6 +67,7 @@ public class BodyPartInventorySlot : MonoBehaviour
             return;
         _popUp = Instantiate(gameObject, transform);
         Destroy(_popUp.GetComponent<BodyPartInventorySlot>());
+        _popUp.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         _popUp.transform.position = new Vector3(transform.position.x, transform.position.y - offSet, 0);
         _popUp.GetComponentInChildren<TMP_Text>().text = "+";
     }

@@ -16,9 +16,10 @@ public class HumanManager : ActorManagerBase
 
         if (blockerList.Count == 0 || debugSkipWon)
         {
+            string sceneName = SceneManager.GetActiveScene().name;
+            Inventory.instance.AddGuaranteedBodyPartDrop(sceneName);
             endScreenPopup.LevelWon();
 
-            string sceneName = SceneManager.GetActiveScene().name;
             LevelProgression.instance.GetLevelByName(sceneName).Completed = true;
             Destroy(this);
         }
@@ -40,6 +41,7 @@ public class HumanManager : ActorManagerBase
                 BodyPart bodyPart = item.New();
                 Inventory.instance.AddNewBodyPart(bodyPart);
                 InGameUi.instance.ShowBodyPartCollectedPopUp(bodyPart);
+                SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.BodyPartCollected, gameObject.GetComponent<AudioSource>(), ignoreChance: true);
             }
         }
 
