@@ -2757,6 +2757,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1345341155}
     m_Modifications:
+    - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
+      propertyPath: m_text
+      value: "You have finally arrived at your destination!\n\nNow you only have
+        a simple task left: Make sure the apocalypse succeeds!\n\nFor that to happen,
+        you have to destroy three camps that are full of survivors and use their
+        body parts to construct new zombies.\n\nAfter you have assembled an army
+        you are ready to attack the science lab where they try to concoct a weapon
+        against the apocalypse.\_\n\nDon't be scared that you might do something
+        wrong, I will teach you. And to be honest, the humans are quite stupid and
+        also not that hard to kill.\n\nTo start your rampage, just click the \"Attack
+        this location\" Button on your trusty map."
+      objectReference: {fileID: 0}
     - target: {fileID: 4657501830155409589, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
       propertyPath: m_Name
       value: TutorialPanel

@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: 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
+    dataString: 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
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -315,43 +315,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
       propertyPath: m_text
-      value: 'Are you nervous? Well, you shouldn''t be. It''s just a bunch of meat
-        sacks after all. They don''t even have guns!
-
-
-
-        Now to the important
-        parts:
-
-        - To move your horde, just click on the position you want
-        them to move with the left mouse button.
-
-        - To move the camera, use
-        the WSAD-Keys or bring your cursor near the screen border.
-
-
-
-        Easy
-        enough, isn''t it?
-
-
-
-        It is essential that you kill as many survivors
-        as you can. Some will fight and some will run away. Just kill everything
-        nearby and make sure you lose as few zombies as you can.
-
-
-
-        Have
-        fun killing!'
+      value: "Are you nervous? Well, you shouldn't be. It's just a bunch of meat
+        sacks, after all. They don't even have guns!\n\nNow to the important parts:\n-
+        To move your horde, just click on the position you want them to move with
+        the left mouse button.\n- To move the camera, use the WSAD-Keys or bring
+        your cursor near the screen border.\n\nEasy enough, isn't it?\n\nOne thing
+        to remember, tough, is that your zombie are stupid. Some of them don't even
+        have heads!\nIf you give them an order to move somewhere, they will only
+        be able to remember that command for a few seconds. \n\nAs long as one zombie
+        is still following your command, the \"command marker\" (green cross) will
+        be visible. If you can't place the marker, or it vanishes, it means that
+        the zombies are confused or busy.\n\nIt is essential that you kill as many
+        survivors as you can. Some will fight and some will run away. Just kill everything
+        nearby and make sure you lose as few zombies as you can.\n\nHave fun killing!"
       objectReference: {fileID: 0}
     - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4657501828349135716, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
       propertyPath: m_fontSizeBase
-      value: 32
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4657501829162399066, guid: 652433bafe41c1c4ca81c1db8e43f4fb, type: 3}
       propertyPath: m_text
@@ -8456,10 +8440,6 @@ PrefabInstance:
       propertyPath: borderProvider
       value: 
       objectReference: {fileID: 388981477}
-    - target: {fileID: 5766986112033302089, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5766986112033302090, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -8470,7 +8450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766986112033302198, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.15
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 5766986112033302198, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8507,14 +8487,6 @@ PrefabInstance:
     - target: {fileID: 5766986112033302198, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766986112033302199, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: m_AssetsPPU
-      value: 96
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766986112033302199, guid: 6417e27635320c340a2b5dea37a78894, type: 3}
-      propertyPath: m_UpscaleRT
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6417e27635320c340a2b5dea37a78894, type: 3}

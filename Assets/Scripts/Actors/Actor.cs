@@ -11,7 +11,7 @@ namespace Assets.Scripts.Actors
         private IActorType myActorType;
 
         [field: SerializeField]
-        private ActorType Typ { get; set; } = ActorType.Zombie;
+        public ActorType Typ { get; set; } = ActorType.Zombie;
 
         [field: SerializeField]
         public float MeleeDamage { get; set; } = 5f;

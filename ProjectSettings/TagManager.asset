@@ -56,9 +56,9 @@ TagManager:
   - name: UI_01
     uniqueID: 515862597
     locked: 0
-  - name: Torso
+  - name: Zombie
     uniqueID: 2095632783
     locked: 0
-  - name: Limbs
-    uniqueID: 233070617
+  - name: Human
+    uniqueID: 4164031147
     locked: 0

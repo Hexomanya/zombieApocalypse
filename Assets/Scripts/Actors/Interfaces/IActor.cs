@@ -1,10 +1,12 @@
-﻿using Pathfinding;
+﻿using Assets.Scripts.Actors.ActorTypes;
+using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Scripts.Actors.Interfaces
 {
     public interface IActor
     {
+        public ActorType Typ { get; }
         public DetectionHandler DetectionHandler { get; }
 
         public MeleeRangeHandler MeleeRangeHandler { get; }

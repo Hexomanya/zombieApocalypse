@@ -9,11 +9,15 @@ namespace Assets.Scripts.Actors.ActorStates
 
         public void EnterState(GameObject gameObject, IActor actor, IActorType actorType)
         {
-            actorType.UpdatePath(gameObject.transform.position, Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition)), actor, true);
+            Vector3 destination = Utility.RemoveZAxis(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+            actorType.UpdatePath(gameObject.transform.position, destination, actor, true);
             actor.ConcentrationTimer = actor.ConcentrationTime;
             actorType.PlayerCommandCooldownTimer = actor.PlayerCommandCooldown;
             actor.AstarAI.canMove = true;
             actor.Animator?.SetBool("Walking", true);
+
+            PlayerClickVisualizer.Instance.MarkNewPosition(gameObject, destination);
         }
 
         public void ExitState(GameObject gameObject, IActor actor)
@@ -21,6 +25,8 @@ namespace Assets.Scripts.Actors.ActorStates
             actor.AstarAI.SetPath(null);
             actor.AstarAI.canMove = false;
             actor.Animator?.SetBool("Walking", false);
+
+            PlayerClickVisualizer.Instance.RemoveZombie(gameObject);
         }
 
         public void Update(GameObject gameObject, IActor actor, IActorType actorType)
