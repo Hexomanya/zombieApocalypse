@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4946842819376157222, guid: fca833a0966da4a048008658723cfcbe, type: 3}
     - target: {fileID: 192721830956740972, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
+      propertyPath: <Damage>k__BackingField
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 192721830956740972, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: <Accuracy>k__BackingField
       value: 0.85
       objectReference: {fileID: 0}
@@ -37,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1932915543989874959, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: m_Radius
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1932915543989874960, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: detectionRange
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1932915544487196009, guid: 5ee5e1ba455f76f46b66fc8c39961ceb, type: 3}
       propertyPath: m_RootOrder
