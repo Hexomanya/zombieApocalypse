@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: DefaultLeftArm
   m_EditorClassIdentifier: 
-  name: DefaultLeftArm
+  name: Default Left Arm
   sprite: {fileID: 2152377124456824251, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   type: 1
   zombieType: 0
-  damageModifier: 5
   meleeDamageModifier: 3
   meleeCooldownTime: -0.4
   healthModifier: 7

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: LongHairRightArm
   m_EditorClassIdentifier: 
-  name: LongHairRightArm
+  name: Long Hair Right Arm
   sprite: {fileID: -8741477008817079301, guid: 82531937b01f3df40a1397f17b7651b8, type: 3}
   type: 3
   zombieType: 2
-  meleeDamageModifier: 4.5
+  meleeDamageModifier: 3.75
   meleeCooldownTime: -0.2
   healthModifier: 5
   speedModifier: 0.2
