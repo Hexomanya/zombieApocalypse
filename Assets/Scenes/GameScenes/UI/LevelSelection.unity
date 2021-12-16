@@ -325,6 +325,10 @@ PrefabInstance:
       value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
+      propertyPath: hideOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
       propertyPath: messageHandler
       value: 
       objectReference: {fileID: 661426753}
@@ -577,6 +581,10 @@ PrefabInstance:
     - target: {fileID: 718783350866075575, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
+      propertyPath: hideOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
       propertyPath: messageHandler
@@ -1293,6 +1301,10 @@ PrefabInstance:
     - target: {fileID: 718783350866075574, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level01
+      objectReference: {fileID: 0}
+    - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
+      propertyPath: hideOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
       propertyPath: messageHandler
@@ -2416,6 +2428,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1345341156}
+    - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
+      propertyPath: hideOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 718783351263676071, guid: a6772f4af24dfc64abd7bdd1a8a4d846, type: 3}
       propertyPath: messageHandler
       value: 
