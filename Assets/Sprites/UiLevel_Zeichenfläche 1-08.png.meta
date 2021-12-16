@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: bc031f1e5e03a44abacb3ba8ceeb7b3e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8719010070807536289
+    second: "UiLevel_Zeichenfl\xE4che 1-08_0"
+  - first:
+      213: 1135638617659861824
+    second: "UiLevel_Zeichenfl\xE4che 1-08_1"
+  - first:
+      213: 8805801169179102200
+    second: "UiLevel_Zeichenfl\xE4che 1-08_2"
+  - first:
+      213: 2056991225225684042
+    second: "UiLevel_Zeichenfl\xE4che 1-08_3"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +87,105 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "UiLevel_Zeichenfl\xE4che 1-08_0"
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 925
+        width: 570
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d9670398adff680800000000000000
+      internalID: -8719010070807536289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UiLevel_Zeichenfl\xE4che 1-08_1"
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 925
+        width: 572
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04be4de4e4992cf00800000000000000
+      internalID: 1135638617659861824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UiLevel_Zeichenfl\xE4che 1-08_2"
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 925
+        width: 572
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 73, z: 0, w: 230}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbc3ab128d743a70800000000000000
+      internalID: 8805801169179102200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "UiLevel_Zeichenfl\xE4che 1-08_3"
+      rect:
+        serializedVersion: 2
+        x: 3006
+        y: 925
+        width: 572
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 70, z: 0, w: 230}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a442ca5fe96eb8c10800000000000000
+      internalID: 2056991225225684042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
