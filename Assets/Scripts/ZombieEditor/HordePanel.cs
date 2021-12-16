@@ -44,8 +44,11 @@ public class HordePanel : MonoBehaviour
 
     public void ClearUI()
     {
-        foreach (Transform child in transform)
-            Destroy(child.gameObject);
+        if (transform != null)
+        {
+            foreach (Transform child in transform)
+                Destroy(child?.gameObject);
+        }
         uiZombies = new List<UiZombieHandler>();
     }
 }
