@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: DefaultRightArm
   m_EditorClassIdentifier: 
-  name: DefaultRightArm
+  name: Default Right Arm
   sprite: {fileID: -1464266523200089135, guid: 5e158523e66b5a047888c8d133d2acdc, type: 3}
   type: 3
   zombieType: 0

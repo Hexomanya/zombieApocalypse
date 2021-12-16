@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: LongHairRightFoot
   m_EditorClassIdentifier: 
-  name: LongHairRightFoot
+  name: Long Hair Right Foot
   sprite: {fileID: -3611297994778047879, guid: 82531937b01f3df40a1397f17b7651b8, type: 3}
   type: 5
   zombieType: 2

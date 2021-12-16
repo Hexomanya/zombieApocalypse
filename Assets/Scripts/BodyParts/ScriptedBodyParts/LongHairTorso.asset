@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: LongHairTorso
   m_EditorClassIdentifier: 
-  name: LongHairTorso
+  name: Long Hair Torso
   sprite: {fileID: -5418178886326061163, guid: 82531937b01f3df40a1397f17b7651b8, type: 3}
   type: 2
   zombieType: 2

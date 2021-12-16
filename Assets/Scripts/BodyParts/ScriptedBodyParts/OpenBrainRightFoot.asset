@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: OpenBrainRightFoot
   m_EditorClassIdentifier: 
-  name: OpenBrainRightFoot
+  name: Open Brain Right Foot
   sprite: {fileID: 6325882853702437560, guid: b1549227f6ec25f4a9cf3d4c1aa0997a, type: 3}
   type: 5
   zombieType: 1

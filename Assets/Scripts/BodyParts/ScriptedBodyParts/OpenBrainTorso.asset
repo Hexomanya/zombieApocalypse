@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d03b1daba97b4ca9f96bb4547ccaa, type: 3}
   m_Name: OpenBrainTorso
   m_EditorClassIdentifier: 
-  name: OpenBrainTorso
+  name: Open Brain Torso
   sprite: {fileID: -3118632031835042078, guid: b1549227f6ec25f4a9cf3d4c1aa0997a, type: 3}
   type: 2
   zombieType: 1
