@@ -43,7 +43,7 @@ public class PlayerClickVisualizer : MonoBehaviour
 
                 CreateMarker(currentMarkedPos);
 
-                SoundEffectManager.Instance.PlaySound(SoundEffectManager.SoundEffect.PlayerCommand, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                SoundEffectManager.Instance.PlaySoundNo3D(SoundEffectManager.SoundEffect.PlayerCommand);
             }
         }
     }

@@ -41,14 +41,19 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField] private float growlTimeout = 5f;
 
     [Header("Zombie Engage Settings:")]
-    [SerializeField] private float engageTimeout = 0.5f;
+    [SerializeField] private float engageTimeout = 2.5f;
+
+    [Header("Player command Settings:")]
+    [SerializeField] private float commandTimeout = 0.5f;
 
     private AudioSource audioSource;
 
     private float currentGrowlTimeout;
     private float currentEngageTimeout;
+    private float currentCommandTimeout;
     private bool canPlayGrowl = true;
     private bool canPlayEngage = true;
+    private bool canPlayCommand = true;
 
     private void Awake()
     {
@@ -84,8 +89,9 @@ public class SoundEffectManager : MonoBehaviour
     public void PlaySound(SoundEffect effect, AudioSource source, bool ignoreChance = false)
     {
         if(effect == SoundEffect.ZombieEngage && !canPlayEngage) { return; }
+        if (effect == SoundEffect.PlayerCommand && !canPlayCommand) { return; }
 
-        if(source == null) { 
+        if (source == null) { 
 
             source = audioSource; 
         }
@@ -99,9 +105,11 @@ public class SoundEffectManager : MonoBehaviour
 
             AudioClip clipToPlay = group.audioClips[Random.Range(0, group.audioClips.Length - 1)];
 
+            if (effect == SoundEffect.ZombieEngage) { Debug.Log("Playing engage"); canPlayEngage = false; }
+            if (effect == SoundEffect.PlayerCommand) { canPlayCommand = false; }
+
             source.PlayOneShot(clipToPlay);
 
-            if(effect == SoundEffect.ZombieEngage) { canPlayEngage = false; }
         }
     }
     
@@ -134,6 +142,16 @@ public class SoundEffectManager : MonoBehaviour
         else
         {
             currentEngageTimeout -= Time.deltaTime;
+        }
+
+        if (currentCommandTimeout <= 0)
+        {
+            canPlayCommand = true;
+            currentCommandTimeout = commandTimeout;
+        }
+        else
+        {
+            currentCommandTimeout -= Time.deltaTime;
         }
     }
 

@@ -390,7 +390,8 @@ MonoBehaviour:
   goreAttackGroup: {fileID: 11400000, guid: 46c05723b347b484780d723c97508b22, type: 2}
   bodyPartCollectedGroup: {fileID: 11400000, guid: 33830b3548f5a494ab89be7be9e002a9, type: 2}
   growlTimeout: 5
-  engageTimeout: 2
+  engageTimeout: 4
+  commandTimeout: 0.5
 --- !u!82 &646987280
 AudioSource:
   m_ObjectHideFlags: 0
