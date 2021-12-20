@@ -40,10 +40,15 @@ public class SoundEffectManager : MonoBehaviour
     [Header("Zombie Growl Settings:")]
     [SerializeField] private float growlTimeout = 5f;
 
+    [Header("Zombie Engage Settings:")]
+    [SerializeField] private float engageTimeout = 0.5f;
+
     private AudioSource audioSource;
 
     private float currentGrowlTimeout;
+    private float currentEngageTimeout;
     private bool canPlayGrowl = true;
+    private bool canPlayEngage = true;
 
     private void Awake()
     {
@@ -57,7 +62,6 @@ public class SoundEffectManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         audioSource = this.GetComponent<AudioSource>();
-        currentGrowlTimeout = growlTimeout;
     }
 
 
@@ -79,6 +83,8 @@ public class SoundEffectManager : MonoBehaviour
 
     public void PlaySound(SoundEffect effect, AudioSource source, bool ignoreChance = false)
     {
+        if(effect == SoundEffect.ZombieEngage && !canPlayEngage) { return; }
+
         if(source == null) { 
 
             source = audioSource; 
@@ -94,6 +100,8 @@ public class SoundEffectManager : MonoBehaviour
             AudioClip clipToPlay = group.audioClips[Random.Range(0, group.audioClips.Length - 1)];
 
             source.PlayOneShot(clipToPlay);
+
+            if(effect == SoundEffect.ZombieEngage) { canPlayEngage = false; }
         }
     }
     
@@ -116,6 +124,16 @@ public class SoundEffectManager : MonoBehaviour
         else
         {
             currentGrowlTimeout -= Time.deltaTime;
+        }
+
+        if (currentEngageTimeout <= 0)
+        {
+            canPlayEngage = true;
+            currentEngageTimeout = engageTimeout;
+        }
+        else
+        {
+            currentEngageTimeout -= Time.deltaTime;
         }
     }
 
