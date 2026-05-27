@@ -4,7 +4,7 @@
 
 **Lend Me a Leg!** is a zombie strategy game built in Unity as part of a university "Game Design" course. The project challenged us to design and execute a complete game concept following a rigorous iterative prototyping workflow, moving from strict design constraints to a fully playable digital prototype.
 
-**The Team:** Antonia, Luca, Jannik, Benjamin
+**The Team:** Antonia, Luca, Jannik, Benjamin (Hexomanya)
 
 > *Our Pitch: Trade and collect body parts, build a custom zombie horde, and unleash the global apocalypse.*
 
